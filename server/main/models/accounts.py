@@ -148,13 +148,12 @@ class UserProfile(base_models.TimeStampedModel, Verification):
     verification_key = models.CharField(
         max_length=40
     )
-    name = models.CharField(max_length=30, null=False)
-    college = models.CharField(max_length=130, null=False)
-    branch = models.CharField(max_length=30, null=False)
-    year = models.IntegerField(null=False)
-    rollno = models.BigIntegerField(null=False)
-    contact = models.BigIntegerField(null=False)
-    gender = models.CharField(max_length=10, null=False)
+    college = models.CharField(max_length=130, null=True)
+    branch = models.CharField(max_length=30, null=True)
+    year = models.IntegerField(null=True)
+    rollno = models.BigIntegerField(null=True)
+    contact = models.BigIntegerField(null=True)
+    gender = models.CharField(max_length=10, null=True)
 
     objects = UserProfileRegistrationManager()
 

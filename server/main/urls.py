@@ -7,7 +7,7 @@ from rest_framework import permissions
 from .views.test import TestModelView
 
 from .views.accounts import (UserEmailVerificationAPIView, UserProfileAPIView, UserRegistrationAPIView, 
-                           UserLoginView, PasswordResetAPIView, PasswordResetConfirmView)
+                           UserLoginView, PasswordResetAPIView, PasswordResetConfirmView, UpdateProfileAPIView)
 
 
 test_router = routers.DefaultRouter()
@@ -22,4 +22,5 @@ urlpatterns = [
    url(r'^auth/password_reset/$', PasswordResetAPIView.as_view(), name='password_change'),
    url(r'^auth/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
    url(r'^user/profile/$', UserProfileAPIView.as_view(), name='user_profile'),
+   url(r'^user/profile/update$', UpdateProfileAPIView.as_view(), name='user_profile'),
 ]
