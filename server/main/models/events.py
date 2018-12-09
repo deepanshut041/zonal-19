@@ -14,6 +14,9 @@ class EventModel(models.Model):
         return str(self.name)
 
 class UserEventModel(models.Model):
-    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
-    events = models.ForeignKey(to=EventModel, on_delete=models.CASCADE)
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, null=False)
+    event = models.ForeignKey(to=EventModel, on_delete=models.CASCADE, null=False)
     enroll_time = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'event',)
