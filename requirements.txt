@@ -6,11 +6,13 @@ Django==2.1.4
 django-cors-headers==2.4.0
 django-filter==2.0.0
 djangorestframework==3.9.0
+djangorestframework-jwt==1.11.0
 idna==2.7
 itypes==1.1.0
 Jinja2==2.10
 Markdown==3.0.1
 MarkupSafe==1.1.0
+PyJWT==1.7.1
 pytz==2018.7
 requests==2.20.1
 uritemplate==3.0.0
