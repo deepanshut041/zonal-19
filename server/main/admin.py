@@ -10,8 +10,10 @@ MySpecialAdmin = lambda model: type('SubClass'+model.__name__, (admin.ModelAdmin
 
 from .models.test import TestModel
 from .models.accounts import UserProfile
+from .models.events import EventModel, UserEventModel
 
 admin.site.register(TestModel,  MySpecialAdmin(TestModel))
+admin.site.register(UserEventModel, MySpecialAdmin(UserEventModel))
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
@@ -26,3 +28,7 @@ class UserProfileAdmin(admin.ModelAdmin):
 
     def is_active(self, profile):
         return profile.user.is_active
+
+@admin.register(EventModel)
+class EventModel(admin.ModelAdmin):
+    list_display = ('name',)
