@@ -33,32 +33,3 @@ class EventModelView(ModelViewSet):
         queryset = EventModel.objects.all()
         serializer = EventModelSerializer(queryset, many=True)
         return Response(serializer.data)
-
-class UserEventView(mixins.CreateModelMixin,
-                                mixins.ListModelMixin,
-                                mixins.DestroyModelMixin,
-                                viewsets.GenericViewSet):
-    queryset = UserEventModel.objects.all()
-    serializer_class = UserEventModelSerializer
-    permission_classes = [IsOwnerOrStaff,IsAuthenticated, ]
-
-
-    def perform_create(self, serializer):
-        data = serializer.initial_data
-        print(data)
-        if UserEventModel.objects.filter(user=self.request.user, event_id=data['event']).exists():
-            raise serializers.ValidationError('Already Registered')
-        serializer.save(user=self.request.user)
-
-    def get_object(self):
-        try:
-            return UserEventModel.objects.get(user=self.request.user, event_id=self.kwargs['pk'])
-        except UserEventModel.DoesNotExist:
-            raise Http404
-
-    def get_queryset(self):
-        if self.action == 'list':
-            queryset = UserEventModel.objects.filter(user=self.request.user)
-        else:
-            queryset = EventModel.objects.all()
-        return queryset
