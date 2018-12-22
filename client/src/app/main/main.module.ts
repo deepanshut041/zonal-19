@@ -6,11 +6,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LandingPageComponent } from './home/landing-page/landing-page.component';
 import { EventsOverviewComponent } from './home/events-overview/events-overview.component';
-import { ScheduleOverviewComponent } from './home/schedule-overview/schedule-overview.component';
 import { TeamOverviewComponent } from './home/team-overview/team-overview.component';
 import { EventsComponent } from './events/events.component';
-import { ScheduleComponent } from './schedule/schedule.component';
-import { TeamsComponent } from './teams/teams.component';
 import { EventsListComponent } from './events/events-list/events-list.component';
 import { EventsDetailsComponent } from './events/events-details/events-details.component';
 import { RouterModule } from '@angular/router';
@@ -26,11 +23,8 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     LandingPageComponent,
     EventsOverviewComponent,
-    ScheduleOverviewComponent,
     TeamOverviewComponent,
     EventsComponent,
-    ScheduleComponent,
-    TeamsComponent,
     EventsListComponent,
     EventsDetailsComponent
   ]

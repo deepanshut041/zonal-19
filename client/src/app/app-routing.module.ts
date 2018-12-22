@@ -22,8 +22,6 @@ const routes: Routes = [
           {path: '', component: EventsListComponent},
           {path: 'id', component: EventsDetailsComponent}
         ]},
-        {path: 'schedule', component : ScheduleComponent},
-        {path: 'team', component : TeamsComponent}
     ]},
     { path: 'auth', component: AuthComponent, children: [
       {path: 'sign-in', component: SignInComponent},
