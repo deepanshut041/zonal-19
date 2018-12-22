@@ -1,28 +1,23 @@
 from rest_framework.viewsets import ModelViewSet, ViewSet
 from django.http import Http404
 from rest_framework import viewsets, mixins, serializers
-from ..models.events import EventModel, UserEventModel
-from ..serializers.events import EventModelSerializer, EventsModelSerializer
-from ..serializers.events import UserEventModelSerializer
+from ..models.events import EventModel, EventCoordinatorModel, EventParticipantModel, EventRegistrationModel
+from ..serializers.events import EventModelSerializer, EventDetailSerializer, EventShortSerializer, EventCoordinatorSerializer
+from ..serializers.events import EventParticipantsSerializer, EventRegistrationSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly, AllowAny
 from ..base.permissions import IsOwnerOrAdmin, IsSuperUser, IsOwnerOrStaff
+from rest_framework import mixins
 
 class EventModelView(ModelViewSet):
     queryset = EventModel.objects.all()
-
-    def get_serializer_class(self):
-        if self.action == 'list':
-            return EventsModelSerializer
-        else:
-            return EventModelSerializer
-        return serializers.Default
+    serializer_class = EventModelSerializer
 
     def get_permissions(self):
         # Your logic should be all here
         if self.action in ('create', 'update', 'partial_update', 'destroy'):
-            self.permission_classes = [IsSuperUser, ]
+            self.permission_classes = [IsSuperUser, IsAdminUser, ]
         else:
             self.permission_classes = [AllowAny, ]
 
@@ -31,34 +26,42 @@ class EventModelView(ModelViewSet):
     @action(detail=False, methods=['GET'], name='Get detailed list')
     def detail_list(self, request, *args, **kwargs):
         queryset = EventModel.objects.all()
-        serializer = EventModelSerializer(queryset, many=True)
+        serializer = EventDetailSerializer(queryset, many=True)
         return Response(serializer.data)
 
-class UserEventView(mixins.CreateModelMixin,
-                                mixins.ListModelMixin,
-                                mixins.DestroyModelMixin,
-                                viewsets.GenericViewSet):
-    queryset = UserEventModel.objects.all()
-    serializer_class = UserEventModelSerializer
-    permission_classes = [IsOwnerOrStaff,IsAuthenticated, ]
+    @action(detail=False, methods=['GET'], name='Get detailed list')
+    def short_list(self, request, *args, **kwargs):
+        queryset = EventModel.objects.all()
+        serializer = EventShortSerializer(queryset, many=True)
+        return Response(serializer.data)
 
+class EventCoordinatorView(ModelViewSet):
+    queryset = EventCoordinatorModel.objects.all()
+    serializer_class = EventCoordinatorSerializer
 
-    def perform_create(self, serializer):
-        data = serializer.initial_data
-        print(data)
-        if UserEventModel.objects.filter(user=self.request.user, event_id=data['event']).exists():
-            raise serializers.ValidationError('Already Registered')
-        serializer.save(user=self.request.user)
-
-    def get_object(self):
-        try:
-            return UserEventModel.objects.get(user=self.request.user, event_id=self.kwargs['pk'])
-        except UserEventModel.DoesNotExist:
-            raise Http404
-
-    def get_queryset(self):
-        if self.action == 'list':
-            queryset = UserEventModel.objects.filter(user=self.request.user)
+    def get_permissions(self):
+        # Your logic should be all here
+        if self.action in ('create', 'update', 'partial_update', 'destroy'):
+            self.permission_classes = [IsSuperUser, IsAdminUser, ]
         else:
-            queryset = EventModel.objects.all()
-        return queryset
+            self.permission_classes = [AllowAny, ]
+
+        return super(EventCoordinatorView, self).get_permissions() 
+
+class EventRegistrationView(ModelViewSet):
+    queryset = EventRegistrationModel.objects.all()
+    serializer_class = EventRegistrationSerializer
+
+    def get_permissions(self):
+        # Your logic should be all here
+        if self.action in ('list', 'update', 'partial_update', 'destroy', 'retrieve'):
+            self.permission_classes = [IsSuperUser, IsAdminUser, ]
+        else:
+            self.permission_classes = [AllowAny, ]
+
+        return super(EventRegistrationView, self).get_permissions()
+
+class EventParticipantView(ModelViewSet):
+    queryset = EventParticipantModel.objects.all()
+    serializer_class = EventParticipantsSerializer
+    permission_classes = (IsAdminUser, IsSuperUser, )
