@@ -18,7 +18,7 @@ const routes: Routes = [
         {path: '', component: HomeComponent},
         {path: 'events', component: EventsComponent, children: [
           {path: '', component: EventsListComponent},
-          {path: 'id', component: EventsDetailsComponent}
+          {path: ':id', component: EventsDetailsComponent}
         ]},
     ]},
     { path: 'auth', component: AuthComponent, children: [
