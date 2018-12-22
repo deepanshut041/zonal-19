@@ -6,8 +6,6 @@ import { HomeComponent } from './main/home/home.component';
 import { EventsComponent } from './main/events/events.component';
 import { EventsListComponent } from './main/events/events-list/events-list.component';
 import { EventsDetailsComponent } from './main/events/events-details/events-details.component';
-import { ScheduleComponent } from './main/schedule/schedule.component';
-import { TeamsComponent } from './main/teams/teams.component';
 import { AuthComponent } from './auth/auth/auth.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
@@ -28,8 +26,7 @@ const routes: Routes = [
       {path: 'sign-up', component: SignUpComponent},
       {path: '', redirectTo: 'sign-in', pathMatch: 'full'}
     ]},
-    { path: '**', component: PageNotFoundComponent},
-    { path: 'test', component: AppComponent }
+    { path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
