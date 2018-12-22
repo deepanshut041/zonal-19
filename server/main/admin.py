@@ -8,12 +8,13 @@ MySpecialAdmin = lambda model: type('SubClass'+model.__name__, (admin.ModelAdmin
     'list_select_related': [x.name for x in model._meta.fields if isinstance(x, (ManyToOneRel, ForeignKey, OneToOneField,))]
 })
 
-from .models.test import TestModel
 from .models.accounts import UserProfile
-from .models.events import EventModel, UserEventModel
+from .models.events import EventModel, EventCoordinatorModel, EventRegistrationModel, EventParticipantModel
 
-admin.site.register(TestModel,  MySpecialAdmin(TestModel))
-admin.site.register(UserEventModel, MySpecialAdmin(UserEventModel))
+admin.site.register(EventModel,  MySpecialAdmin(EventModel))
+admin.site.register(EventCoordinatorModel, MySpecialAdmin(EventCoordinatorModel))
+admin.site.register(EventRegistrationModel,  MySpecialAdmin(EventRegistrationModel))
+admin.site.register(EventParticipantModel, MySpecialAdmin(EventParticipantModel))
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
@@ -28,7 +29,3 @@ class UserProfileAdmin(admin.ModelAdmin):
 
     def is_active(self, profile):
         return profile.user.is_active
-
-@admin.register(EventModel)
-class EventModel(admin.ModelAdmin):
-    list_display = ('name',)

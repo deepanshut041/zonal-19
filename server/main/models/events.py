@@ -85,7 +85,7 @@ class EventParticipantModel(models.Model):
     aadhar_no = models.CharField(max_length=20, null=False)
     phn_no = models.BigIntegerField(max_length=20, null=False)
     email = models.EmailField(null=False)
-    registration_id = models.CharField(max_length=130, null=True)
+    regs_id = models.CharField(max_length=130, null=True)
     registration = models.ForeignKey(EventRegistrationModel, on_delete=models.CASCADE, related_name="participants")
 
     def __str__(self):

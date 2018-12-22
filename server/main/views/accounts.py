@@ -9,7 +9,7 @@ from rest_framework.response import Response
 
 from ..models.accounts import UserProfile
 from ..serializers.accounts import (UserRegistrationSerializer, UserLoginSerializer, UserSerializer,
- UserProfileSerializer, PasswordResetSerializer, PasswordResetConfirmSerializer, UpdateProfileSerializer)
+ UserProfileSerializer, PasswordResetSerializer, PasswordResetConfirmSerializer)
 
 User = get_user_model()
 
@@ -114,17 +114,3 @@ class UserProfileAPIView(generics.RetrieveAPIView):
         except UserProfile.DoesNotExist:
             raise Http404
 
-
-
-class UpdateProfileAPIView(generics.UpdateAPIView):
-    permission_classes = (permissions.IsAuthenticated, )
-    serializer_class = UpdateProfileSerializer
-
-    def get_object(self):
-        try:
-            return self.request.user.userprofile
-        except UserProfile.DoesNotExist:
-            raise Http404
-        
-    def pre_save(self, obj):
-        obj.user = self.request.user

@@ -3,7 +3,7 @@ from ..models.events import EventModel, EventCoordinatorModel, EventParticipantM
 
 class EventShortSerializer(serializers.ModelSerializer):
     class Meta:
-        models = EventModel
+        model = EventModel
         fields = ("id", "name", "date", "time", "venue", "maxp")
 
 class EventModelSerializer(serializers.ModelSerializer):
