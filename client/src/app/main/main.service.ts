@@ -1,6 +1,6 @@
-import { Injectable, isDevMode } from "@angular/core";
+import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
 
 @Injectable()
@@ -9,9 +9,9 @@ export class MainService {
 
   constructor(private http:HttpClient) {
     if (isDevMode()) {
-        this.domain = "http://localhost:8000";
+        this.domain = 'http://localhost:8000';
       } else {
-        this.domain = ".";
+        this.domain = '.';
       }
   }
 
@@ -19,20 +19,20 @@ export class MainService {
     const headers = new HttpHeaders({
       'Content-Type':'application/json; charset=utf-8'
     });
-    return this.http.get<any[]>(this.domain+'/api/events/short_list/', {headers: headers})
+    return this.http.get<any[]>(this.domain + '/api/events/short_list/', {headers: headers})
   }
 
-  getEvent(id:number):Observable<any>{
+  getEvent(id: number): Observable<any>{
     const headers = new HttpHeaders({
-      'Content-Type':'application/json; charset=utf-8'
+      'Content-Type': 'application/json; charset=utf-8'
     });
-    return this.http.get<any>(this.domain+'/api/events/' + id + '/', {headers: headers})
+    return this.http.get<any>(this.domain + '/api/events/' + id + '/', {headers: headers})
   }
 
-  getEvents():Observable<any[]>{
+  getEvents(): Observable<any[]>{
     const headers = new HttpHeaders({
-      'Content-Type':'application/json; charset=utf-8'
+      'Content-Type': 'application/json; charset=utf-8'
     });
-    return this.http.get<any[]>(this.domain+'/api/events/', {headers: headers})
+    return this.http.get<any[]>(this.domain + '/api/events/', {headers: headers})
   }
 }
