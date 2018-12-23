@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../main.service';
 
+
 @Component({
   selector: 'app-events-list',
   templateUrl: './events-list.component.html',
@@ -18,6 +19,7 @@ export class EventsListComponent implements OnInit {
     }, (err)=>{
       console.log(err)
     })
+
   }
 
 }

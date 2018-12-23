@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MainService } from "../../main.service";
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-events-details',
   templateUrl: './events-details.component.html',
