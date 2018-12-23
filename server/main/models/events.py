@@ -28,21 +28,7 @@ class EventCoordinatorModel(models.Model):
     def __str__(self):
         return str(self.name + " - " + self.branch + " - " + self.year)
 
-class EventRegistrationModel(models.Model):
-    college_name = models.CharField(max_length=130, null=False)
-    college_code = models.CharField(max_length=10, null=False)
-    faculty_name = models.CharField(max_length=130, null=False)
-    faculty_designation = models.CharField(max_length=130, null=False)
-    faculty_phn_no = models.BigIntegerField(null=False)
-    faculty_email = models.EmailField(null=False)
-    event = models.ForeignKey(EventModel, on_delete=models.CASCADE, related_name="events")
-
-    def __str__(self):
-        return str(self.college_code + " - " + self.college_name)
-    
-    class Meta:
-        unique_together = ('college_code', 'event')
-
+class EventRegistrationManager(models.Manager):
     @transaction.atomic
     def do_registration(self, data, participants, send_email=True):
         """
@@ -55,7 +41,7 @@ class EventRegistrationModel(models.Model):
         m.save()
 
         for participant in participants:
-            participant['registration'] = m.pk
+            participant['registration'] = m
             EventParticipantModel.objects.create_participant(data=participant, send_email=True)
 
         if send_email:
@@ -75,22 +61,23 @@ class EventRegistrationModel(models.Model):
         msg.attach_alternative(message, "text/html")
         msg.send()
 
-class EventParticipantModel(models.Model):
-    name = models.CharField(max_length=130, null=False)
-    fathers_name = models.CharField(max_length=130, null=False)
-    university_roll = models.CharField(max_length=20, null=False)
-    branch = models.CharField(max_length=30, null=False)
-    year = models.IntegerField(default=0, null=False)
-    gender = models.CharField(max_length=20, null=False)
-    aadhar_no = models.CharField(max_length=20, null=False)
-    phn_no = models.BigIntegerField(max_length=20, null=False)
-    email = models.EmailField(null=False)
-    regs_id = models.CharField(max_length=130, null=True)
-    registration = models.ForeignKey(EventRegistrationModel, on_delete=models.CASCADE, related_name="participants")
+class EventRegistrationModel(models.Model):
+    college_name = models.CharField(max_length=130, null=False)
+    college_code = models.CharField(max_length=10, null=False)
+    faculty_name = models.CharField(max_length=130, null=False)
+    faculty_designation = models.CharField(max_length=130, null=False)
+    faculty_phn_no = models.BigIntegerField(null=False)
+    faculty_email = models.EmailField(null=False)
+    event = models.ForeignKey(EventModel, on_delete=models.CASCADE, related_name="events")
 
+    objects = EventRegistrationManager()
     def __str__(self):
-        return str(self.name + " - " + self.university_roll)
+        return str(self.college_code + " - " + self.college_name)
     
+    class Meta:
+        unique_together = ('college_code', 'event')
+
+class EventParticipantManager(models.Manager):
     @transaction.atomic
     def create_participant(self, data, send_email=True):
         """
@@ -118,3 +105,21 @@ class EventParticipantModel(models.Model):
         msg = EmailMultiAlternatives(subject, "", settings.DEFAULT_FROM_EMAIL, [email])
         msg.attach_alternative(message, "text/html")
         msg.send()
+
+class EventParticipantModel(models.Model):
+    name = models.CharField(max_length=130, null=False)
+    fathers_name = models.CharField(max_length=130, null=False)
+    university_roll = models.CharField(max_length=20, null=False)
+    branch = models.CharField(max_length=30, null=False)
+    year = models.IntegerField(default=0, null=False)
+    gender = models.CharField(max_length=20, null=False)
+    aadhar_no = models.CharField(max_length=20, null=False)
+    phn_no = models.BigIntegerField(max_length=20, null=False)
+    email = models.EmailField(null=False)
+    regs_id = models.CharField(max_length=130, null=True)
+    registration = models.ForeignKey(EventRegistrationModel, on_delete=models.CASCADE, related_name="participants")
+
+    objects = EventParticipantManager()
+    def __str__(self):
+        return str(self.name + " - " + self.university_roll)
+    

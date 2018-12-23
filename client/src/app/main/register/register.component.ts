@@ -108,6 +108,13 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   }
 
   submitForm(){
-    console.log("Submit button Works")
+    console.log(this.registerForm.value)
+    this._mainService.regsiter(this.registerForm.value).subscribe(
+      (resp)=>{
+        console.log(resp);
+      }, (err)=>{
+        console.log(err);
+      }
+    )
   }
 }
