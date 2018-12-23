@@ -125,9 +125,11 @@ import datetime
 
 INSTALLED_APPS += [
     'rest_framework_recaptcha',
+    'django_cleanup',
     'rest_framework',
     'main',
     'corsheaders',
+    
     ]
 
 REST_FRAMEWORK = {

@@ -13,9 +13,12 @@ class EventModel(models.Model):
     faculty_name = models.CharField(max_length=130, null=False)
     department = models.CharField(max_length=130, null=False)
     maxp = models.IntegerField(default=6, null=False)
+    image = models.ImageField(blank=False, null=False, upload_to = 'images/events/')
 
     def __str__(self):
         return str(self.name)
+
+
 
 class EventCoordinatorModel(models.Model):
     name = models.CharField(max_length=130, null=False)
@@ -122,4 +125,3 @@ class EventParticipantModel(models.Model):
     objects = EventParticipantManager()
     def __str__(self):
         return str(self.name + " - " + self.university_roll)
-    
