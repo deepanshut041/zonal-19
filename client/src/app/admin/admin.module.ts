@@ -12,7 +12,7 @@ import { MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatS
 
 @NgModule({
   imports: [
-    CommonModule, CommonModule, RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, RecaptchaModule,
+    CommonModule, RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, RecaptchaModule,
     MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule,
     MatOptionModule, MatFormFieldModule, AdminRoutingModule
   ],

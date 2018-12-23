@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnectionErrorComponent implements OnInit {
 
+  CONNECTION_ERROR = '/assets/500 Eror-01.svg';
+
   constructor() { }
 
   ngOnInit() {

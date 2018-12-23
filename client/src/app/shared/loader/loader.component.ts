@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoaderComponent implements OnInit {
 
+  LOADER = '/assets/Infinity-1.ps-200px.svg';
+
   constructor() { }
 
   ngOnInit() {
