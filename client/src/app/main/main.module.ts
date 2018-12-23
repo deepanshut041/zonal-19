@@ -29,6 +29,7 @@ import { EventsDetailsComponent } from './events/events-details/events-details.c
 import { RegisterComponent } from './register/register.component';
 
 import { MainService } from './main.service';
+import { LandingPageService } from './home/landing-page/landing-page.service';
 
 
 
@@ -41,6 +42,6 @@ import { MainService } from './main.service';
     MainComponent, NavbarComponent, FooterComponent, HomeComponent, LandingPageComponent, EventsOverviewComponent,
     TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent
   ],
-  providers:[MainService,]
+  providers:[MainService,LandingPageService]
 })
 export class MainModule { }
