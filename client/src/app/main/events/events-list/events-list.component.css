@@ -1,0 +1,30 @@
+.topRow{
+  background-color: #000;
+  height: 150px;
+  border-radius: 5px;
+}
+.BottomRow{
+  padding: 20px;
+}
+.bottomColumn{
+  background-color: #1b1464;
+  margin-top: -50px;
+  height: 500px;
+}
+.bottomColumn .row{
+  padding: 10px;
+}
+.EventCard{
+  background-color: #fff;
+  border-radius: 10px;
+}
+.eventDetails{
+  background-color: #000;
+}
+.eventEname, .eventEtime, .eventEdate{
+  font-size: 15px;
+  font-weight: lighter;
+}
+.eventEname{
+  font-size: 18px;
+}

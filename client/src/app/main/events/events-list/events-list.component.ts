@@ -8,6 +8,9 @@ import { MainService } from '../../main.service';
   styleUrls: ['./events-list.component.css']
 })
 export class EventsListComponent implements OnInit {
+
+  EVENT_PG_IMG = '/assets/Rules.svg';
+
   events:any[]
 
   constructor(private _mainService:MainService) { }

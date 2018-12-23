@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsOverviewComponent implements OnInit {
 
+  EVENT_IMG = '/assets/Events.svg';
+
   constructor() { }
 
   ngOnInit() {
