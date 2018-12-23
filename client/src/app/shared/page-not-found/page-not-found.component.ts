@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
+  PAGENOTFOUND = '/assets/404 Error-02.svg';
+
   constructor() { }
 
   ngOnInit() {
