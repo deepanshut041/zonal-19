@@ -1,0 +1,136 @@
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0px;
+  padding: 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;
+  }
+.fullPage{
+  scroll-snap-align: end;
+  height: 100vh;
+  color: #fff;
+}
+/* events section */
+.EventsPage .container{
+  margin-top: 20px;
+}
+.EventsDesign{
+  height: 500px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+}
+.EventsDesign img{
+  width: 100%;
+}
+.EventsBox{
+  height: 500px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.EventsPage{
+  z-index: 1;
+  background-color: #fff;
+  padding: 50px;
+}
+.EventsPage .row{
+  box-shadow: 0px 5px 20px -7px #000;
+  border-radius: 10px;
+}
+.EventsPage .row:hover{
+  box-shadow: 0px 8px 30px -10px #000;
+  transition: .15s linear;
+}
+
+.EventsPage .container .row{
+  height: 500px;
+}
+.EventsCollection{
+ height: 500px;
+ background-color: #fff;
+}
+.EventsCollection .col-lg-4{
+  color: #fff;
+  font-weight: 400;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 3;
+  cursor: pointer;
+  text-shadow: 2px 2px 5px #212121;
+}
+.EventsBox::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+
+.EventsCollection .col-lg-3:hover{
+  box-shadow: 0px 0px 30px 2px #000 inset;
+  transition: .4s;
+  z-index: 10;
+  text-shadow: 0px 5px 5px #212121;
+}
+.card{
+  height: 200px;
+  background-color: #212121 !important;
+}
+.CalenderDesign{
+  width: 100%;
+}
+
+@media (max-width:480px)
+{
+
+  .EventsPage{
+    padding: 20px;
+  }
+  .EventsDesign{
+    height: 0px;
+    padding: 50px;
+    margin-top: 0px;
+  }
+  .EventsDesign .windowScreen-event{
+    width: 100px;
+    visibility: ;
+  }
+  .EventButton {
+  box-shadow: 0px 5px 15px -3px #1b1464 !important;
+  background-color: #000;
+  width: 200px;
+  color: #fff;
+  padding: 15px;
+  display: inline-block;
+  letter-spacing: 2px;
+  font-size: 1.5rem !important;
+}
+.EventButton:hover {
+  box-shadow: 0px 8px 20px -2px #000 !important;
+  background-color: #000;
+  color: #fff;
+}
+.ButtonText{
+  display: inline-block;
+  margin-left: 20px;
+}
+.EventsButton i{
+  display: inline-block;
+}
+  .EventsBox
+  {
+    margin-top: 10px;
+  }
+  .card{
+    height: 100px;
+  }
+  .CalenderDesign{
+    width: 100%;
+  }
+
+}

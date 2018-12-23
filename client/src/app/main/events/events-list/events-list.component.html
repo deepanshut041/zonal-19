@@ -1,3 +1,6 @@
-<p>
-  events-list works!
-</p>
+<ul *ngIf="events">
+  <li *ngFor="let event of events">
+    <p>{{event.name}}</p>
+  </li>
+</ul>
+
