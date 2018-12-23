@@ -75,7 +75,7 @@
   <div formArrayName="participants">
     <h3>Participants</h3>
 
-    <div *ngFor="let participant of registerForm.get('participants').controls; let i=index">
+    <div *ngFor="let participant of registerForm.controls['participants']; let i=index">
       <!-- The repeated alias template -->
       <div [formGroupName]="i">
         <p>

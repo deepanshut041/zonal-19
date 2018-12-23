@@ -1,6 +1,7 @@
 import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { DOMAIN } from '../shared/assets';
 
 
 @Injectable()
@@ -8,11 +9,7 @@ export class MainService {
   domain:string
 
   constructor(private http:HttpClient) {
-    if (isDevMode()) {
-        this.domain = 'http://localhost:8000';
-      } else {
-        this.domain = '.';
-      }
+    this.domain = DOMAIN
   }
 
   getEventsShort():Observable<any[]>{
