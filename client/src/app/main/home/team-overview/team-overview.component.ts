@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ASSETS } from 'src/app/shared/assets';
 
 @Component({
   selector: 'app-home-team-overview',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamOverviewComponent implements OnInit {
 
-  IMG = './assets/Events.svg';
+  IMG = ASSETS + '/Events.svg';
 
   constructor() { }
 

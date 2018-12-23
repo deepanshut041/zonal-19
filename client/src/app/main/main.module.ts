@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SharedModule } from "../shared/shared.module";
 
 // Recpatcha
 import { RecaptchaModule } from 'ng-recaptcha';
@@ -19,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { EventsOverviewComponent } from './home/events-overview/events-overview.component';
 import { TeamOverviewComponent } from './home/team-overview/team-overview.component';
 import { LandingPageComponent } from './home/landing-page/landing-page.component';
+import { ScheduleOverviewComponent } from './home/schedule-overview/schedule-overview.component';
 
 // Events Component
 import { EventsComponent } from './events/events.component';
@@ -29,18 +31,19 @@ import { EventsDetailsComponent } from './events/events-details/events-details.c
 import { RegisterComponent } from './register/register.component';
 
 import { MainService } from './main.service';
+import { LandingPageService } from './home/landing-page/landing-page.service';
 
 
 
 @NgModule({
   imports: [
     CommonModule, RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, RecaptchaModule,
-     MatButtonModule, MatCheckboxModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule
+     MatButtonModule, MatCheckboxModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule, SharedModule
   ],
   declarations: [
     MainComponent, NavbarComponent, FooterComponent, HomeComponent, LandingPageComponent, EventsOverviewComponent,
-    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent
+    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent,ScheduleOverviewComponent
   ],
-  providers:[MainService,]
+  providers:[MainService,LandingPageService]
 })
 export class MainModule { }
