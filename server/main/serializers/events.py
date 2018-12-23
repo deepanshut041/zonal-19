@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from ..models.events import EventModel, EventCoordinatorModel, EventParticipantModel, EventRegistrationModel
 from django.forms.models import model_to_dict
+from rest_framework_recaptcha.fields import ReCaptchaField
 
 class EventShortSerializer(serializers.ModelSerializer):
     class Meta:
@@ -36,9 +37,13 @@ class EventParticipantSerializer(serializers.ModelSerializer):
 
 class EventRegistrationSerializer(serializers.ModelSerializer):
     participants = EventParticipantSerializer(many=True)
+    recaptcha = ReCaptchaField(error_messages={
+            "invalid-input-response": "reCAPTCHA token is invalid.",
+            "idiot": "Don't try to hack (tum se na ho paayga",
+        })
     class Meta:
         model = EventRegistrationModel
-        fields = ("participants", "college_name", "college_code", "faculty_name", "faculty_designation", "faculty_phn_no", "faculty_email", "event")
+        fields = ("participants", "college_name", "college_code", "faculty_name", "faculty_designation", "faculty_phn_no", "faculty_email", "event", "recaptcha")
 
     def create(self, validated_data):
 

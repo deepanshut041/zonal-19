@@ -131,6 +131,9 @@
     </div>
   </div>
   <div>
+      <re-captcha (resolved)="resolved($event)" siteKey="{{SITE_KEY}}"></re-captcha>
+  </div>
+  <div>
       <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Submit</button>
   </div>
 
