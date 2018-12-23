@@ -7,7 +7,7 @@ import { MainService } from "../main.service";
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegsiterComponent implements OnInit, AfterViewInit {
+export class RegisterComponent implements OnInit, AfterViewInit {
   registerForm: FormGroup
   events:any[]
   max_participants:number
@@ -67,7 +67,7 @@ export class RegsiterComponent implements OnInit, AfterViewInit {
     let control = <FormArray>this.registerForm.controls['participants']
       for (let i = control.length; i < maxp; i++) {
         control.push(this.createItem())
-      } 
+      }
   }
 
   resetParticipants():void{
@@ -76,7 +76,7 @@ export class RegsiterComponent implements OnInit, AfterViewInit {
     if (this.total_participants < control.length) {
       while (this.total_participants != control.length) {
         control.removeAt(control.length - 1);
-      } 
+      }
     }
   }
 
