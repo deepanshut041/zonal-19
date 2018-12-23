@@ -72,11 +72,15 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
   resetParticipants():void{
     let control = <FormArray>this.registerForm.controls['participants']
-    console.log("hello");
+
     if (this.total_participants < control.length) {
       while (this.total_participants != control.length) {
         control.removeAt(control.length - 1);
       }
+    }
+    console.log(control.length)
+    if (control.length == 0) {
+      control.markAsPending()
     }
   }
 
@@ -101,5 +105,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       'phn_no':  [null, Validators.compose([Validators.required])],
       'email':  [null, Validators.compose([Validators.required])]
     });
+  }
+
+  submitForm(){
+    console.log("Submit button Works")
   }
 }
