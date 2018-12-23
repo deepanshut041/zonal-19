@@ -9,10 +9,12 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly, AllowAny
 from ..base.permissions import IsOwnerOrAdmin, IsSuperUser, IsOwnerOrStaff
 from rest_framework import mixins
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 
 class EventModelView(ModelViewSet):
     queryset = EventModel.objects.all()
     serializer_class = EventModelSerializer
+    parser_classes = [MultiPartParser, FormParser, JSONParser]
 
     def get_permissions(self):
         # Your logic should be all here

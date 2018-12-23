@@ -6,6 +6,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+// Recpatcha
+import { RecaptchaModule } from 'ng-recaptcha';
+
 // Core components
 import { MainComponent } from './main.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -31,7 +34,7 @@ import { MainService } from './main.service';
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule,
+    CommonModule, RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, RecaptchaModule,
      MatButtonModule, MatCheckboxModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule
   ],
   declarations: [

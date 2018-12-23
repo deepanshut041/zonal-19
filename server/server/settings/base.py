@@ -124,9 +124,12 @@ USE_TZ = True
 import datetime
 
 INSTALLED_APPS += [
+    'rest_framework_recaptcha',
+    'django_cleanup',
     'rest_framework',
     'main',
     'corsheaders',
+    
     ]
 
 REST_FRAMEWORK = {
@@ -139,6 +142,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ),
 }
+
+DRF_RECAPTCHA_SECRET_KEY = "6Ld-VYQUAAAAAG6YhUz1A0C5CZJ2wcK4rlO1EV9R"
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
