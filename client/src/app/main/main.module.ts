@@ -13,9 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 
 // HomeComponents
 import { HomeComponent } from './home/home.component';
-import { LandingPageComponent } from './home/landing-page/landing-page.component';
 import { EventsOverviewComponent } from './home/events-overview/events-overview.component';
 import { TeamOverviewComponent } from './home/team-overview/team-overview.component';
+import { LandingPageComponent } from './home/landing-page/landing-page.component';
 
 // Events Component
 import { EventsComponent } from './events/events.component';
@@ -23,9 +23,10 @@ import { EventsListComponent } from './events/events-list/events-list.component'
 import { EventsDetailsComponent } from './events/events-details/events-details.component';
 
 // Register Components
-import { RegsiterComponent } from "./register/register.component";
+import { RegsiterComponent } from './register/register.component';
 
-import { MainService } from "./main.service";
+import { MainService } from './main.service';
+
 
 
 @NgModule({

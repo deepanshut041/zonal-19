@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamOverviewComponent implements OnInit {
 
+  IMG = './assets/Events.svg';
+
   constructor() { }
 
   ngOnInit() {
