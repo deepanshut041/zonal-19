@@ -23,7 +23,7 @@ import { EventsListComponent } from './events/events-list/events-list.component'
 import { EventsDetailsComponent } from './events/events-details/events-details.component';
 
 // Register Components
-import { RegsiterComponent } from './register/register.component';
+import { RegisterComponent } from './register/register.component';
 
 import { MainService } from './main.service';
 
