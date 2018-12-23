@@ -36,7 +36,7 @@ import { MainService } from './main.service';
   ],
   declarations: [
     MainComponent, NavbarComponent, FooterComponent, HomeComponent, LandingPageComponent, EventsOverviewComponent,
-    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegsiterComponent
+    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent
   ],
   providers:[MainService,]
 })

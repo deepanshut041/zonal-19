@@ -10,7 +10,7 @@ import { AuthComponent } from './auth/auth/auth.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { RegsiterComponent } from "./main/register/register.component";
+import { RegisterComponent } from './main/register/register.component';
 
 const routes: Routes = [
     { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
@@ -21,7 +21,7 @@ const routes: Routes = [
           {path: '', component: EventsListComponent},
           {path: ':id', component: EventsDetailsComponent}
         ]},
-        {path: 'register', component: RegsiterComponent}
+        {path: 'register', component: RegisterComponent}
     ]},
     { path: 'auth', component: AuthComponent, children: [
       {path: 'sign-in', component: SignInComponent},

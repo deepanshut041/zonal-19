@@ -1,58 +1,57 @@
-
-<form [formGroup]="registerForm">
+<form [formGroup]="registerForm" (ngSubmit)="submitForm()">
   <mat-form-field appearance="standard">
-    <mat-label>Standard form field</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="college_name">
+    <mat-label>College Name</mat-label>
+    <input matInput placeholder="College Name" type="text" formControlName="college_name">
     <mat-hint>Hint</mat-hint>
   </mat-form-field>
-  
+
 
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Standard form field</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="college_code">
+      <mat-label>College Code</mat-label>
+      <input matInput placeholder="College Code" type="number" formControlName="college_code">
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
 
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Standard form field</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="faculty_name">
+      <mat-label>Faculty Name</mat-label>
+      <input matInput placeholder="Faculty Name" type="text" formControlName="faculty_name">
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
 
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Standard form field</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="faculty_designation">
+      <mat-label>Faculty Designation</mat-label>
+      <input matInput placeholder="Faculty Designation" type="text" formControlName="faculty_designation">
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
 
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Standard form field</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="faculty_phn_no">
+      <mat-label>Faculty Phone Number</mat-label>
+      <input matInput placeholder="Faculty Phone Number" type="tel" formControlName="faculty_phn_no">
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
 
   <p>
     <mat-form-field appearance="standard">
-      <mat-label>Standard form field</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="faculty_email">
+      <mat-label>Faculty Email</mat-label>
+      <input matInput placeholder="Faculty Email" type="email" formControlName="faculty_email">
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
 
   <p *ngIf="events">
-    <mat-form-field appearance="standard" >
-      <mat-select placeholder="Favorite food"  formControlName="event">
-          <mat-option [value]="null">
-              No Events
-          </mat-option>
+    <mat-form-field appearance="standard">
+      <mat-select placeholder="Event" formControlName="event">
+        <mat-option [value]="null">
+          --- Select Event ----
+        </mat-option>
         <mat-option *ngFor="let event of events" [value]="event.id">
           {{event.name}} -- ({{event.maxp}})
         </mat-option>
@@ -61,8 +60,11 @@
   </p>
 
   <p *ngIf="participants">
-    <mat-form-field appearance="standard" >
-      <mat-select placeholder="Favorite food"  formControlName="n_participants">
+    <mat-form-field appearance="standard">
+      <mat-select placeholder="Select Participants" formControlName="n_participants">
+        <mat-option [value]="null">
+          --- Select Participants ----
+        </mat-option>
         <mat-option *ngFor="let participant of participants" [value]="participant">
           {{participant}}
         </mat-option>
@@ -72,56 +74,64 @@
 
   <div formArrayName="participants">
     <h3>Participants</h3>
-  
+
     <div *ngFor="let participant of registerForm.get('participants').controls; let i=index">
       <!-- The repeated alias template -->
       <div [formGroupName]="i">
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="name">
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="fathers_name">
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="university_roll">
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="branch">
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="year">
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="gender">
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="aadhar_no">
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="phn_no">
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard form field</mat-label>
-          <input matInput placeholder="Placeholder" formControlName="email">
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Name of Student</mat-label>
+            <input matInput placeholder="Name of Student" type="text" formControlName="name">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Fathers Name</mat-label>
+            <input matInput placeholder="Fathers Name" type="text" formControlName="fathers_name">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>University Roll.No</mat-label>
+            <input matInput placeholder="University Roll.No" type="number" formControlName="university_roll">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Branch</mat-label>
+            <input matInput placeholder="Branch" type="text" formControlName="branch">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Year</mat-label>
+            <input matInput placeholder="Year" type="number" formControlName="year">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Gender</mat-label>
+            <input matInput placeholder="Gender" type="text" formControlName="gender">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Aadhar Number</mat-label>
+            <input matInput placeholder="Aadhar Number" type="number" formControlName="aadhar_no">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Phone No.</mat-label>
+            <input matInput placeholder="Phone No." type="tel" formControlName="phn_no">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" type="email" formControlName="email">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
       </div>
     </div>
   </div>
+  <div>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Submit</button>
+  </div>
+
 </form>

@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from ..models.events import EventModel, EventCoordinatorModel, EventParticipantModel, EventRegistrationModel
+from django.forms.models import model_to_dict
 
 class EventShortSerializer(serializers.ModelSerializer):
     class Meta:
@@ -28,8 +29,13 @@ class EventParticipantsSerializer(serializers.ModelSerializer):
         model = EventParticipantModel
         fields = '__all__'
 
+class EventParticipantSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EventParticipantModel
+        exclude = ["registration"]
+
 class EventRegistrationSerializer(serializers.ModelSerializer):
-    participants = EventParticipantsSerializer()
+    participants = EventParticipantSerializer(many=True)
     class Meta:
         model = EventRegistrationModel
         fields = ("participants", "college_name", "college_code", "faculty_name", "faculty_designation", "faculty_phn_no", "faculty_email", "event")
@@ -45,14 +51,13 @@ class EventRegistrationSerializer(serializers.ModelSerializer):
             'faculty_email': validated_data.get("faculty_email"),
             'event': validated_data.get("event")
             }
-        event = EventModel.objects.get(pk=validated_data.get("event"))
-        event_data = EventShortSerializer(event)
-
+        event = validated_data.get("event")
+        dict_event = model_to_dict( event )
         participants = validated_data.get("participants")
 
-        if not participants:
+        if not participants or len(participants) == 0:
             raise serializers.ValidationError("No Paticpants provided.")
-        if len(participants) > event_data['maxp']:
+        if len(participants) > dict_event['maxp']:
             raise serializers.ValidationError("Paticpants exceeds provided limit")
 
         EventRegistrationModel.objects.do_registration(registration_data, participants, True)

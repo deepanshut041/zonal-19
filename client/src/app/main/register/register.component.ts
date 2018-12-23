@@ -7,7 +7,7 @@ import { MainService } from "../main.service";
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegsiterComponent implements OnInit, AfterViewInit {
+export class RegisterComponent implements OnInit, AfterViewInit {
   registerForm: FormGroup
   events:any[]
   max_participants:number
@@ -67,16 +67,20 @@ export class RegsiterComponent implements OnInit, AfterViewInit {
     let control = <FormArray>this.registerForm.controls['participants']
       for (let i = control.length; i < maxp; i++) {
         control.push(this.createItem())
-      } 
+      }
   }
 
   resetParticipants():void{
     let control = <FormArray>this.registerForm.controls['participants']
-    console.log("hello");
+
     if (this.total_participants < control.length) {
       while (this.total_participants != control.length) {
         control.removeAt(control.length - 1);
-      } 
+      }
+    }
+    console.log(control.length)
+    if (control.length == 0) {
+      control.markAsPending()
     }
   }
 
@@ -101,5 +105,16 @@ export class RegsiterComponent implements OnInit, AfterViewInit {
       'phn_no':  [null, Validators.compose([Validators.required])],
       'email':  [null, Validators.compose([Validators.required])]
     });
+  }
+
+  submitForm(){
+    console.log(this.registerForm.value)
+    this._mainService.regsiter(this.registerForm.value).subscribe(
+      (resp)=>{
+        console.log(resp);
+      }, (err)=>{
+        console.log(err);
+      }
+    )
   }
 }
