@@ -1,19 +1,14 @@
-<ul *ngIf="events">
-  <li *ngFor="let event of events">
-    <p>{{event.name}}</p>
-  </li>
-</ul>
 <div class="container fullPage">
   <div class="row topRow">
     Background-Image
   </div>
   <div class="row BottomRow">
     <div class="col-12 bottomColumn">
-      <div class="row">
-        <div class="col-lg-4 col-sm-12 EventCard" routerLink="id">
+      <div class="row" *ngIf="events">
+        <div class="col-lg-4 col-sm-12 EventCard" *ngFor="let event of events" routerLink="{{event.id}}">
           <img src="{{EVENT_PG_IMG}}" alt="event image">
           <div class="eventDetails row">
-            <div class="col-lg-6 col-sm-12 eventEname text-center">Event Name</div>
+            <div class="col-lg-6 col-sm-12 eventEname text-center">{{event.name}}</div>
             <div class="col-lg-3 col-sm-6 eventEtime text-center">8:00 am</div>
             <div class="col-lg-3 col-sm-6 eventEdate text-center">30 Jan</div>
           </div>
@@ -22,4 +17,4 @@
       </div>
     </div>
   </div>
-  </div>
+</div>

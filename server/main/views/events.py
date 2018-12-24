@@ -10,13 +10,29 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthentic
 from ..base.permissions import IsOwnerOrAdmin, IsSuperUser, IsOwnerOrStaff
 from rest_framework import mixins
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
+from django_filters.rest_framework import DjangoFilterBackend
+
 
 class EventModelView(ModelViewSet):
     queryset = EventModel.objects.all()
     serializer_class = EventModelSerializer
     parser_classes = [MultiPartParser, FormParser, JSONParser]
 
+    def get_serializer_class(self):
+        if self.action == 'retrieve':
+            return EventDetailSerializer
+        return super(EventModelView, self).get_serializer_class()
+
     def get_permissions(self):
+        # Your logic should be all here
+        if self.action in ('create', 'update', 'partial_update', 'destroy'):
+            self.permission_classes = [IsSuperUser, IsAdminUser, ]
+        else:
+            self.permission_classes = [AllowAny, ]
+
+        return super(EventModelView, self).get_permissions()
+
+    def get_ser(self):
         # Your logic should be all here
         if self.action in ('create', 'update', 'partial_update', 'destroy'):
             self.permission_classes = [IsSuperUser, IsAdminUser, ]
@@ -53,6 +69,8 @@ class EventCoordinatorView(ModelViewSet):
 class EventRegistrationView(ModelViewSet):
     queryset = EventRegistrationModel.objects.all()
     serializer_class = EventRegistrationSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = ('college_code', 'event__id')
 
     def get_permissions(self):
         # Your logic should be all here
@@ -67,3 +85,5 @@ class EventParticipantView(ModelViewSet):
     queryset = EventParticipantModel.objects.all()
     serializer_class = EventParticipantsSerializer
     permission_classes = (IsAdminUser, IsSuperUser, )
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = ('registration__college_code', 'registration__event')

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from "../../main.service";
 import { ActivatedRoute } from '@angular/router';
+import { ASSETS } from 'src/app/shared/assets';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EventsDetailsComponent implements OnInit {
   event: any
+  EVENT_PG_IMG = ASSETS + '/Rules.svg'
   constructor(private _mainService: MainService, private activeRoute: ActivatedRoute) {
 
   }
