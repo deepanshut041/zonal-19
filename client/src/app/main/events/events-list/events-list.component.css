@@ -2,14 +2,16 @@
   background-color: #000;
   height: 150px;
   border-radius: 5px;
+  box-shadow: 0px 5px 15px -8px #000;
 }
 .BottomRow{
   padding: 20px;
 }
 .bottomColumn{
-  background-color: #1b1464;
+  background-color: #fff;
   margin-top: -50px;
-  height: 500px;
+  box-shadow: 0px 5px 20px -7px #000;
+  border-radius: 10px;
 }
 .bottomColumn .row{
   padding: 10px;
@@ -17,13 +19,21 @@
 .EventCard{
   background-color: #fff;
   border-radius: 10px;
+  box-shadow: 0px 5px 10px -5px #000;
+  border-radius: 10px;
+}
+.EventCard:hover{
+  box-shadow: 0px 8px 30px -10px #000;
+  transition: .3s;
 }
 .eventDetails{
   background-color: #000;
 }
 .eventEname, .eventEtime, .eventEdate{
-  font-size: 15px;
+  font-size: 12px;
   font-weight: lighter;
+  padding: 10px;
+  color: #fff;
 }
 .eventEname{
   font-size: 18px;
