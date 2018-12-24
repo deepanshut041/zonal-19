@@ -128,6 +128,7 @@ INSTALLED_APPS += [
     'django_cleanup',
     'rest_framework',
     'main',
+    'django_filters',
     'corsheaders',
     
     ]
@@ -141,6 +142,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100,
 }
 
 DRF_RECAPTCHA_SECRET_KEY = "6Ld-VYQUAAAAAG6YhUz1A0C5CZJ2wcK4rlO1EV9R"

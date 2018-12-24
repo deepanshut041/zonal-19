@@ -12,6 +12,7 @@ class EventModel(models.Model):
     time = models.TimeField(null=True)
     venue = models.CharField(max_length=130, null=False)
     faculty_name = models.CharField(max_length=130, null=False)
+    faculty_image = models.ImageField(blank=False, null=False, upload_to = 'images/events/faculty/')
     department = models.CharField(max_length=130, null=False)
     maxp = models.IntegerField(default=6, null=False)
     image = models.ImageField(blank=False, null=False, upload_to = 'images/events/')
