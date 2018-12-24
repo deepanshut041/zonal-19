@@ -38,6 +38,7 @@ export class LandingPageService {
         scene.add(cube);
 
         camera.position.z = 2;
+        camera.position.y = .4;
 
         // var ambientLight = new THREE.AmbientLight(0x00e576, 2.0);
         // scene.add(ambientLight);
