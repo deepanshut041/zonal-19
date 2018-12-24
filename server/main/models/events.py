@@ -2,6 +2,7 @@ from django.db import models, transaction
 from django.contrib.auth import get_user_model
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
+from django.core.validators import RegexValidator
 
 class EventModel(models.Model):
     name = models.CharField(max_length=130, null=False)
@@ -14,6 +15,7 @@ class EventModel(models.Model):
     department = models.CharField(max_length=130, null=False)
     maxp = models.IntegerField(default=6, null=False)
     image = models.ImageField(blank=False, null=False, upload_to = 'images/events/')
+    color = models.CharField(max_length=10, null=False)
 
     def __str__(self):
         return str(self.name)
@@ -22,8 +24,8 @@ class EventModel(models.Model):
 
 class EventCoordinatorModel(models.Model):
     name = models.CharField(max_length=130, null=False)
-    img_url = models.CharField(max_length=200, null=True)
-    phn_no = models.BigIntegerField(null=True)
+    image = models.ImageField(blank=False, null=False, upload_to = 'images/events/coordinators/')
+    phn_no = models.CharField(null=False, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
     branch = models.CharField(max_length=30, null=False)
     year = models.IntegerField(default=3)
     event = models.ForeignKey(EventModel, on_delete=models.CASCADE, related_name="coordinators")
@@ -65,11 +67,17 @@ class EventRegistrationManager(models.Manager):
         msg.send()
 
 class EventRegistrationModel(models.Model):
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Others'),
+    )
     college_name = models.CharField(max_length=130, null=False)
     college_code = models.CharField(max_length=10, null=False)
-    faculty_name = models.CharField(max_length=130, null=False)
+    faculty_name = models.CharField(max_length=50, null=False)
     faculty_designation = models.CharField(max_length=130, null=False)
-    faculty_phn_no = models.BigIntegerField(null=False)
+    faculty_gender = models.CharField(max_length=10, null=False, choices=GENDER_CHOICES)
+    faculty_phn_no = models.CharField(null=False, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
     faculty_email = models.EmailField(null=False)
     event = models.ForeignKey(EventModel, on_delete=models.CASCADE, related_name="events")
 
@@ -110,17 +118,31 @@ class EventParticipantManager(models.Manager):
         msg.send()
 
 class EventParticipantModel(models.Model):
-    name = models.CharField(max_length=130, null=False)
-    fathers_name = models.CharField(max_length=130, null=False)
-    university_roll = models.CharField(max_length=20, null=False)
-    branch = models.CharField(max_length=30, null=False)
-    year = models.IntegerField(default=0, null=False)
-    gender = models.CharField(max_length=20, null=False)
-    aadhar_no = models.CharField(max_length=20, null=False)
-    phn_no = models.BigIntegerField(max_length=20, null=False)
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Others'),
+    )
+    YEAR_CHOICES = (
+        (1, '1st'),
+        (2, '2nd'),
+        (3, '3rd'),
+        (4, '4th'),
+        (5, '5th'),
+    )
+
+    name = models.CharField(max_length=50, null=False)
+    fathers_name = models.CharField(max_length=50, null=False)
+    university_roll = models.CharField(max_length=15, null=False)
+    branch = models.CharField(max_length=50, null=False)
+    year = models.IntegerField(default=0, null=False, choices=YEAR_CHOICES)
+    gender = models.CharField(max_length=10, null=False, choices=GENDER_CHOICES)
+    aadhar_no = models.CharField(null=False, validators=[RegexValidator(regex='^.{16}$', message='Length has to be 16', code='nomatch')])
+    phn_no = models.CharField(null=False, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
     email = models.EmailField(null=False)
     regs_id = models.CharField(max_length=130, null=True)
     registration = models.ForeignKey(EventRegistrationModel, on_delete=models.CASCADE, related_name="participants")
+
 
     objects = EventParticipantManager()
     def __str__(self):

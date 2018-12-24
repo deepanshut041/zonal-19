@@ -25,6 +25,15 @@ class EventModelView(ModelViewSet):
 
         return super(EventModelView, self).get_permissions()
 
+    def get_ser(self):
+        # Your logic should be all here
+        if self.action in ('create', 'update', 'partial_update', 'destroy'):
+            self.permission_classes = [IsSuperUser, IsAdminUser, ]
+        else:
+            self.permission_classes = [AllowAny, ]
+
+        return super(EventModelView, self).get_permissions()
+
     @action(detail=False, methods=['GET'], name='Get detailed list')
     def detail_list(self, request, *args, **kwargs):
         queryset = EventModel.objects.all()

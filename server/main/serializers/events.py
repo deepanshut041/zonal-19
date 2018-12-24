@@ -43,7 +43,8 @@ class EventRegistrationSerializer(serializers.ModelSerializer):
         })
     class Meta:
         model = EventRegistrationModel
-        fields = ("participants", "college_name", "college_code", "faculty_name", "faculty_designation", "faculty_phn_no", "faculty_email", "event", "recaptcha")
+        fields = ("participants", "college_name", "college_code", "faculty_name",
+         "faculty_designation", "faculty_phn_no", "faculty_email", "event", "recaptcha", "faculty_gender")
 
     def create(self, validated_data):
 
@@ -54,7 +55,8 @@ class EventRegistrationSerializer(serializers.ModelSerializer):
             'faculty_designation': validated_data.get("faculty_designation"),
             'faculty_phn_no': validated_data.get("faculty_phn_no"),
             'faculty_email': validated_data.get("faculty_email"),
-            'event': validated_data.get("event")
+            'event': validated_data.get("event"),
+            'faculty_gender': validated_data.get("faculty_gender")
             }
         event = validated_data.get("event")
         dict_event = model_to_dict( event )
