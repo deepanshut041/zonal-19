@@ -1,5 +1,5 @@
 
-.fixedbutton .btn{
+ .fixedbutton .btn{  /*color need tobe changed */
   position: fixed;
   font-size: 12px !important;
   padding-top: 25px;
@@ -42,6 +42,7 @@
 .EventDetails{
   word-spacing: 5px;
 }
+
 .eventDate{
   font-size: 40px;
   font-weight: bolder;
@@ -49,8 +50,8 @@
 .eventTime{
   font-size: 20px;
 }
-.EventVenue{}
-.colorSpace{
+.EventVenue{color: #00e576;}/*color need tobe changed */
+.colorSpace{  /*color need tobe changed */
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -63,6 +64,7 @@
   margin-top: 5px;
   font-size: 16px;
   color: #000;
+  padding: 10px;
 }
 .RulesList li i{
   margin-right: 30px;
