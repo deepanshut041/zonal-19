@@ -25,7 +25,7 @@ class EventModel(models.Model):
 class EventCoordinatorModel(models.Model):
     name = models.CharField(max_length=130, null=False)
     image = models.ImageField(blank=False, null=False, upload_to = 'images/events/coordinators/')
-    phn_no = models.CharField(null=False, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
+    phn_no = models.CharField(null=False,max_length=10, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
     branch = models.CharField(max_length=30, null=False)
     year = models.IntegerField(default=3)
     event = models.ForeignKey(EventModel, on_delete=models.CASCADE, related_name="coordinators")
@@ -77,7 +77,7 @@ class EventRegistrationModel(models.Model):
     faculty_name = models.CharField(max_length=50, null=False)
     faculty_designation = models.CharField(max_length=130, null=False)
     faculty_gender = models.CharField(max_length=10, null=False, choices=GENDER_CHOICES)
-    faculty_phn_no = models.CharField(null=False, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
+    faculty_phn_no = models.CharField(null=False,max_length=10, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
     faculty_email = models.EmailField(null=False)
     event = models.ForeignKey(EventModel, on_delete=models.CASCADE, related_name="events")
 
@@ -137,8 +137,8 @@ class EventParticipantModel(models.Model):
     branch = models.CharField(max_length=50, null=False)
     year = models.IntegerField(default=0, null=False, choices=YEAR_CHOICES)
     gender = models.CharField(max_length=10, null=False, choices=GENDER_CHOICES)
-    aadhar_no = models.CharField(null=False, validators=[RegexValidator(regex='^.{16}$', message='Length has to be 16', code='nomatch')])
-    phn_no = models.CharField(null=False, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
+    aadhar_no = models.CharField(null=False, max_length=16, validators=[RegexValidator(regex='^.{16}$', message='Length has to be 16', code='nomatch')])
+    phn_no = models.CharField(null=False, max_length=10, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
     email = models.EmailField(null=False)
     regs_id = models.CharField(max_length=130, null=True)
     registration = models.ForeignKey(EventRegistrationModel, on_delete=models.CASCADE, related_name="participants")
