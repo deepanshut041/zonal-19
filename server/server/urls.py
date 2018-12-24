@@ -23,7 +23,7 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('api/', include('main.urls')),
-    path('admin/', admin.site.urls),
+    path('django_admin/', admin.site.urls),
     re_path(r"^$", TemplateView.as_view(template_name="base.html"), name='index'),
     re_path(r"^.*/$", TemplateView.as_view(template_name="base.html"), name='index'),
 ]
