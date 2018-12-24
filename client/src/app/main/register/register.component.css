@@ -1,0 +1,8 @@
+.RegisterPage .RegisterPageRow{
+  box-shadow: 0px 5px 20px -7px #000;
+  border-radius: 10px;
+  padding: 20px;
+}
+mat-form-field{
+  width: 100%;
+}
