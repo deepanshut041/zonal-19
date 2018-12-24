@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ASSETS } from 'src/app/shared/assets';
 
 @Component({
   selector: 'app-home-events-overview',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsOverviewComponent implements OnInit {
 
-  EVENT_IMG = '/assets/Events.svg';
+  EVENT_IMG = ASSETS + '/Events.svg';
 
   constructor() { }
 

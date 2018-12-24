@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as THREE from 'three';
+import { ASSETS } from 'src/app/shared/assets';
 
 @Injectable()
 
@@ -25,12 +26,12 @@ export class LandingPageService {
         var geometry = new THREE.BoxGeometry(1, 1, 1);
         var cubeMaterials =
             [
-                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('assets/Jam.png'), side: THREE.DoubleSide }), //rightside
-                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('assets/Bridge.png'), side: THREE.DoubleSide }), //leftside
-                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('assets/Code.png'), side: THREE.DoubleSide }), //topside
-                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('assets/Robo.png'), side: THREE.DoubleSide }), //bottomside
-                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('assets/Poster.png'), side: THREE.DoubleSide }), //frontside
-                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('assets/Debate.png'), side: THREE.DoubleSide }), //backside
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(ASSETS + '/Jam.png'), side: THREE.DoubleSide }), //rightside
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(ASSETS + '/Bridge.png'), side: THREE.DoubleSide }), //leftside
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(ASSETS + '/Code.png'), side: THREE.DoubleSide }), //topside
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(ASSETS + '/Robo.png'), side: THREE.DoubleSide }), //bottomside
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(ASSETS + '/Poster.png'), side: THREE.DoubleSide }), //frontside
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(ASSETS + '/Debate.png'), side: THREE.DoubleSide }), //backside
             ];
         // var material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe:true } );
         var material = new THREE.MeshFaceMaterial(cubeMaterials);

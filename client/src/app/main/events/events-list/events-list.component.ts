@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../main.service';
-import { ASSETS } from "../../../shared/assets";
+import { ASSETS } from '../../../shared/assets';
 
 @Component({
   selector: 'app-events-list',
@@ -10,6 +10,7 @@ import { ASSETS } from "../../../shared/assets";
 export class EventsListComponent implements OnInit {
 
   EVENT_PG_IMG = ASSETS + '/Rules.svg';
+  ID = '1';
 
   events:any[]
 

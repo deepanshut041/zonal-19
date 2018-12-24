@@ -32,17 +32,20 @@ import { RegisterComponent } from './register/register.component';
 
 import { MainService } from './main.service';
 import { LandingPageService } from './home/landing-page/landing-page.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgwWowModule } from 'ngx-wow';
 
 
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, RecaptchaModule,
-     MatButtonModule, MatCheckboxModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule, SharedModule
+    CommonModule, RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, RecaptchaModule, FontAwesomeModule,
+     MatButtonModule, MatCheckboxModule, MatInputModule, BrowserAnimationsModule, MatIconModule,
+     MatSelectModule, MatOptionModule, MatFormFieldModule, SharedModule, NgwWowModule
   ],
   declarations: [
     MainComponent, NavbarComponent, FooterComponent, HomeComponent, LandingPageComponent, EventsOverviewComponent,
-    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent,ScheduleOverviewComponent
+    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent, ScheduleOverviewComponent
   ],
   providers:[MainService,LandingPageService]
 })
