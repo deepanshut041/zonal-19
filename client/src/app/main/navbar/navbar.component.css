@@ -15,13 +15,7 @@ nav{
   cursor: pointer;
 }
 .trans-bg{
-  background: rgba(255,255,255, .3);
-  padding: 5px 10px 5px 10px;
-  border-radius: 5px;
-}
-.trans-bg:hover{
-  background: rgba(255,255,255, 1);
-  padding: 5px 10px 5px 10px;
+  padding: 10px;
 }
 .registerButton .btn{
   border-top: 2px solid #7e57c2 !important;
