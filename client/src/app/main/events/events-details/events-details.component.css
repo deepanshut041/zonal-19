@@ -1,0 +1,87 @@
+
+.fixedbutton .btn{
+  position: fixed;
+  font-size: 12px !important;
+  padding-top: 25px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #00e576;
+  color: #fff !important;
+  background-color: #00e576 !important;
+  z-index: 50;
+  left: 92%;
+  top: 80%;
+  box-shadow: 0px 5px 15px -4px #000;
+}
+.topRow{
+  background-color: #000;
+  height: 80px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px -8px #000;
+}
+.BottomRow{
+  padding: 20px;
+}
+.bottomColumn{
+  background-color: #fff;
+  margin-top: -50px;
+  box-shadow: 0px 5px 20px -7px #000;
+  border-radius: 10px;
+}
+.bottomColumn .row{
+  padding: 10px;
+}
+.EventImage{
+  width: 100%;
+  height: 300px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #00e576;
+}
+.EventDetails{
+  word-spacing: 5px;
+}
+.eventDate{
+  font-size: 40px;
+  font-weight: bolder;
+}
+.eventTime{
+  font-size: 20px;
+}
+.EventVenue{}
+.colorSpace{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #00e576;
+  color: #fff;
+  font-size: 24px;
+}
+.RulesList li{
+  list-style: none;
+  margin-top: 5px;
+  font-size: 16px;
+  color: #000;
+}
+.RulesList li i{
+  margin-right: 30px;
+  color: #1b1464;
+}
+/* Faculty incharge */
+.EventCard{
+  background-color: #fff;
+  border-radius: 10px;
+  border-radius: 10px;
+}
+.eventDetails{
+  background-color: #000;
+}
+.facultyName, .facultyDesignation,{
+  font-size: 15px;
+  color: #fff;
+}
+.facultyName{
+  font-size: 18px;
+}
+/* Faculty incharge */
