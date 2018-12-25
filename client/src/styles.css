@@ -11,10 +11,10 @@ font-family: 'GT';
 
 @font-face {
   font-family: 'GT';
-  src: url('./assets/font/gthaptikbold.woff2') format('woff2');
-  src: url('./assets/font/gthaptiklight.woff2') format('woff2');
-  src: url('./assets/font/gthaptikregular-oblique.woff2') format('woff2');
-  src: url('./assets/font/gthaptikregular.woff2') format('woff2');
+  src: url('/static/ang/assets/font/gthaptikbold.woff2') format('woff2');
+  src: url('/static/ang/assets/font/gthaptiklight.woff2') format('woff2');
+  src: url('/static/ang/assets/font/gthaptikregular-oblique.woff2') format('woff2');
+  src: url('/static/ang/assets/font/gthaptikregular.woff2') format('woff2');
   font-weight: 100;
   font-style: normal;
 
