@@ -11,13 +11,13 @@
             </mat-form-field>
           </div>
           <div class="form-group col-lg-6 col-sm-12">
-          <p>
-            <mat-form-field appearance="standard">
-              <mat-label>College Code</mat-label>
-              <input class="form-control" matInput placeholder="College Code" type="number" formControlName="college_code">
-              <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-          </p>
+            <p>
+              <mat-form-field appearance="standard">
+                <mat-label>College Code</mat-label>
+                <input class="form-control" matInput placeholder="College Code" type="number" formControlName="college_code">
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </p>
           </div>
           <div class="form-group col-lg-6 col-sm-12">
             <p>
@@ -25,6 +25,19 @@
                 <mat-label>Faculty Name</mat-label>
                 <input class="form-control" matInput placeholder="Faculty Name" type="text" formControlName="faculty_name">
                 <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="form-group col-lg-6 col-sm-12">
+            <p>
+              <mat-form-field appearance="standard">
+                <mat-label>Faculty Gender</mat-label>
+                <mat-select class="form-control" placeholder="Event" formControlName="faculty_gender">
+                  <mat-option [value]="null">--- Select Event ----</mat-option>
+                  <mat-option  [value]="'M'">Male</mat-option>
+                  <mat-option  [value]="'F'">Female</mat-option>
+                  <mat-option  [value]="'O'">Others</mat-option>
+                </mat-select>
               </mat-form-field>
             </p>
           </div>
@@ -61,7 +74,7 @@
 
           <div class="form-group col-lg-12 col-sm-12">
             <p *ngIf="events">
-              <mat-form-field  appearance="standard">
+              <mat-form-field appearance="standard">
                 <mat-select class="form-control" placeholder="Event" formControlName="event">
                   <mat-option [value]="null">
                     --- Select Event ----
@@ -91,10 +104,11 @@
           </div>
 
 
-          <div formArrayName="participants"> <!--participants-->
+          <div formArrayName="participants">
+            <!--participants-->
             <h3>Participants</h3>
 
-            <div *ngFor="let participant of registerForm.controls['participants']; let i=index">
+            <div *ngFor="let participant of registerForm.controls.participants.controls; let i=index">
               <!-- The repeated alias template -->
               <div [formGroupName]="i">
                 <p>
@@ -126,9 +140,13 @@
                     <mat-hint>Hint</mat-hint>
                   </mat-form-field>
                   <mat-form-field appearance="standard">
-                    <mat-label>Gender</mat-label>
-                    <input class="form-control" matInput placeholder="Gender" type="text" formControlName="gender">
-                    <mat-hint>Hint</mat-hint>
+                      <mat-label>Faculty Gender</mat-label>
+                      <mat-select class="form-control" placeholder="Event" formControlName="gender">
+                        <mat-option [value]="null">--- Select Event ----</mat-option>
+                        <mat-option  [value]="'M'">Male</mat-option>
+                        <mat-option  [value]="'F'">Female</mat-option>
+                        <mat-option  [value]="'O'">Others</mat-option>
+                      </mat-select>
                   </mat-form-field>
                   <mat-form-field appearance="standard">
                     <mat-label>Aadhar Number</mat-label>
@@ -151,10 +169,10 @@
           </div>
 
           <div>
-              <re-captcha (resolved)="resolved($event)" siteKey="{{SITE_KEY}}"></re-captcha>
+            <re-captcha (resolved)="resolved($event)" siteKey="{{SITE_KEY}}"></re-captcha>
           </div>
           <div>
-              <button class="btn btn-primary" mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Submit</button>
+            <button class="btn btn-primary" mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Submit</button>
           </div>
 
         </form>

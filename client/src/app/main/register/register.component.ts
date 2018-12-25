@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       'college_code': [null, Validators.compose([Validators.required])],
       'faculty_name': [null, Validators.compose([Validators.required])],
       'faculty_designation': [null, Validators.compose([Validators.required])],
+      'faculty_gender': [null, Validators.compose([Validators.required])],
       'faculty_phn_no': [null, Validators.compose([Validators.required])],
       'faculty_email': [null, Validators.compose([Validators.required])],
       'event': [null, Validators.compose([Validators.required])],
@@ -114,7 +115,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       console.log("Valid Form")
       this._mainService.regsiter(this.registerForm.value).subscribe(
         (resp) => {
-          console.log(resp);
+          this.registerForm.reset();
         }, (err) => {
           console.log(err);
         }
@@ -125,7 +126,6 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   }
 
   resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response ${captchaResponse}:`);
     this.registerForm.controls['recaptcha'].setValue(captchaResponse)
   }
 }
