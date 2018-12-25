@@ -14,16 +14,20 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   total_participants: number
   participants: any[]
   SITE_KEY: string = "6Ld-VYQUAAAAAKb_EMJhaBY1sCFhOz_OZEpMaxrK"
+  
 
   constructor(private fb: FormBuilder, private _mainService: MainService) {
+    let emailFormat = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
+    let nameFormat = "[a-zA-Z\s]+$";
+    let numberFormat = '^[0-9]*$';
     this.registerForm = fb.group({
-      'college_name': [null, Validators.compose([Validators.required])],
-      'college_code': [null, Validators.compose([Validators.required])],
-      'faculty_name': [null, Validators.compose([Validators.required])],
-      'faculty_designation': [null, Validators.compose([Validators.required])],
+      'college_name': [null, Validators.compose([Validators.required, Validators.maxLength(130), Validators.minLength(3), Validators.pattern(nameFormat)])],
+      'college_code': [null, Validators.compose([Validators.required, Validators.maxLength(3), Validators.minLength(3), Validators.pattern(numberFormat)])],
+      'faculty_name': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(2), Validators.pattern(nameFormat)])],
+      'faculty_designation': [null, Validators.compose([Validators.required, Validators.maxLength(130), Validators.minLength(2), Validators.pattern(nameFormat)])],
       'faculty_gender': [null, Validators.compose([Validators.required])],
-      'faculty_phn_no': [null, Validators.compose([Validators.required])],
-      'faculty_email': [null, Validators.compose([Validators.required])],
+      'faculty_phn_no': [null, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(numberFormat)])],
+      'faculty_email': [null, Validators.compose([Validators.required, Validators.pattern(emailFormat)])],
       'event': [null, Validators.compose([Validators.required])],
       'participants': this.fb.array([]),
       'n_participants': [null, Validators.compose([Validators.required])],
@@ -97,16 +101,19 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
 
   createItem(): FormGroup {
+    let emailFormat = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
+    let nameFormat = "[a-zA-Z\s]+$";
+    let numberFormat = '^[0-9]*$';
     return this.fb.group({
-      'name': [null, Validators.compose([Validators.required])],
-      'fathers_name': [null, Validators.compose([Validators.required])],
-      'university_roll': [null, Validators.compose([Validators.required])],
-      'branch': [null, Validators.compose([Validators.required])],
+      'name': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3), Validators.pattern(nameFormat)])],
+      'fathers_name': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3), Validators.pattern(nameFormat)])],
+      'university_roll': [null, Validators.compose([Validators.required, Validators.maxLength(15), Validators.minLength(10), Validators.pattern(numberFormat)])],
+      'branch': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3), Validators.pattern(nameFormat)])],
       'year': [null, Validators.compose([Validators.required])],
       'gender': [null, Validators.compose([Validators.required])],
-      'aadhar_no': [null, Validators.compose([Validators.required])],
-      'phn_no': [null, Validators.compose([Validators.required])],
-      'email': [null, Validators.compose([Validators.required])]
+      'aadhar_no': [null, Validators.compose([Validators.required, Validators.maxLength(16), Validators.minLength(16), Validators.pattern(numberFormat)])],
+      'phn_no': [null, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(numberFormat)])],
+      'email': [null, Validators.compose([Validators.required, Validators.pattern(emailFormat)])]
     });
   }
 
@@ -127,5 +134,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
   resolved(captchaResponse: string) {
     this.registerForm.controls['recaptcha'].setValue(captchaResponse)
+  }
+
+  getControls() {
+    return <FormArray>this.registerForm.get('participants');
   }
 }
