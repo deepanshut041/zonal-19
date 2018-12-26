@@ -150,6 +150,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
             this.particpantsForm.reset();
             this.recaptchaForm.reset();
             this.form_success = false;
+            this.form_show = true;
           }, 5000);
 
         }, (err) => {
