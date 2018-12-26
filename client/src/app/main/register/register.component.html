@@ -7,7 +7,7 @@
       <div class="title-section">
         <h3>Regis<span>tr</span>ation</h3>
       </div>
-      <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="!form_progress">
+      <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_show">
         <mat-horizontal-stepper #stepper linear labelPosition="bottom">
           <mat-step [stepControl]="registerForm">
             <ng-template matStepLabel>Fill your information</ng-template>
@@ -176,7 +176,7 @@
                 <button matStepperPrevious class="btn btn-outline-secondary">Back</button>
               </div>
               <div class="col text-right">
-                <button matStepperNext class="btn btn-outline-secondary" [disabled]="!recaptchaForm.valid">Next</button>
+                <button matStepperNext class="btn btn-outline-secondary" [disabled]="!particpantsForm.valid">Next</button>
               </div>
             </div>
           </mat-step>
