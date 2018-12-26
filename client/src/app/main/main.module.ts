@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule, MatCardModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SharedModule } from "../shared/shared.module";
 
@@ -40,7 +40,7 @@ import { NgwWowModule } from 'ngx-wow';
 @NgModule({
   imports: [
     CommonModule, RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, RecaptchaModule, FontAwesomeModule,
-     MatButtonModule, MatCheckboxModule, MatInputModule, BrowserAnimationsModule, MatIconModule,
+     MatButtonModule, MatCheckboxModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatCardModule
      MatSelectModule, MatOptionModule, MatFormFieldModule, SharedModule, NgwWowModule
   ],
   declarations: [
