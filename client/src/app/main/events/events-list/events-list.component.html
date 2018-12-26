@@ -1,19 +1,14 @@
-<div class="container fullPage">
-  <div class="row topRow">
-    Background-Image
-  </div>
-  <div class="row BottomRow">
-    <div class="col-12 bottomColumn">
-      <div class="row" *ngIf="events">
-        <div class="col-lg-4 col-sm-12 EventCard" *ngFor="let event of events" routerLink="{{event.id}}">
-          <img src="{{EVENT_PG_IMG}}" alt="event image">
-          <div class="eventDetails row">
-            <div class="col-lg-6 col-sm-12 eventEname text-center">{{event.name}}</div>
-            <div class="col-lg-3 col-sm-6 eventEtime text-center">8:00 am</div>
-            <div class="col-lg-3 col-sm-6 eventEdate text-center">30 Jan</div>
-          </div>
+<div class="container">
+  <div class="row" *ngIf="events">
+    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let event of events">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <img class="card-image" src="{{event.image}}">
+        <h3>{{event.name}}</h3>
+        <div class="card-details fadeIn-top">
+          <p>{{event.details}}</p>
+          <button type="button" class="btn btn-outline-primary" routerLink="/events/{{event.id}}">KnowMore...</button>
         </div>
-
       </div>
     </div>
   </div>

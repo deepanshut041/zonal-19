@@ -1,121 +1,95 @@
 <div *ngIf="event">
-  <div>
-    <h1>{{event.name}}</h1>
+  <div class="container fullPage">
+    <div class="fixedbutton">
+      <div class="btn">
+        <!-- <i class="fas fa-cash-register"></i>-->Register
+      </div>
+    </div>
+    <div class="row topRow">
+      {{event.name}}
+    </div>
+    <div class="row BottomRow">
+      <div class="col-12 bottomColumn">
+        <div class="row "> <!--Event main-details row starts-->
+          <div class="col-12 EventImage text-center "><!--Event Image-->
+            <img src="{{event.image}}"/>
+          </div>
+          <div class="col-12 EventDetails">
+            <div class="row">
+              <div class="col-lg-10 col-sm-12 "><!--Event Details-->
+                <h4>Event Details</h4>
+                <p>{{event.details}}</p>
+              </div>
+              <div class="col-lg-2 col-sm-12 align-self-center">
+                <div class="row">
+                  <div class="col-lg-12 col-sm-4 eventDate text-center"><!--Event Date-->
+                    <i class="far fa-calendar-alt"></i>{{event.date}}
+                  </div>
+                  <div class="col-lg-12 col-sm-4 eventTime text-center"><!--Event Time-->
+                    <i class="far fa-clock"></i>{{event.time}}
+                  </div>
+                  <div class="col-lg-12 col-sm-4 EventVenue text-center"><!--Event Venue-->
+                    <i class="far fa-map-marker-alt"></i>{{event.venue}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="colorSpace text-center">
+            Rules
+          </div>
+          <div class="col-12 RulesList"><!--Event Rules-->
+            <p>
+              {{event.rules}}
+            </p>
+          </div>
+          <div class="colorSpace text-center">
+            Faculty Co-ordinator
+          </div>
+          <div class="col-12">
+            <div class="row"><!--Event Faculty incharge , Department, Participants no.-->
+              <div class="col-lg-4 col-sm-12 EventCard">
+                <img src="{{event.faculty_image}}" alt="event image">
+                <div class="eventDetails row">
+                  <div class="col-lg-6 col-sm-6 facultyName text-center">{{event.faculty_name}}</div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-4 department text-center">
+                {{event.department}}
+              </div>
+              <div class="col-lg-4 col-sm-4 participants text-center">
+                Participants
+              </div>
+            </div>
+          </div>
+          <div class="colorSpace text-center">
+            Student Co-ordinators
+          </div>
+          <div class="col-12"> <!--Event Co-ordinators-->
+            <div class="row">
+              <div class="col-lg-6 col-sm-12" *ngFor="let coordinator of event.coordinators"><!--first mid scetion-->
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4 EventCard">
+                    <img src="{{coordinator.image}}" alt="event image"><!--student image-->
+                  </div>
+                  <div class="col-lg-8 col-sm-8">
+                    <div class="row">
+                      <div class="col-12 text-center"><!--student name-->
+                        {{coordinator.name}}
+                      </div>
+                      <div class="col-12 text-center"><!--student contact details-->
+                        {{coordinator.phn_no}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!--Event main-details row ends-->
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container fullPage">
-  <div class="fixedbutton">
-    <div class="btn">
-      <!-- <i class="fas fa-cash-register"></i>-->Register
-    </div>
-  </div>
-  <div class="row topRow">
-    Event Name
-  </div>
-  <div class="row BottomRow">
-    <div class="col-12 bottomColumn">
-      <div class="row "> <!--Event main-details row starts-->
-        <div class="col-12 EventImage text-center "><!--Event Image-->
-          Events Image
-        </div>
-        <div class="col-12 EventDetails">
-          <div class="row">
-            <div class="col-lg-10 col-sm-12 "><!--Event Details-->
-              <h4>Event Details</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-            <div class="col-lg-2 col-sm-12 align-self-center">
-              <div class="row">
-                <div class="col-lg-12 col-sm-4 eventDate text-center"><!--Event Date-->
-                  <i class="far fa-calendar-alt"></i>30Jan
-                </div>
-                <div class="col-lg-12 col-sm-4 eventTime text-center"><!--Event Time-->
-                  <i class="far fa-clock"></i>8am - 11pm
-                </div>
-                <div class="col-lg-12 col-sm-4 EventVenue text-center"><!--Event Venue-->
-                  <i class="far fa-map-marker-alt"></i>Venue
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="colorSpace text-center">
-          Rules
-        </div>
-        <div class="col-12 RulesList"><!--Event Rules-->
-          <ul>
-                      <li><i class="fas fa-check-circle"></i>Keep The environment clean and pollution free.</li>
-                      <li><i class="fas fa-check-circle"></i>Keep The environment clean and pollution free.</li>
-                      <li><i class="fas fa-check-circle"></i>Keep The environment clean and pollution free.</li>
-                      <li><i class="fas fa-check-circle"></i>Keep The environment clean and pollution free.</li>
-                      <li><i class="fas fa-check-circle"></i>Keep The environment clean and pollution free.</li>
-                      <li><i class="fas fa-check-circle"></i>Keep The environment clean and pollution free.</li>
-                      <li><i class="fas fa-check-circle"></i>Keep The environment clean and pollution free.</li>
-                    </ul>
-        </div>
-        <div class="colorSpace text-center">
-          Faculty Co-ordinator
-        </div>
-        <div class="col-12">
-          <div class="row"><!--Event Faculty incharge , Department, Participants no.-->
-            <div class="col-lg-4 col-sm-12 EventCard">
-              <img src="{{EVENT_PG_IMG}}" alt="event image">
-              <div class="eventDetails row">
-                <div class="col-lg-6 col-sm-6 facultyName text-center">Faculty Name</div>
-                <div class="col-lg-6 col-sm-6 facultyDesignation text-center">Designation</div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 department text-center">
-              Department
-            </div>
-            <div class="col-lg-4 col-sm-4 participants text-center">
-              Participants
-            </div>
-          </div>
-        </div>
-        <div class="colorSpace text-center">
-          Student Co-ordinators
-        </div>
-        <div class="col-12"> <!--Event Co-ordinators-->
-          <div class="row">
-            <div class="col-lg-6 col-sm-12"><!--first mid scetion-->
-              <div class="row">
-                <div class="col-lg-4 col-sm-4 EventCard">
-                  <img src="{{EVENT_PG_IMG}}" alt="event image"><!--student image-->
-                </div>
-                <div class="col-lg-8 col-sm-8">
-                  <div class="row">
-                    <div class="col-12 text-center"><!--student name-->
-                      Student Name
-                    </div>
-                    <div class="col-12 text-center"><!--student contact details-->
-                      contact No.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-sm-12"><!--second mid scetion-->
-              <div class="row">
-                <div class="col-lg-4 col-sm-4 EventCard">
-                  <img src="{{EVENT_PG_IMG}}" alt="event image"><!--student image-->
-                </div>
-                <div class="col-lg-8 col-sm-8">
-                  <div class="row">
-                    <div class="col-12 text-center"><!--student name-->
-                      Student Name
-                    </div>
-                    <div class="col-12 text-center"><!--student contact details-->
-                      contact No.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!--Event main-details row ends-->
-    </div>
-  </div>
-</div>
+

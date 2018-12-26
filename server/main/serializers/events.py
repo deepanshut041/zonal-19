@@ -22,7 +22,7 @@ class EventDetailSerializer(serializers.ModelSerializer):
     coordinators = EventCoordinatorSerializer(many=True)
     class Meta:
         model = EventModel
-        fields = ("id", "name", "details", "rules", "date", "time", "venue", "faculty_name", "department", "coordinators", "maxp", "faculty_image")
+        fields = ("id", "name", "details", "rules", "date", "time", "venue", "faculty_name", "department", "coordinators", "maxp", "faculty_image", "image")
 
 
 class EventParticipantsSerializer(serializers.ModelSerializer):
