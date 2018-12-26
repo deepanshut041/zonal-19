@@ -1,8 +1,108 @@
 .RegisterPage .RegisterPageRow{
   box-shadow: 0px 5px 20px -7px #000;
   border-radius: 10px;
-  padding: 20px;
+  margin-top: 25px;
 }
 mat-form-field{
   width: 100%;
+}
+.title-section {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.title-section h3{
+  display: inline-block;
+  font-size: 32px;
+  color: #070202;
+  font-weight: 500;
+  margin: auto;
+  margin-bottom: 3px;
+  padding: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  border-top: 1px solid #46bfa9;
+  border-bottom: 1px solid #46bfa9;
+  line-height: 70px;
+  position: relative;
+}
+.title-section h3::after{
+  content: "";
+  height: 9px;
+  width: 9px;
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  background: #46bfa9;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+}
+.title-section h3::before{
+  content: "";
+  height: 9px;
+  width: 9px;
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  background: #46bfa9;
+  top: -5px;
+  left: 0;
+  right: 0;
+}
+
+.title-section h3 span{
+  color: #46bfa9;
+}
+
+mat-vertical-stepper{
+  padding: 0px;
+}
+
+.mat-horizontal-content-container {
+  padding: 0 10px 10px 10px;
+}
+
+.mat-vertical-stepper-header{
+  padding:1px !important;
+}
+.mat-vertical-content-container{
+  margin-left: 13px !important;
+}
+
+.text-xs-center {
+  width: 100%;
+}
+.g-recaptcha{
+  width: 310px;
+  margin: auto;
+}
+re-captcha div{
+  margin: auto;
+}
+
+#verifyEmailAlert {
+  background-color: #fff;
+  margin: auto;
+  max-width: 330px;
+}
+
+#verifyEmailAlert .verify-alert-icon {
+  padding: 20px;
+  color: #f0ad4e!important;
+  font-size: 70px;
+  transition: all 1s ease-in;
+  -webkit-text-stroke: 20px #fff;
+}
+
+#verifyEmailAlert .verify-alert-message {
+  color: #4CAF50;
+  font-size: 16px;
+  -webkit-transition: all 1 ease-in 1;
+  -moz-transition: all 1 ease-in 1;
+  transition: all 1 ease-in 1;
+  padding-bottom: 30px;
 }

@@ -1,189 +1,229 @@
+<div class="alert alert-danger" role="alert" *ngIf="form_error">
+  {{form_error_message}}
+</div>
 <div class="container-fluid">
   <div class="container RegisterPage">
     <div class="row RegisterPageRow ">
-      <div class="col-lg-8 col-sm-11 mx-auto">
-        <form class="row" [formGroup]="registerForm" (ngSubmit)="submitForm()">
-          <div class="form-group col-lg-6 col-sm-12">
-            <mat-form-field appearance="standard">
-              <mat-label>College Name</mat-label>
-              <input class="form-control" matInput placeholder="College Name" type="text" formControlName="college_name">
-              <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-          </div>
-          <div class="form-group col-lg-6 col-sm-12">
-            <p>
-              <mat-form-field appearance="standard">
-                <mat-label>College Code</mat-label>
-                <input class="form-control" matInput placeholder="College Code" type="text" formControlName="college_code">
-                <mat-hint>Hint</mat-hint>
-              </mat-form-field>
-            </p>
-          </div>
-          <div class="form-group col-lg-6 col-sm-12">
-            <p>
-              <mat-form-field appearance="standard">
-                <mat-label>Faculty Name</mat-label>
-                <input class="form-control" matInput placeholder="Faculty Name" type="text" formControlName="faculty_name">
-                <mat-hint>Hint</mat-hint>
-              </mat-form-field>
-            </p>
-          </div>
-          <div class="form-group col-lg-6 col-sm-12">
-            <p>
-              <mat-form-field appearance="standard">
-                <mat-label>Faculty Gender</mat-label>
-                <mat-select class="form-control" placeholder="Event" formControlName="faculty_gender">
-                  <mat-option [value]="null">--- Select Event ----</mat-option>
-                  <mat-option  [value]="'M'">Male</mat-option>
-                  <mat-option  [value]="'F'">Female</mat-option>
-                  <mat-option  [value]="'O'">Others</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </p>
-          </div>
-
-          <div class="form-group col-lg-6 col-sm-12">
-            <p>
-              <mat-form-field appearance="standard">
-                <mat-label>Faculty Designation</mat-label>
-                <input class="form-control" matInput placeholder="Faculty Designation" type="text" formControlName="faculty_designation">
-                <mat-hint>Hint</mat-hint>
-              </mat-form-field>
-            </p>
-          </div>
-
-          <div class="form-group col-lg-6 col-sm-12">
-            <p>
-              <mat-form-field appearance="standard">
-                <mat-label>Faculty Phone Number</mat-label>
-                <input class="form-control" matInput placeholder="Faculty Phone Number" type="text" formControlName="faculty_phn_no">
-                <mat-hint>Hint</mat-hint>
-              </mat-form-field>
-            </p>
-          </div>
-
-          <div class="form-group col-lg-6 col-sm-12">
-            <p>
-              <mat-form-field appearance="standard">
-                <mat-label>Faculty Email</mat-label>
-                <input class="form-control" matInput placeholder="Faculty Email" type="text" formControlName="faculty_email">
-                <mat-hint>Hint</mat-hint>
-              </mat-form-field>
-            </p>
-          </div>
-
-          <div class="form-group col-lg-12 col-sm-12">
-            <p *ngIf="events">
-              <mat-form-field appearance="standard">
-                <mat-select class="form-control" placeholder="Event" formControlName="event">
-                  <mat-option [value]="null">
-                    --- Select Event ----
-                  </mat-option>
-                  <mat-option *ngFor="let event of events" [value]="event.id">
-                    {{event.name}} -- ({{event.maxp}})
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </p>
-          </div>
-
-
-          <div class="form-group col-lg-12 col-sm-12">
-            <p *ngIf="participants">
-              <mat-form-field appearance="standard">
-                <mat-select class="form-control" placeholder="Select Participants" formControlName="n_participants">
-                  <mat-option [value]="null">
-                    --- Select Participants ----
-                  </mat-option>
-                  <mat-option *ngFor="let participant of participants" [value]="participant">
-                    {{participant}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </p>
-          </div>
-
-
-          <div formArrayName="participants">
-            <!--participants-->
-            <h3>Participants</h3>
-
-            <div *ngFor="let participant of getControls().controls; let i=index">
-              <!-- The repeated alias template -->
-              <div [formGroupName]="i">
-                <p>
-                  <mat-form-field appearance="standard">
-                    <mat-label>Name of Student</mat-label>
-                    <input class="form-control" matInput placeholder="Name of Student" type="text" formControlName="name">
-                    <mat-hint>Hint</mat-hint>
-                  </mat-form-field>
-                  <mat-form-field appearance="standard">
-                    <mat-label>Fathers Name</mat-label>
-                    <input class="form-control" matInput placeholder="Fathers Name" type="text" formControlName="fathers_name">
-                    <mat-hint>Hint</mat-hint>
-                  </mat-form-field>
-                  <mat-form-field appearance="standard">
-                    <mat-label>University Roll.No</mat-label>
-                    <input class="form-control" matInput placeholder="University Roll.No" type="text" formControlName="university_roll">
-                    <mat-hint>Hint</mat-hint>
-                  </mat-form-field>
-                  <mat-form-field appearance="standard">
-                    <mat-label>Branch</mat-label>
-                    <input class="form-control" matInput placeholder="Branch" type="text" formControlName="branch">
-                    <mat-hint>Hint</mat-hint>
-                  </mat-form-field>
-                </p>
-                <p>
-                  <mat-form-field appearance="standard">
-                    <mat-label>Year</mat-label>
-                    <mat-select class="form-control" placeholder="Event" formControlName="year">
-                      <mat-option [value]="null">--- Select year ----</mat-option>
-                      <mat-option  [value]="1">1st</mat-option>
-                      <mat-option  [value]="2">2nd</mat-option>
-                      <mat-option  [value]="3">3rd</mat-option>
-                      <mat-option  [value]="4">4th</mat-option>
-                      <mat-option  [value]="5">5th</mat-option>
-                    </mat-select>
+      <div class="title-section">
+        <h3>Regis<span>tr</span>ation</h3>
+      </div>
+      <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="!form_progress">
+        <mat-horizontal-stepper #stepper linear labelPosition="bottom">
+          <mat-step [stepControl]="registerForm">
+            <ng-template matStepLabel>Fill your information</ng-template>
+            <form class="row" [formGroup]="registerForm" (ngSubmit)="submitForm()">
+              <div class="col-lg-6 col-sm-12">
+                <mat-form-field appearance="standard">
+                  <mat-label>College Name</mat-label>
+                  <input matInput placeholder="College Name" type="text" formControlName="college_name">
                 </mat-form-field>
-                  <mat-form-field appearance="standard">
-                      <mat-label>Faculty Gender</mat-label>
-                      <mat-select class="form-control" placeholder="Event" formControlName="gender">
-                        <mat-option [value]="null">--- Select Event ----</mat-option>
-                        <mat-option  [value]="'M'">Male</mat-option>
-                        <mat-option  [value]="'F'">Female</mat-option>
-                        <mat-option  [value]="'O'">Others</mat-option>
-                      </mat-select>
-                  </mat-form-field>
-                  <mat-form-field appearance="standard">
-                    <mat-label>Aadhar Number</mat-label>
-                    <input class="form-control" matInput placeholder="Aadhar Number" type="text" formControlName="aadhar_no">
-                    <mat-hint>Hint</mat-hint>
-                  </mat-form-field>
-                  <mat-form-field appearance="standard">
-                    <mat-label>Phone No.</mat-label>
-                    <input class="form-control" matInput placeholder="Phone No." type="text" formControlName="phn_no">
-                    <mat-hint>Hint</mat-hint>
-                  </mat-form-field>
-                  <mat-form-field appearance="standard">
-                    <mat-label>Email</mat-label>
-                    <input class="form-control" matInput placeholder="Email" type="email" formControlName="email">
-                    <mat-hint>Hint</mat-hint>
-                  </mat-form-field>
-                </p>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <mat-form-field appearance="standard">
+                  <mat-label>College Code</mat-label>
+                  <input matInput placeholder="College Code" type="text" formControlName="college_code">
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <mat-form-field appearance="standard">
+                  <mat-label>Faculty Name</mat-label>
+                  <input matInput placeholder="Faculty Name" type="text" formControlName="faculty_name">
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <mat-form-field appearance="standard">
+                  <mat-label>Faculty Gender</mat-label>
+                  <mat-select placeholder="Event" formControlName="faculty_gender">
+                    <mat-option [value]="null">--- Select Gender ----</mat-option>
+                    <mat-option [value]="'M'">Male</mat-option>
+                    <mat-option [value]="'F'">Female</mat-option>
+                    <mat-option [value]="'O'">Others</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <mat-form-field appearance="standard">
+                  <mat-label>Faculty Designation</mat-label>
+                  <input matInput placeholder="Faculty Designation" type="text" formControlName="faculty_designation">
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <mat-form-field appearance="standard">
+                  <mat-label>Faculty Phone Number</mat-label>
+                  <input matInput placeholder="Faculty Phone Number" type="text" formControlName="faculty_phn_no">
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <mat-form-field appearance="standard">
+                  <mat-label>Faculty Email</mat-label>
+                  <input matInput placeholder="Faculty Email" type="text" formControlName="faculty_email">
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <mat-form-field appearance="standard" *ngIf="events">
+                  <mat-select placeholder="Event" formControlName="event">
+                    <mat-option [value]="null">
+                      --- Select Event ----
+                    </mat-option>
+                    <mat-option *ngFor="let event of events" [value]="event.id">
+                      {{event.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </form>
+            <h1 class="row"> </h1>
+            <div class="text-right">
+              <button matStepperNext class="btn btn-outline-secondary" [disabled]="!registerForm.valid">Next</button>
+            </div>
+          </mat-step>
+          <mat-step [stepControl]="particpantsForm">
+            <ng-template matStepLabel>Fill participants information</ng-template>
+            <form class="row" [formGroup]="particpantsForm">
+              <div class="col-lg-12 col-sm-12">
+                <mat-form-field appearance="standard">
+                  <mat-select placeholder="Select Participants" formControlName="n_participants">
+                    <mat-option [value]="null">
+                      --- Select Participants ----
+                    </mat-option>
+                    <mat-option *ngFor="let participant of participants" [value]="participant">
+                      {{participant}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <mat-vertical-stepper formArrayName="participants" class="col-12">
+                <h3>Participants</h3>
+                <div class="row">
+                  <div *ngFor="let participant of getControls().controls; let i=index" class="col-12">
+                    <mat-step [formGroupName]="i" [stepControl]="participant">
+                      <ng-template matStepLabel>participant {{i + 1}}</ng-template>
+                      <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                          <mat-form-field appearance="standard">
+                            <mat-label>Name of Student</mat-label>
+                            <input matInput placeholder="Name of Student" type="text" formControlName="name">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                          <mat-form-field appearance="standard">
+                            <mat-label>Fathers Name</mat-label>
+                            <input matInput placeholder="Fathers Name" type="text" formControlName="fathers_name">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                          <mat-form-field appearance="standard">
+                            <mat-label>University Roll.No</mat-label>
+                            <input matInput placeholder="University Roll.No" type="text" formControlName="university_roll">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                          <mat-form-field appearance="standard">
+                            <mat-label>Branch</mat-label>
+                            <input matInput placeholder="Branch" type="text" formControlName="branch">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                          <mat-form-field appearance="standard">
+                            <mat-label>Year</mat-label>
+                            <mat-select placeholder="Event" formControlName="year">
+                              <mat-option [value]="null">--- Select year ----</mat-option>
+                              <mat-option [value]="1">1st</mat-option>
+                              <mat-option [value]="2">2nd</mat-option>
+                              <mat-option [value]="3">3rd</mat-option>
+                              <mat-option [value]="4">4th</mat-option>
+                              <mat-option [value]="5">5th</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                          <mat-form-field appearance="standard">
+                            <mat-label>Faculty Gender</mat-label>
+                            <mat-select placeholder="Event" formControlName="gender">
+                              <mat-option [value]="null">--- Select Event ----</mat-option>
+                              <mat-option [value]="'M'">Male</mat-option>
+                              <mat-option [value]="'F'">Female</mat-option>
+                              <mat-option [value]="'O'">Others</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                          <mat-form-field appearance="standard">
+                            <mat-label>Aadhar Number</mat-label>
+                            <input matInput placeholder="Aadhar Number" type="text" formControlName="aadhar_no">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                          <mat-form-field appearance="standard">
+                            <mat-label>Phone No.</mat-label>
+                            <input matInput placeholder="Phone No." type="text" formControlName="phn_no">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12">
+                          <mat-form-field appearance="standard">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" type="email" formControlName="email">
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </mat-step>
+                  </div>
+                </div>
+              </mat-vertical-stepper>
+            </form>
+            <div class="row">
+              <div class="col text-left">
+                <button matStepperPrevious class="btn btn-outline-secondary">Back</button>
+              </div>
+              <div class="col text-right">
+                <button matStepperNext class="btn btn-outline-secondary" [disabled]="!recaptchaForm.valid">Next</button>
               </div>
             </div>
-          </div>
-
-          <div>
-            <re-captcha (resolved)="resolved($event)" siteKey="{{SITE_KEY}}"></re-captcha>
-          </div>
-          <div>
-            <button class="btn btn-primary" mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Submit</button>
-          </div>
-
-        </form>
+          </mat-step>
+          <mat-step [stepControl]="recaptchaForm">
+            <ng-template matStepLabel>Done</ng-template>
+            <form class="row" [formGroup]="recaptchaForm" (ngSubmit)="submitForm()">
+              <div class="col-12 text-center">
+                <p class="text-center">
+                </p>
+              </div>
+              <div class="text-xs-center">
+                <div class="g-recaptcha">
+                  <re-captcha (resolved)="resolved($event)" siteKey="{{SITE_KEY}}"></re-captcha>
+                </div>
+              </div>
+              <h1 class="col-12"><br> </h1>
+              <div class="col-12">
+                <div class="row">
+                  <div class="col text-left">
+                    <button matStepperPrevious class="btn btn-outline-secondary">Back</button>
+                  </div>
+                  <div class="col text-right">
+                    <button class="btn btn-outline-secondary" type="submit" [disabled]="!recaptchaForm.valid">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </mat-step>
+        </mat-horizontal-stepper>
       </div>
-
+      <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_progress">
+        <div class="text-center">
+          <img src="{{LOADER_IMAGE}}" />
+          <h3> Please Wait</h3>
+          <div><br><br></div>
+        </div>
+      </div>
+      <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_success">
+          <div id="verifyEmailAlert">
+              <div class="verify-alert-icon" id="verifyEmailAlertIcon">
+                  <i class="fa fa-check fa-2x"></i>
+              </div>
+              <div class="verify-alert-message" id="verifyEmailAlertMsg">
+                  <p>{{form_success_message}}</p>
+              </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>
