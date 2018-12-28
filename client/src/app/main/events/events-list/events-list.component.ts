@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../main.service';
 import { ASSETS } from '../../../shared/assets';
+import { EventListBgAnimationService } from './events-list.service';
 
 @Component({
   selector: 'app-events-list',
@@ -14,13 +15,16 @@ export class EventsListComponent implements OnInit {
 
   events:any[]
 
-  constructor(private _mainService:MainService) { }
+  constructor(private _mainService:MainService, private _evenListSevice:EventListBgAnimationService) { }
 
   ngOnInit() {
-    this._mainService.getEvents().subscribe((events)=>{
+    var scene3d = document.getElementById("scene3d");
+    this._evenListSevice.threeActivator(scene3d);
+
+    this._mainService.getEvents().subscribe((events) => {
       this.events = events["results"]
       console.log(events)
-    }, (err)=>{
+    }, (err) => {
       console.log(err)
     })
 

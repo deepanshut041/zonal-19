@@ -38,6 +38,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgwWowModule } from 'ngx-wow';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { ContactUsComponent } from './home/contact-us/contact-us.component';
+import { EventListBgAnimationService } from './events/events-list/events-list.service';
 
 
 
@@ -51,6 +52,6 @@ import { ContactUsComponent } from './home/contact-us/contact-us.component';
     MainComponent, NavbarComponent, FooterComponent, HomeComponent, LandingPageComponent, EventsOverviewComponent,
     TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent, ScheduleOverviewComponent, AboutUsComponent, ContactUsComponent
   ],
-  providers:[MainService,LandingPageService]
+  providers:[MainService,LandingPageService,EventListBgAnimationService]
 })
 export class MainModule { }
