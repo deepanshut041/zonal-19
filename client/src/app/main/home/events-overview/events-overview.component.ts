@@ -14,5 +14,5 @@ export class EventsOverviewComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
 }
