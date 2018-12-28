@@ -1,25 +1,7 @@
-.bigBlock{
-  width: 100%;
-  height: 50%;
-  background-color: #1b1464;
-  position: absolute;
-  z-index: 0;
-  margin-top: 100px;
-  left: 0px;
-  animation-name: pulse;
-  animation-duration: 1.4s;
-  animation-iteration-count: infinite;
-}
-.smallBlock{
-  width: 100%;
-  height: 50%;
-  background-color: #00e576;
-  padding: 20px;
-}
+
 /* events section */
 .EventsPage .container{
-margin-top: 0px;
-z-index: 1;
+margin-top: -280px;
 }
 .EventsDesign{
 height: 500px;
@@ -30,7 +12,7 @@ padding: 70px;
 }
 
 .EventButton {
-box-shadow: 0px 5px 15px -7px #1b1464 !important;
+box-shadow: 0px 5px 15px -3px #1b1464 !important;
 background-color: #000;
 width: 180px;
 color: #fff;
@@ -41,14 +23,9 @@ font-size: 1.2rem !important;
 }
 
 .EventButton:hover {
-box-shadow: 0px 8px 20px -7px #000 !important;
-background: #fff;
-color: #000;
-border-top: 3px solid #7e57c2 !important;
-border-right: 3px solid #7e57c2 !important;
-border-bottom: 3px solid #00e576 !important;
-border-left: 3px solid #00e576 !important;
-transition: .3s;
+box-shadow: 0px 8px 20px -2px #000 !important;
+background-color: #000;
+color: #fff;
 }
 .ButtonText{
 display: inline-block;
@@ -74,63 +51,15 @@ z-index: 1;
 background-color: #fff;
 padding: 50px;
 }
-.mainRow{
+.EventsPage .row{
 box-shadow: 0px 5px 20px -7px #000;
 border-radius: 10px;
-background-color: #fff;
 }
-.box1{
-  position: absolute;
-  width: 60px;
-  height: 30px;
-  z-index: 100;
-  border-bottom: 3px solid #00e576 !important;
-  border-left: 3px solid #00e576 !important;
-  top: 60%;
-  left: 25%;
-  animation-name: moveBorderBottom ;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+.EventsPage .row:hover{
+box-shadow: 0px 8px 30px -10px #000;
+transition: .15s linear;
 }
-@keyframes moveBorderBottom{
-  from {
-    transform: scale3d(1, 1, 1);
-  }
 
-  50% {
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
-.box2{
-  position: absolute;
-  width: 60px;
-  height: 30px;
-  z-index: 100;
-  border-top: 3px solid #7e57c2 !important;
-  border-right: 3px solid #7e57c2 !important;
-  top: 38%;
-  left: 64%;
-  animation-name: moveBorderTop ;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-@keyframes moveBorderTop{
-  from {
-    transform: scale3d(1, 1, 1);
-  }
-
-  50% {
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
 .EventsPage .container .row{
 height: 500px;
 }
@@ -167,14 +96,17 @@ background-color: #212121 !important;
 .CalenderDesign{
 width: 100%;
 }
+
 @media (max-width:480px)
 {
-.bigBlock{visibility: collapse;}
+
 .EventsPage{
   padding: 20px;
 }
 .EventsPage .container{
+
 margin-top: 0px;
+
 }
 .EventsDesign{
   height: 0px;
@@ -199,21 +131,6 @@ letter-spacing: 1px;
 font-size: 1rem !important;
 margin-top: -100px;
 }
-.box1{
-  width: 60px;
-  height: 30px;
-  top: 18%;
-  left: 20%;
-}
-
-.box2{
-  width: 60px;
-  height: 30px;
-  top: 08%;
-  left: 64%;
-
-}
-
 .EventsBox
 {
   margin-top: 5px
