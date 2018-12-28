@@ -28,6 +28,7 @@ color: #fff;
 border-radius: 10px;
 padding: 70px;
 }
+
 .EventButton {
 box-shadow: 0px 5px 15px -7px #1b1464 !important;
 background-color: #000;
@@ -38,6 +39,7 @@ display: inline-block;
 letter-spacing: 1px;
 font-size: 1.2rem !important;
 }
+
 .EventButton:hover {
 box-shadow: 0px 8px 20px -7px #000 !important;
 background: #fff;

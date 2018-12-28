@@ -9,7 +9,7 @@ import { ASSETS } from '../../../shared/assets';
 })
 export class EventsListComponent implements OnInit {
 
-  EVENT_BG_IMG = ASSETS + '/Events.svg'
+  EVENT_BG_IMG = ASSETS + '/eventsbg.svg'
   ID = '1'
 
   events:any[]
