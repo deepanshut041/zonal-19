@@ -1,4 +1,99 @@
 /* =======================
+    FOOTER TOP SECTION
+========================= */
+.footer-top-section {
+  display: block;
+  width: 100%;
+  background: #222426;
+  padding: 70px 0 60px;
+}
+.widget {
+}
+.headline {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  display: block;
+  text-align: left;
+  color: #fff;
+  position: relative;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.headline:before{
+  content: "";
+  width: 100px;
+  height: 2px;
+  background: #46bfa9;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+.widget-item {
+}
+.widget-item > p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+}
+.widget-item > ul {
+}
+.widget-item > ul > li {
+  list-style: none;
+}
+.widget-item > ul > li > a {
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: left;
+  line-height: 30px;
+  position: relative;
+  padding-left: 15px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s
+}
+.widget-item > ul > li > a:before{
+  content: "\f101";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #46bfa9;
+  font-size: 14px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s
+}
+.widget-item > ul > li > a:hover{
+  color: #46bfa9;
+}
+.tagcloud {
+  margin-left: -4px;
+  margin-right: -4px;
+}
+.tagcloud > a {
+  float: left;
+  background: #46bfa9;
+  padding: 3px 8px;
+  margin: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  border-bottom: 1px solid #46bfa9;
+}
+.tagcloud > a:hover{
+  border-bottom: 1px solid #fff;
+}
+
+/* =======================
     FOOTER SECTION
 ========================= */
 .footer-section {

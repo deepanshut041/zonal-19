@@ -9,7 +9,7 @@
   width: 100%;
   left: 0;
   right: 0;
-  background: #fff;
+  background: #313840;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -30,6 +30,7 @@
 }
 .navbar {
   margin: 0;
+  background: #313840;
   min-height: initial;
   box-shadow: none;
 }

@@ -28,10 +28,9 @@
 }
 .frontImage{
   width: 100%;
-  height: 400px;
-  position: absolute;
+  height: 100%;
+  position: relative;
   z-index: 100;
-  top: 49%;
 }
 .box1{
   position: absolute;
@@ -100,7 +99,14 @@ canvas {
 }
 
 .mobileImage{
-visibility: collapse;
+  display: none;
+}
+
+.desktopImage{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
 }
 @media (max-width:480px){
   .desktopImage{

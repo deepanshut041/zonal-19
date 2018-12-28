@@ -8,8 +8,9 @@ export class LandingPageService {
     threeActivator(elm) {
         var scene3d = elm
         var scene = new THREE.Scene(); //creating the scene
+        scene.background = new THREE.Color(0x000000)
         var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
-        var renderer = new THREE.WebGLRenderer(); //rendering the scene
+        var renderer = new THREE.WebGLRenderer({ alpha: true }); //rendering the scene
         renderer.setSize(window.innerWidth, window.innerHeight);
         scene3d.appendChild(renderer.domElement);
 
@@ -21,6 +22,17 @@ export class LandingPageService {
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
         });
+
+        window.addEventListener('resize', onWindowResize, false);
+
+        function onWindowResize() {
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+        }
 
 
         var geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -38,17 +50,17 @@ export class LandingPageService {
         var cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
-        camera.position.z = 2;
-        camera.position.y = .4;
+        camera.position.z = 3.5;
+        camera.position.y = 0;
 
         // var ambientLight = new THREE.AmbientLight(0x00e576, 2.0);
         // scene.add(ambientLight);
 
         function animate() {
             requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;  //animating the cube
-            cube.rotation.y += 0.01;
-            cube.rotation.z += 0.01;
+            cube.rotation.x += 0.008;  //animating the cube
+            cube.rotation.y += 0.02;
+            cube.rotation.z = 1.2;
             renderer.render(scene, camera);
         }
         animate();

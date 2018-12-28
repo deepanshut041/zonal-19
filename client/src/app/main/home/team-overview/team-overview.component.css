@@ -1,93 +1,137 @@
 
 .container .row{
-box-shadow: 0px 5px 20px -7px #000;
-border-radius: 10px;
-}
-.TeamTittle{
-  letter-spacing: 5px;
-  background-color: #000;
-  color: #fff;
-  font-size: 24px;
-  font-weight: lighter;
+  box-shadow: 0px 5px 20px -7px #000;
   border-radius: 10px;
-  box-shadow: 0px 0px 0px 0px !important;
-}
-.TeamTittle h1{
-  font-size: 76px !important;
-  font-weight: lighter !important;
-}
-.TeamTittle span{
-  margin-left: 10px;
-  display: block;
-}
-.teamRow{
-  padding:20px;
-  box-shadow: 0px 0px 0px 0px !important;
-}
-.teamCard{
-  padding: 20px;
-  margin-top: 40px;
-  height: 300px;
-}
-.teamCard img{
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  z-index: 1;
-  position: absolute;
-  left: 15%;
-  border: 2px solid #212121;
-}
-.teamCard .TeamMemberDetails{
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  position: absolute;
-  opacity: 0;
-
-  z-index: 2;
-  display: block;
-  padding-top: 25%;
-  font-weight: lighter;
-  left: 15%;
-}
-
-.teamCard .TeamMemberDetails:hover{
-  position: absolute;
-  opacity: 1;
-  z-index: 50;
-  background-color: #000;
-  color: #fff;
-  transition: .3s;
-  box-shadow: 0px 0px 20px -5px #000;
-}
-/* team */
-@media (max-width:480px)
-{
-  /* team */
+  }
   .TeamTittle{
-    text-align: center;
-    padding: 5px;
+    letter-spacing: 5px;
+    background-color: #000;
+    color: #fff;
+    font-size: 24px;
+    font-weight: lighter;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 0px !important;
   }
   .TeamTittle h1{
-    font-size: 24px !important;
+    font-size: 76px !important;
     font-weight: lighter !important;
-    display: inline-block !important;
   }
   .TeamTittle span{
-    font-size: 24px;
-    margin-left: -8px;
-    display: inline-block;
+    margin-left: 10px;
+    display: block;
+  }
+  .teamRow{
+    padding:20px;
+    box-shadow: 0px 0px 0px 0px !important;
   }
   .teamCard{
     padding: 20px;
-    margin-top: 10px;
+    margin-top: 40px;
+    height: 300px;
   }
   .teamCard img{
-    left: 5%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 1;
+    position: absolute;
+    left: 15%;
+    border: 2px solid #212121;
+    cursor: pointer;
+  }
+  .teamCard:hover{
+    animation-name: jello;
+    animation-duration: .75s;
+    transform-origin: center;
+  }
+  @keyframes jello {
+    from,
+    11.1%,
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    22.2% {
+      transform: skewX(-12.5deg) skewY(-12.5deg);
+    }
+  
+    33.3% {
+      transform: skewX(6.25deg) skewY(6.25deg);
+    }
+  
+    44.4% {
+      transform: skewX(-3.125deg) skewY(-3.125deg);
+    }
+  
+    55.5% {
+      transform: skewX(1.5625deg) skewY(1.5625deg);
+    }
+  
+    66.6% {
+      transform: skewX(-0.78125deg) skewY(-0.78125deg);
+    }
+  
+    77.7% {
+      transform: skewX(0.390625deg) skewY(0.390625deg);
+    }
+  
+    88.8% {
+      transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+    }
   }
   .teamCard .TeamMemberDetails{
-    left: 5%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    display: block;
+    padding-top: 25%;
+    font-weight: lighter;
+    left: 15%;
   }
-}
+  
+  .teamCard .TeamMemberDetails:hover{
+    position: absolute;
+    opacity: 1;
+    z-index: 50;
+    background-color: #000;
+    color: #fff;
+    transition: .7s;
+    box-shadow: 0px 0px 20px -5px #000;
+  }
+  /* team */
+  @media (max-width:480px)
+  {
+    /* team */
+    .container{
+      margin-top: 50px;
+    }
+    .TeamTittle{
+      text-align: center;
+      padding: 5px;
+    }
+    .TeamTittle h1{
+      font-size: 24px !important;
+      font-weight: lighter !important;
+      display: inline-block !important;
+    }
+    .TeamTittle span{
+      font-size: 24px;
+      margin-left: -8px;
+      display: inline-block;
+    }
+    .teamCard{
+      padding: 20px;
+      margin-top: 10px;
+    }
+    .teamCard img{
+      left: 5%;
+    }
+    .teamCard .TeamMemberDetails{
+      left: 5%;
+    }
+  }
+  
