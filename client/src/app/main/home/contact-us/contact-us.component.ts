@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ASSETS } from 'src/app/shared/assets';
 
 @Component({
   selector: 'app-home-contact-us',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
+
+    CONTACT_IMG = ASSETS + '/ContactUs.svg';
 
   constructor() { }
 

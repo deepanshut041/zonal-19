@@ -1,0 +1,68 @@
+
+/* events section */
+.aboutUsPage .container{
+margin-top: 0px;
+z-index: 1;
+}
+.aboutUsPage{
+z-index: 1;
+background-color: #fff;
+padding: 50px;
+}
+.mainRow{
+box-shadow: 0px 5px 20px -7px #000;
+border-radius: 10px;
+background-color: #fff;
+}
+
+.aboutUsPage .container .row{
+}
+.imageRow{
+  background-color: #000;
+  border-radius: 10px;
+  padding: 10px;
+}
+.contactUsImage{
+}
+.contactUsImage img:hover{
+animation: tada 1s 1;
+}
+h3{
+  font-size: 1.2rem !important;
+  color: #eee !important;
+  letter-spacing: 1px;
+}
+i{margin-right: 25px;
+font-size: 24px;
+color: #fff;}
+i:hover{
+  animation: jello 1s 1;
+}
+@media (max-width:480px)
+{
+.aboutUsPage{
+  padding: 20px;
+}
+.aboutUsPage .container{
+margin-top: 0px;
+}
+h3{
+  font-size: 1rem !important;
+  color: #fff;
+}
+i{margin-right: 5px;
+font-size: 24px;
+color: #fff;}
+.aboutUsPage .container .row{
+height: 450px;
+}
+.
+.contactUsImage img{
+height: 100px;
+margin-left: 0;
+margin-right: 0;
+margin:auto;
+padding-top: 50px;
+}
+
+}
