@@ -1,6 +1,6 @@
 .LandingPage{
-  background-color: #fff;
   z-index: 0;
+  margin-top:-250px;
 }
 .LandingPage .MainHeader{
   position: absolute;
@@ -9,11 +9,11 @@
   width: 100%;
   top: 30%;
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   font-weight: lighter !important;
-  letter-spacing: 20px;
+  letter-spacing: 40px;
   text-shadow: 0px 2px 8px 1px #1b1464;
-  animation: headerSpace 2.5s infinite;
+  padding-left: 15px;
 }
 .Aktu{
   position: absolute;
@@ -26,13 +26,20 @@
   font-weight: lighter !important;
   text-shadow: 0px 2px 8px 1px #1b1464;
 }
+.frontImage{
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  z-index: 100;
+  top: 304px;
+}
 .box1{
   position: absolute;
   width: 60px;
   height: 30px;
   z-index: 100;
-  border-bottom: 2px solid #00e576 !important;
-  border-left: 2px solid #00e576 !important;
+  border-bottom: 3px solid #00e576 !important;
+  border-left: 3px solid #00e576 !important;
   top: 20%;
   left: 30%;
 }
@@ -41,16 +48,39 @@
   width: 60px;
   height: 30px;
   z-index: 100;
-  border-top: 2px solid #7e57c2 !important;
-  border-right: 2px solid #7e57c2 !important;
+  border-top: 3px solid #7e57c2 !important;
+  border-right: 3px solid #7e57c2 !important;
   top: 15%;
-  left: 64%;
+  left: 65%;
 }
-@keyframes headerSpace{
-  0%{top: 30%;}
-  20%{top: 32%;}
-  60%{top: 30%;}
-  82%{top:31%}
+.year{
+  position: absolute;
+  font-size:4rem;
+  color: #fff;
+  z-index: 105;
+  cursor: pointer;
+}
+.year:hover{
+  animation: bounce 1s infinite;
+}
+.two{
+  top: 65%;
+  left: 10%;
+  transform: rotateZ(-5deg);
+}
+.zero{
+  top: 84%;
+  left: 31.5%;
+  transform: rotateZ(5deg);
+}
+.one{
+  top: 72.5%;
+  left: 62%;
+}
+.nine{
+  top: 85.5%;
+  left: 89%;
+  transform: rotateZ(15deg);
 }
 #scene3d {
 	width: 300px;
@@ -68,45 +98,78 @@ canvas {
   width: 100%; height: 100% ;
   position: absolute;
 }
+
+.mobileImage{
+visibility: collapse;
+}
 @media (max-width:480px){
-
+  .desktopImage{
+  visibility: collapse;
+  }
+  .mobileImage{
+  visibility: visible;
+  }
+  .LandingPage{
+    margin-top: -300px;
+  }
   .LandingPage .MainHeader{
-    top: 25%;
-    color: #fff;
-    font-size: 2rem;
+    top: 35%;
+    font-size: 3rem;
     font-weight: lighter !important;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
     padding-left: 15px;
-
-    animation: headerSpace 2.5s infinite;
   }
   .Aktu{
-    top: 13%;
-    color: #fff;
+    top: 15%;
     font-size: .8rem;
     font-weight: lighter !important;
     text-shadow: 0px 2px 8px 1px #1b1464;
+  }
+  .frontImage{
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    z-index: 100;
+    top: 501px;
   }
   .box1{
     position: absolute;
     width: 60px;
     height: 30px;
-    top: 15%;
+    top: 17%;
     left: 5%;
   }
   .box2{
     position: absolute;
     width: 60px;
     height: 30px;
-    top: 10%;
+    top: 12%;
     left: 79%;
   }
-
-  @keyframes headerSpace{
-    0%{top: 25%;}
-    20%{top: 27%;}
-    60%{top: 25%;}
-    82%{top:26%}
+  .year{
+    font-size:3rem;
   }
-
+  .year:hover{
+    animation: bounce 1s infinite;
+  }
+  .two{
+    top: 84%;
+    left: 10%;
+    transform: rotateZ(-15deg);
+  }
+  .zero{
+    top: 84%;
+    left: 31.5%;
+  transform: rotateZ(10deg);}
+  .one{
+    top: 83.2%;
+    left: 62%;
+    transform: rotateZ(5deg);
+  }
+  .nine{
+    top: 83%;
+    left: 89%;}
+  #scene3d{
+    background-color: #fff;
+  }
 }

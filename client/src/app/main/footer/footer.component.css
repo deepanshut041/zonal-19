@@ -6,7 +6,70 @@
   height: 100px;
   border-top: 1px solid #dbe2e8;
 }
+.row{
+  background-color: #000;
+  margin-top: 50px;
+}
+.content{
+  color: #fff;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+.firstRow{
+  background-color: #1b1464;
+  padding: 20px;
+}
+.content h5{
+  letter-spacing: 5px;
+  padding: 5px;
+}
+a{
+  text-decoration: none;
+}
+.links{
+  cursor: pointer;
+}
+.inline{
+  display: inline-block;
+  padding: 20px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  font-size: 1.5rem;
+}
+.facebook:hover, .twitter:hover, .github:hover, .youtube:hover{
+  animation-duration: 1s;
+  animation-name: jello;
+  animation-iteration-count: 1;
+}
+.inline a{
+color: inherit;
+}
+.inline:hover{
+  background-color: #fff;
+  color: #000 !important;
+}
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
 
-img {
-  width: 20px;
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+a{
+  color: inherit;
+}
+.siLogo img {
+  margin-left: 20px;
+  width: 40px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px -2px #000;
 }

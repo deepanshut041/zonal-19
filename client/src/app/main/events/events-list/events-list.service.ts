@@ -4,13 +4,12 @@ import { ASSETS } from 'src/app/shared/assets';
 
 @Injectable()
 
-export class LandingPageService {
+export class EventListBgAnimationService {
     threeActivator(elm) {
         var scene3d = elm
         var scene = new THREE.Scene(); //creating the scene
-        scene.background = new THREE.Color(0x000000)
         var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
-        var renderer = new THREE.WebGLRenderer({ alpha: true }); //rendering the scene
+        var renderer = new THREE.WebGLRenderer(); //rendering the scene
         renderer.setSize(window.innerWidth, window.innerHeight);
         scene3d.appendChild(renderer.domElement);
 
@@ -24,7 +23,7 @@ export class LandingPageService {
         });
 
 
-        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var geometry = new THREE.BoxGeometry(5, 5, 5);
         var cubeMaterials =
             [
                 new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(ASSETS + '/Jam.png'), side: THREE.DoubleSide }), //rightside
@@ -37,19 +36,25 @@ export class LandingPageService {
         // var material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe:true } );
         var material = new THREE.MeshFaceMaterial(cubeMaterials);
         var cube = new THREE.Mesh(geometry, material);
+        // var cubes = [];
+        // cube.push(cube);
+        // var i = 0;
+        // while (i<20){
+
+        // }
         scene.add(cube);
 
-        camera.position.z = 3.5;
-        camera.position.y = 0;
+        camera.position.z = 10;
+        camera.position.y = .2;
 
         // var ambientLight = new THREE.AmbientLight(0x00e576, 2.0);
         // scene.add(ambientLight);
 
         function animate() {
             requestAnimationFrame(animate);
-            cube.rotation.x += 0.008 ;  //animating the cube
-            cube.rotation.y += 0.02;
-            cube.rotation.z = 1.2;
+            cube.rotation.x += 0.01;  //animating the cube
+            cube.rotation.y += 0.01;
+            cube.rotation.z += 0.01;
             renderer.render(scene, camera);
         }
         animate();
