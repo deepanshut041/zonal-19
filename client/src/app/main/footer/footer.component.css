@@ -1,60 +1,55 @@
-.footer{
-  width: 100%;
-}
-.footer{
-  margin: 0px 35px 0 35px;
-  height: 100px;
-  border-top: 1px solid #dbe2e8;
-}
-
-.divider{
-  background-color: #000;
-  height: 50px;
-}
-.content{
+/* =======================
+    FOOTER SECTION
+========================= */
+.footer-section {
+  display: block;
+  background: #000002;
+  padding: 45px 0 20px 0;
+  text-align: center;
   color: #fff;
-  margin-bottom: 0px;
-  padding: 0px;
+  position: relative;
 }
-.firstRow{
-  background-color: #1b1464;
-  padding: 20px;
+.footer-section p{
+  padding: 0;
+  margin: 0;
+  display: block;
+  color: #fff;
 }
-.content h5{
-  letter-spacing: 5px;
-  padding: 5px;
+.footer-section p a{
+  color: #46bfa9
 }
-a{
-  text-decoration: none;
+.footer-section p a:hover{
+  color: #fff;
 }
-.links{
-  cursor: pointer;
+.top-button{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 40px 25px;
+  border-color: transparent transparent #46bfa9 transparent;
+  position: absolute;
+  top: -60px;
+  text-align: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
-.inline{
-  display: inline-block;
-  padding: 20px;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  margin: 10px;
-  font-size: 1.5rem;
+.top-button:before{
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #fff;
+  font-size: 16px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 15px;
+  left: -3px;
 }
-.facebook:hover, .twitter:hover, .github:hover, .youtube:hover{
-  animation-duration: 1s;
-  animation-name: jello;
-  animation-iteration-count: 1;
-}
-.inline a{
-color: inherit;
-}
-.inline:hover{
-  background-color: #fff;
-  color: #000 !important;
-}
-@keyframes flash {
-  from,
-  50%,
-  to {
-    opacity: 1;
-  }
+.top-button.fixed{
+  position: fixed;
+  bottom: 0;
+  top: auto;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }

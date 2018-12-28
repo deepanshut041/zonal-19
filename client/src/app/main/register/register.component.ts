@@ -28,13 +28,13 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
   constructor(private fb: FormBuilder, private _mainService: MainService) {
     let emailFormat = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
-    let nameFormat = "^(?![\s.]+$)[a-zA-Z\s.]*$";
+
     let numberFormat = '^[0-9]*$';
     this.registerForm = fb.group({
-      'college_name': [null, Validators.compose([Validators.required, Validators.maxLength(130), Validators.minLength(3), Validators.pattern(nameFormat)])],
+      'college_name': [null, Validators.compose([Validators.required, Validators.maxLength(130), Validators.minLength(3)])],
       'college_code': [null, Validators.compose([Validators.required, Validators.maxLength(3), Validators.minLength(3), Validators.pattern(numberFormat)])],
-      'faculty_name': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(2), Validators.pattern(nameFormat)])],
-      'faculty_designation': [null, Validators.compose([Validators.required, Validators.maxLength(130), Validators.minLength(2), Validators.pattern(nameFormat)])],
+      'faculty_name': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(2)])],
+      'faculty_designation': [null, Validators.compose([Validators.required, Validators.maxLength(130), Validators.minLength(2)])],
       'faculty_gender': [null, Validators.compose([Validators.required])],
       'faculty_phn_no': [null, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(numberFormat)])],
       'faculty_email': [null, Validators.compose([Validators.required, Validators.pattern(emailFormat)])],
@@ -54,13 +54,12 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
   createItem(): FormGroup {
     let emailFormat = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
-    let nameFormat = "^(?![\s.]+$)[a-zA-Z\s.]*$";
     let numberFormat = '^[0-9]*$';
     return this.fb.group({
-      'name': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3), Validators.pattern(nameFormat)])],
-      'fathers_name': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3), Validators.pattern(nameFormat)])],
+      'name': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3)])],
+      'fathers_name': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3)])],
       'university_roll': [null, Validators.compose([Validators.required, Validators.maxLength(15), Validators.minLength(10), Validators.pattern(numberFormat)])],
-      'branch': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3), Validators.pattern(nameFormat)])],
+      'branch': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3)])],
       'year': [null, Validators.compose([Validators.required])],
       'gender': [null, Validators.compose([Validators.required])],
       'aadhar_no': [null, Validators.compose([Validators.required, Validators.maxLength(16), Validators.minLength(16), Validators.pattern(numberFormat)])],

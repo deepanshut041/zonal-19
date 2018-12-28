@@ -1,9 +1,6 @@
-<div class="alert alert-danger" role="alert" *ngIf="form_error">
-  {{form_error_message}}
-</div>
 <div class="container-fluid">
-  <div class="container RegisterPage">
-    <div class="row RegisterPageRow ">
+  <div class="container">
+    <div class="row align-items-center register-page-row">
       <div class="title-section">
         <h3>Regis<span>tr</span>ation</h3>
       </div>
@@ -215,14 +212,14 @@
         </div>
       </div>
       <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_success">
-          <div id="verifyEmailAlert">
-              <div class="verify-alert-icon" id="verifyEmailAlertIcon">
-                  <i class="fa fa-check fa-2x"></i>
-              </div>
-              <div class="verify-alert-message" id="verifyEmailAlertMsg">
-                  <p>{{form_success_message}}</p>
-              </div>
+        <div id="verifyEmailAlert">
+          <div class="verify-alert-icon" id="verifyEmailAlertIcon">
+            <i class="fa fa-check fa-2x"></i>
           </div>
+          <div class="verify-alert-message" id="verifyEmailAlertMsg">
+            <p>{{form_success_message}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

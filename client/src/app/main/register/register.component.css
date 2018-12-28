@@ -1,7 +1,11 @@
-.RegisterPage .RegisterPageRow{
+.RegisterPage{
+  min-height: 100vh;
+}
+.register-page-row{
   box-shadow: 0px 5px 20px -7px #000;
   border-radius: 10px;
-  margin-top: 25px;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 mat-form-field{
   width: 100%;

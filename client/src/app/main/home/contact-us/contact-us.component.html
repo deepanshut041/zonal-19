@@ -1,24 +1,72 @@
-<div class="aboutUsPage fullPage row " id="events"> <!--EventsPage-->
+<!-- START CONTACT SECTION -->
+<div class="section contact-section" id="contact">
   <div class="container">
-    <div class="row mainRow">
-      <div class="col-12">
-        <div class="row imageRow">
-          <div class="col-lg-4 col-sm-12 contactUsImage">
-            <img class="img-fluid windowScreen-event align-self-center" src="{{CONTACT_IMG}}" alt="Events Image">
-          </div>
-          <div class="col-lg-6 col-sm-12 contactText  text-center align-self-center">
-            <h3><i class="fas fa-envelope"></i>technicalzonals19@gmail.com</h3><br>
-            <h3><i class="fas fa-phone"></i>Mobile no.</h3>
-
-          </div>
-
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="">
-
-        </div>
+    <div class="row">
+      <div class="title-section white-title">
+        <h1>GET I<span>N T</span> OUCH</h1>
       </div>
     </div>
-  </div>
-</div>
+    <div class="row">
+      <div class="col-md-6 wow fadeInLeft animated" data-wow-delay="0.2s">
+        <div class="contact-content left-content">
+          <div class="logo-title">
+            <h1>ENT<span>REVS</span>TOR</h1>
+          </div>
+          <h3>We'd love To Meet You In Person Or Via The Web!</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent
+            taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis
+            urna.
+            Donec at commodo erat.</p>
+          <div class="contact-info">
+            <p><b>Phone:</b> 1.555.555.5555</p>
+            <p><b>Main Office:</b> 123 Elm St. New York City, NY </p>
+            <p><b>Email:</b> info@yourdomain.com</p>
+          </div>
+        </div>
+      </div><!-- END OF / COLUMN -->
+      <div class="col-md-6 wow fadeInRight animated" data-wow-delay="0.2s">
+        <form id="contact-form" action="inc/contact.php" name="contactform" method="post" class="contact-form">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="email" id="email" class="form-control" placeholder="Your Email" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="subject" id="subject" class="form-control" placeholder="Your Subject" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="website" id="website" class="form-control" placeholder="Website URL" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <textarea name="comments" id="comments" cols="30" rows="10" class="form-control" placeholder="Your Message"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <span class="pori-btn">
+                <input type="submit" class="submit-btn" id="submit" value="SEND" />
+              </span>
+            </div>
+          </div>
+        </form><!-- END OF /. FORM -->
+        <div id="message"></div>
+      </div><!-- END OF /. COLUMN -->
+    </div><!-- END OF /. ROW -->
+  </div><!-- END OF /. CONTAINER -->
+</div><!-- END OF /. CONTACT SECTION -->
