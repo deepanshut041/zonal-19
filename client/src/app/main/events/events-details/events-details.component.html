@@ -11,7 +11,7 @@
     <div class="row BottomRow">
       <div class="col-12 bottomColumn">
         <div class="row "> <!--Event main-details row starts-->
-          <div class="col-12 EventImage text-center "><!--Event Image-->
+          <div class="col-12 EventImage text-center " [ngStyle]="{'background-color' : ' + event.color +'}">Event Image
             <img src="{{event.image}}"/>
           </div>
           <div class="col-12 EventDetails">
@@ -56,9 +56,6 @@
               </div>
               <div class="col-lg-4 col-sm-4 department text-center">
                 {{event.department}}
-              </div>
-              <div class="col-lg-4 col-sm-4 participants text-center">
-                Participants
               </div>
             </div>
           </div>
