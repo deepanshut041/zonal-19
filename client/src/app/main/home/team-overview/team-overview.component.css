@@ -106,6 +106,9 @@ border-radius: 10px;
 @media (max-width:480px)
 {
   /* team */
+  .container{
+    margin-top: 50px;
+  }
   .TeamTittle{
     text-align: center;
     padding: 5px;

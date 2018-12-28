@@ -6,13 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
-
+import { NgwWowModule } from 'ngx-wow';
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule, AppRoutingModule, BrowserAnimationsModule, MainModule, AuthModule, SharedModule,
+    BrowserModule, AppRoutingModule, BrowserAnimationsModule, MainModule, AuthModule, SharedModule, NgwWowModule
   ],
   providers: [],
   bootstrap: [AppComponent]

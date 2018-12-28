@@ -23,6 +23,9 @@
   letter-spacing: 5px;
   padding: 5px;
 }
+a{
+  text-decoration: none;
+}
 .links{
   cursor: pointer;
 }
