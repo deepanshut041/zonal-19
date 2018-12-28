@@ -24,8 +24,8 @@ mat-form-field{
   padding: 5px 0;
   text-align: center;
   text-transform: uppercase;
-  border-top: 1px solid #00e576;
-  border-bottom: 1px solid #00e576;
+  border-top: 1px solid #46bfa9;
+  border-bottom: 1px solid #46bfa9;
   line-height: 70px;
   position: relative;
 }
@@ -36,7 +36,7 @@ mat-form-field{
   position: absolute;
   display: block;
   margin: 0 auto;
-  background: #1b1464;
+  background: #46bfa9;
   bottom: -5px;
   left: 0;
   right: 0;
@@ -48,14 +48,14 @@ mat-form-field{
   position: absolute;
   display: block;
   margin: 0 auto;
-  background: #1b1464;
+  background: #46bfa9;
   top: -5px;
   left: 0;
   right: 0;
 }
 
 .title-section h3 span{
-  color: #00e576;
+  color: #46bfa9;
 }
 
 mat-vertical-stepper{

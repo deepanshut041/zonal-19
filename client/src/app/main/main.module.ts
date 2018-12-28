@@ -36,9 +36,6 @@ import { MainService } from './main.service';
 import { LandingPageService } from './home/landing-page/landing-page.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgwWowModule } from 'ngx-wow';
-import { AboutUsComponent } from './home/about-us/about-us.component';
-import { ContactUsComponent } from './home/contact-us/contact-us.component';
-import { EventListBgAnimationService } from './events/events-list/events-list.service';
 
 
 
@@ -50,8 +47,8 @@ import { EventListBgAnimationService } from './events/events-list/events-list.se
   ],
   declarations: [
     MainComponent, NavbarComponent, FooterComponent, HomeComponent, LandingPageComponent, EventsOverviewComponent,
-    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent, ScheduleOverviewComponent, AboutUsComponent, ContactUsComponent
+    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent, ScheduleOverviewComponent
   ],
-  providers:[MainService,LandingPageService,EventListBgAnimationService]
+  providers:[MainService,LandingPageService]
 })
 export class MainModule { }
