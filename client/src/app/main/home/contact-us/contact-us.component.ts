@@ -8,7 +8,8 @@ import { ASSETS } from 'src/app/shared/assets';
 })
 export class ContactUsComponent implements OnInit {
 
-    CONTACT_IMG = ASSETS + '/ContactUs.svg';
+    CONTACT_US = ASSETS + '/ContactUs.svg';
+    CONTACT_BG_IMG = ASSETS + '/map-bg.png';
 
   constructor() { }
 

@@ -48,8 +48,8 @@ canvas {
   padding: 5px 0;
   text-align: center;
   text-transform: uppercase;
-  border-top: 1px solid #46bfa9;
-  border-bottom: 1px solid #46bfa9;
+  border-top: 1px solid #00e576;
+  border-bottom: 1px solid #00e576;
   line-height: 70px;
   position: relative;
 }
@@ -70,7 +70,7 @@ canvas {
   position: absolute;
   display: block;
   margin: 0 auto;
-  background:#46bfa9;
+  background:#00e576;
   top: -5px;
   left: 0;
   right: 0;
@@ -82,13 +82,13 @@ canvas {
   position: absolute;
   display: block;
   margin: 0 auto;
-  background:#46bfa9;
+  background:#00e576;
   bottom: -5px;
   left: 0;
   right: 0;
 }
 .title-section > h1 > span{
-  color: #46bfa9
+  color: #00e576
 }
 .white-title > p {
   color: #fff;
@@ -100,6 +100,7 @@ canvas {
 }
 .wrapper {
 }
+
 .section {
   padding: 120px 0;
 }

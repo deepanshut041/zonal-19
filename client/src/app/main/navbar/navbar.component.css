@@ -1,7 +1,7 @@
 /* =======================
     HEADER SECTION
 ========================= */
-.header-section {
+/* .header-section {
   position: relative;
   padding: 10px 0;
   top: 0px;
@@ -27,31 +27,33 @@
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
-}
+} */
 .navbar {
   margin: 0;
-  background: #313840;
+  background: #1b1464;
   min-height: initial;
   box-shadow: none;
 }
-.icon-bar {
-  background: #fff;
+.navbar-toggler-icon {
+  color: #fff;
 }
 .navbar-brand {
   padding: 0;
   height: auto;
   color: #fff;
 }
-.navbar-toggle{
+.navbar-toggler{
   margin: 0;
   margin-top: 5px;
 }
 .navbar-nav {
-  border-top: 1px solid #46bfa9;
-  border-bottom: 1px solid #46bfa9;
+  border-top: 1px solid #00e576;
+  border-bottom: 1px solid #00e576;
 }
+
 .navbar-right {
 }
+
 .navbar-right > li {
   position: relative;
   -webkit-transition: all 1s;
@@ -86,7 +88,7 @@
   font-size: 14px;
   font-weight: 300;
   text-transform: uppercase;
-  color: #46bfa9;
+  color: #00e576;
   position: relative;
   background: #313840;
   padding: 15px;
@@ -97,7 +99,7 @@
   transition: all 1s;
 }
 .navbar-right > li ul li a:hover{
-  background: #46bfa9;
+  background: #00e576;
   color: #fff
 }
 
@@ -130,7 +132,7 @@
 .navbar-right > li > a:hover:before, .navbar-right > li > a:hover:after, .navbar-right > li.active > a:before, .navbar-right > li.active > a:after{
   width: 7px;
   height: 7px;
-  background: #46bfa9;
+  background: #00e576;
   content: "";
   display: block;
   margin: 0 auto;
@@ -159,7 +161,7 @@
 }
 .navbar-right > li > a:hover, .navbar-right > li > a:focus, .navbar-right > li.active > a{
   background: transparent;
-  color: #46bfa9;
+  color: #00e576;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
