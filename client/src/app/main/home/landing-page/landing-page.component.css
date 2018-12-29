@@ -1,6 +1,11 @@
+.html{
+  background: #11e8bb; /* Old browsers */
+  background: linear-gradient(to bottom,  #11e8bb 0%,#8200c9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
 .LandingPage{
   z-index: 0;
-  margin-top:-250px;
+  margin-top: -300px;
+  background-color: red;
 }
 .LandingPage .MainHeader{
   position: absolute;
@@ -63,21 +68,21 @@
   animation: bounce 1s infinite;
 }
 .two{
-  top: 65%;
+  top: 66%;
   left: 10%;
   transform: rotateZ(-5deg);
 }
 .zero{
-  top: 84%;
+  top: 85%;
   left: 31.5%;
   transform: rotateZ(5deg);
 }
 .one{
-  top: 72.5%;
+  top: 74%;
   left: 62%;
 }
 .nine{
-  top: 85.5%;
+  top: 87%;
   left: 89%;
   transform: rotateZ(15deg);
 }
