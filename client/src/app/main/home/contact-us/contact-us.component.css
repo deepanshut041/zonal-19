@@ -2,22 +2,14 @@
     CONTACT SECTION
 ========================= */
 .contact-section {
-  background: url('https://revolthemes.net/demo/klasik/html/images/map-bg.png') #2f3133;
   background-size: auto;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
   padding-bottom: 30px;
 }
-.contact-section:before{
-  content: "";
-  background: rgba(50, 50, 50, .12);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: block;
-  top: 0;
-}
+
+
 .contact-section:before{
   content: "";
   width: 100%;
@@ -26,19 +18,23 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(50, 50, 50, .70)
+  background: rgba(27, 20, 100, .90);
 }
+
 .contact-section .titie-section{
   display: block;
   margin-bottom: 80px;
 }
+
 .contact-section .titie-section h1{
   color: #fff;
 }
+
 .contact-section .left-content {
   display: block;
   overflow: hidden;
 }
+
 .contact-section .left-content h1{
   font-size: 44px;
   margin: 0;
@@ -47,20 +43,22 @@
   line-height: 1;
   font-weight: 300;
 }
+
 .contact-section .left-content h1 span{
-  color: #46bfa9;
+  color: #00e576;
 }
+
 .contact-section .left-content h3{
   color: #fff;
   display: block;
   font-size: 20px;
   font-weight: 400;
-  
   margin: 0;
   padding: 0;
   margin-top: 15px;
   margin-bottom: 10px;
 }
+
 .contact-section .left-content p{
   color: #fff;
   font-size: 14px;
@@ -68,16 +66,26 @@
   line-height: 24px;
 }
 .contact-section .left-content p b{
-  color: #46bfa9;
+  color: #00e576;
 }
 .contact-section .left-content p{
   margin-bottom: 0;
 }
+
+.left-content .contact-img{
+  height: 250px;
+}
+
+.left-content .contact-img img{
+  height: 250px;
+}
+
 .left-content .contact-info{
   display: block;
   margin-top: 30px;
   opacity: 1;
 }
+
 .left-content .contact-info p{
   margin: 0;
   display: block;
@@ -104,7 +112,7 @@
   width: 100%;
 }
 #message fieldset h1{
-  color: #46bfa9;
+  color: #00e576;
   margin: 0;
   padding: 0;
   font-size: 20px;
@@ -128,16 +136,55 @@
   background: transparent;
   border: 1px solid #fff;
   height: 50px;
-  border-radius: 0px;
 }
 .contact-form  textarea.form-control{
   height: 120px;
 }
 .contact-form .form-control:focus, .contact-form .form-control:hover{
-  border: 1px solid #46bfa9;
+  border: 1px solid #00e576;
   box-shadow: none;
-  color: #46bfa9 !important;
+  color: #00e576 !important;
 }
+
+::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+ color: #fff;
+}
+
+::-ms-input-placeholder {
+ color: #fff;
+}
+
 span.pori-btn{
   padding: 0;
 }
+
+.form-control{
+  color: #00e576;
+}
+
+.submit-button {
+  box-shadow: 0px 5px 15px -7px #1b1464 !important;
+  background-color: #7e57c2;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-size: 1.2rem !important;
+  }
+
+  .submit-button:hover {
+  box-shadow: 0px 8px 20px -7px #000 !important;
+  background: #fff;
+  color: #000;
+  border-top: 1.5px solid #7e57c2 !important;
+  border-right: 1.5px solid #7e57c2 !important;
+  border-bottom: 1.5px solid #00e576 !important;
+  border-left: 1.5px solid #00e576 !important;
+  transition: .3s;
+  }

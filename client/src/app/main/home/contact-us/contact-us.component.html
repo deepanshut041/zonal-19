@@ -1,5 +1,5 @@
 <!-- START CONTACT SECTION -->
-<div class="section contact-section" id="contact">
+<div class="section contact-section" id="contact" [ngStyle]="{'background-image':'url(' + CONTACT_BG_IMG + ')'}">
   <div class="container">
     <div class="row">
       <div class="title-section white-title">
@@ -9,18 +9,15 @@
     <div class="row">
       <div class="col-md-6 wow fadeInLeft animated" data-wow-delay="0.2s">
         <div class="contact-content left-content">
-          <div class="logo-title">
+          <!-- <div class="logo-title">
             <h1>ENT<span>REVS</span>TOR</h1>
+          </div> -->
+          <div class="contact-img">
+          <img src={{CONTACT_US}}>
           </div>
-          <h3>We'd love To Meet You In Person Or Via The Web!</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nulla sapien. Class aptent tacitiaptent
-            taciti sociosqu ad lit himenaeos. Suspendisse massa urna, luctus ut vestibulum necs et, vulputate quis
-            urna.
-            Donec at commodo erat.</p>
           <div class="contact-info">
             <p><b>Phone:</b> 1.555.555.5555</p>
-            <p><b>Main Office:</b> 123 Elm St. New York City, NY </p>
-            <p><b>Email:</b> info@yourdomain.com</p>
+            <p><b>Email:</b> technicalzonals19@gmail.com</p>
           </div>
         </div>
       </div><!-- END OF / COLUMN -->
@@ -29,24 +26,24 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" />
+                <input type="text" name="name" id="first_name" class="form-control" placeholder="First Name" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" name="email" id="email" class="form-control" placeholder="Your Email" />
+                <input type="text" name="name" id="second_name" class="form-control" placeholder="Second Name" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" name="subject" id="subject" class="form-control" placeholder="Your Subject" />
+                <input type="text" name="email" id="email" class="form-control" placeholder="Your Email" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" name="website" id="website" class="form-control" placeholder="Website URL" />
+                <input type="text" name="phone_no" id="phone_no" class="form-control" placeholder="Phone no." />
               </div>
             </div>
           </div>
@@ -60,7 +57,7 @@
           <div class="row">
             <div class="col-md-12">
               <span class="pori-btn">
-                <input type="submit" class="submit-btn" id="submit" value="SEND" />
+                <button type="submit" class="btn submit-button" id="submit">Submit</button>
               </span>
             </div>
           </div>

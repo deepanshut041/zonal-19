@@ -9,6 +9,7 @@ import { ASSETS } from 'src/app/shared/assets';
 export class EventsOverviewComponent implements OnInit {
 
   EVENT_IMG = ASSETS + '/Events.svg';
+  EVENT_BG_IMG = ASSETS + '/EventsBg.svg';
 
   constructor() { }
 

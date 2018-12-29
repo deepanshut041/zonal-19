@@ -1,5 +1,38 @@
+<div class="fluid-container" [ngStyle]="{'background-image':'url(' + EVENT_BG_IMG + ')'}">
+  <div *ngIf="event" class="container">
+    <div class="row">
+      <div class="col-12 event-name" [ngStyle]="{'background-color' : ' + event.color +'}">
+        <h3>{{event.name}}</h3>
+      </div>
+      <div class="col-12 event-schedule">
+        <div class="event-date">
+          <h3><i class="far fa-calendar-alt"></i>{{event.date}}</h3>
+        </div>
+        <div class="event-time">
+          <h4><i class="far fa-clock"></i>{{event.time}}</h4>
+        </div>
+        <div class="event-venue">
+          <h4><i class="fas fa-map-marker-alt"></i>{{event.venue}}</h4>
+        </div>
+      </div>
+      <div class="col-12 event-detail">
+        <h6 [ngStyle]="{'border-bottom' : '1px solid ' + event.color +' '}">Event Details</h6>
+        <p>{{event.details}}</p>
+      </div>
+      <div class="col-12 event-rules">
+
+      </div>
+      <div class="col-12 faculty-coordinator">
+
+      </div>
+      <div class="col-12 student-cordinator">
+
+      </div>
+    </div>
+  </div>
+</div>
 <div *ngIf="event">
-  <div class="container fullPage">
+    <div class="container fullPage">
     <div class="fixedbutton">
       <div class="btn">
         <!-- <i class="fas fa-cash-register"></i>-->Register

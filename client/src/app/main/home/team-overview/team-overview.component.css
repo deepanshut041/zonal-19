@@ -1,24 +1,28 @@
+.bgSvg{
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+}
+.bgSvg img{
+  height: 550px;
+  margin-top: -5px;
+  animation: pulse 2s infinite;
+}
 
 .container .row{
   box-shadow: 0px 5px 20px -7px #000;
   border-radius: 10px;
+  z-index: 2
   }
-  .TeamTittle{
-    letter-spacing: 5px;
-    background-color: #000;
+  .title{
+    letter-spacing: 4px;
+    height: 50px;
+  }
+  .title h2{
+    padding-top: 10px;
     color: #fff;
-    font-size: 24px;
-    font-weight: lighter;
-    border-radius: 10px;
-    box-shadow: 0px 0px 0px 0px !important;
-  }
-  .TeamTittle h1{
-    font-size: 76px !important;
-    font-weight: lighter !important;
-  }
-  .TeamTittle span{
-    margin-left: 10px;
-    display: block;
   }
   .teamRow{
     padding:20px;
@@ -51,31 +55,31 @@
     to {
       transform: translate3d(0, 0, 0);
     }
-  
+
     22.2% {
       transform: skewX(-12.5deg) skewY(-12.5deg);
     }
-  
+
     33.3% {
       transform: skewX(6.25deg) skewY(6.25deg);
     }
-  
+
     44.4% {
       transform: skewX(-3.125deg) skewY(-3.125deg);
     }
-  
+
     55.5% {
       transform: skewX(1.5625deg) skewY(1.5625deg);
     }
-  
+
     66.6% {
       transform: skewX(-0.78125deg) skewY(-0.78125deg);
     }
-  
+
     77.7% {
       transform: skewX(0.390625deg) skewY(0.390625deg);
     }
-  
+
     88.8% {
       transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
     }
@@ -92,37 +96,46 @@
     font-weight: lighter;
     left: 15%;
   }
-  
+
   .teamCard .TeamMemberDetails:hover{
     position: absolute;
     opacity: 1;
     z-index: 50;
-    background-color: #000;
+    background-color: #1b1464;
     color: #fff;
     transition: .7s;
     box-shadow: 0px 0px 20px -5px #000;
   }
+  .desktop{
+    visibility: visible;
+  }
+  .mobile{
+    visibility: collapse;
+
+  }
   /* team */
   @media (max-width:480px)
   {
+    .imageSection img{
+      height: 150px;
+    }
+    .bgSvg img{
+      visibility: collapse;
+    }
+    .title{
+      background-color: #1b1464;
+      height: 50px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .title h2 {
+      padding: 5px;
+    }
     /* team */
     .container{
       margin-top: 50px;
     }
-    .TeamTittle{
-      text-align: center;
-      padding: 5px;
-    }
-    .TeamTittle h1{
-      font-size: 24px !important;
-      font-weight: lighter !important;
-      display: inline-block !important;
-    }
-    .TeamTittle span{
-      font-size: 24px;
-      margin-left: -8px;
-      display: inline-block;
-    }
+
     .teamCard{
       padding: 20px;
       margin-top: 10px;
@@ -134,4 +147,3 @@
       left: 5%;
     }
   }
-  

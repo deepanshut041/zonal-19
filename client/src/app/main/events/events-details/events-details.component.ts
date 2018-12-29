@@ -10,7 +10,8 @@ import { ASSETS } from 'src/app/shared/assets';
   styleUrls: ['./events-details.component.css']
 })
 export class EventsDetailsComponent implements OnInit {
-  event: any
+  event: any;
+  EVENT_BG_IMG = ASSETS + '/event-list-bg.svg';
   EVENT_PG_IMG = ASSETS + '/Rules.svg'
   constructor(private _mainService: MainService, private activeRoute: ActivatedRoute) {
 

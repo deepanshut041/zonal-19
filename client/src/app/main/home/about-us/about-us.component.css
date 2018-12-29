@@ -1,5 +1,16 @@
-
 /* events section */
+.bgSvg{
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+}
+.bgSvg img{
+  height: 550px;
+  padding-top: 5px;
+  animation: pulse 2s infinite;
+}
 .aboutUsPage .container{
 margin-top: 0px;
 z-index: 1;
@@ -12,48 +23,49 @@ padding: 50px;
 .mainRow{
 box-shadow: 0px 5px 20px -7px #000;
 border-radius: 10px;
-background-color: #fff;
+background:rgba(0, 0, 0, 0.05);
 }
-
 .aboutUsPage .container .row{
-height: 500px;
 }
-.TeamTittle{
-  letter-spacing: 5px;
-  background-color: #000;
+.imageSection{
+  padding: 50px;
+}
+.imageSection img{
+  height: 300px;
+}
+.imageSection img:hover{
+  animation: jello 1s 1;
+}
+.title{
+  letter-spacing: 4px;
+  height: 50px;
+}
+.title h2{
+  padding-top: 10px;
   color: #fff;
-  font-size: 24px;
-  font-weight: lighter;
-  border-radius: 10px;
-  box-shadow: 0px 0px 0px 0px !important;
 }
-.TeamTittle h1{
-  font-size: 76px !important;
-  font-weight: lighter !important;
+.content h1{
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.TeamTittle span{
-  margin-left: 10px;
-  display: block;
+.desktop{
+  visibility: visible;
 }
-.aboutText{
-  font-size: 20px;
-  letter-spacing: 2px;
+.mobile{
+  visibility: collapse;
+
 }
 @media (max-width:480px)
 {
-  .TeamTittle{
-    text-align: center;
-    padding: 5px;
+  .imageSection img{
+    height: 150px;
   }
-  .TeamTittle h1{
-    font-size: 24px !important;
-    font-weight: lighter !important;
-    display: inline-block !important;
+  .desktop{
+    visibility: collapse;
   }
-  .TeamTittle span{
-    font-size: 24px;
-    margin-left: -8px;
-    display: inline-block;
+  .mobile{
+    visibility: visible;
+    margin-top: -750px;
   }
 .aboutUsPage{
   padding: 20px;
@@ -61,13 +73,4 @@ height: 500px;
 .aboutUsPage .container{
 margin-top: 100px;
 }
-.aboutText{
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-.aboutUsPage .container .row{
-height: 600px;
-}
-
-
 }

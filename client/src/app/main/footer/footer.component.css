@@ -4,11 +4,25 @@
 .footer-top-section {
   display: block;
   width: 100%;
-  background: #222426;
+  background: #1b1464;
   padding: 70px 0 60px;
 }
+
+.icon {
+  color: #fff;
+  font-size: 150px;
+  display: none;
+}
+
+@media screen and (min-width: 1024px){
+  .icon{
+    display: block;
+  }
+}
+
 .widget {
 }
+
 .headline {
   margin: 0;
   padding: 0;
@@ -20,32 +34,52 @@
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 .headline:before{
   content: "";
   width: 100px;
   height: 2px;
-  background: #46bfa9;
+  background: #00e576;
   display: block;
   position: absolute;
   bottom: -5px;
   left: 0;
 }
+
 .widget-item {
 }
+
 .widget-item > p {
-  color: #fff;
+  color: #9e9e9e;
   font-size: 14px;
   line-height: 24px;
 }
+
+.widget-item > p > span{
+  color: #fff;
+  cursor: pointer;
+}
+
+.widget-item > p > span a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.widget-item > p > span a:hover{
+  color: #00e576;
+}
+
 .widget-item > ul {
 }
+
 .widget-item > ul > li {
-  list-style: none;
+  list-style-type: none;
 }
 .widget-item > ul > li > a {
   font-weight: 600;
   font-size: 14px;
   color: #fff;
+  text-decoration: none;
   text-transform: capitalize;
   text-align: left;
   line-height: 30px;
@@ -56,12 +90,14 @@
   -o-transition: all 0.5s;
   transition: all 0.5s
 }
+
 .widget-item > ul > li > a:before{
-  content: "\f101";
+  content: "\f77a";
+  font-family: "FontAwesome";
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  color: #46bfa9;
+  color: #00e576;
   font-size: 14px;
   padding-right: 0.5em;
   position: absolute;
@@ -73,25 +109,25 @@
   transition: all 0.5s
 }
 .widget-item > ul > li > a:hover{
-  color: #46bfa9;
+  color: #00e576;
 }
-.tagcloud {
+/* .tagcloud {
   margin-left: -4px;
   margin-right: -4px;
 }
 .tagcloud > a {
   float: left;
-  background: #46bfa9;
+  background: #00e576;
   padding: 3px 8px;
   margin: 4px;
   font-size: 14px;
   font-weight: 400;
   color: #fff;
-  border-bottom: 1px solid #46bfa9;
+  border-bottom: 1px solid #00e576;
 }
 .tagcloud > a:hover{
   border-bottom: 1px solid #fff;
-}
+} */
 
 /* =======================
     FOOTER SECTION
@@ -111,7 +147,7 @@
   color: #fff;
 }
 .footer-section p a{
-  color: #46bfa9
+  color: #00e576;
 }
 .footer-section p a:hover{
   color: #fff;
@@ -121,7 +157,7 @@
   height: 0;
   border-style: solid;
   border-width: 0 25px 40px 25px;
-  border-color: transparent transparent #46bfa9 transparent;
+  border-color: transparent transparent #00e576 transparent;
   position: absolute;
   top: -60px;
   text-align: center;
@@ -147,4 +183,11 @@
   left: 0;
   right: 0;
   margin: 0 auto;
+}
+
+.logo img{
+  border-radius: 50%;
+  background-color: #fff;
+  width: 20px;
+  padding: 2px;
 }

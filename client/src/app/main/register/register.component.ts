@@ -11,6 +11,7 @@ import { ASSETS } from 'src/app/shared/assets';
 export class RegisterComponent implements OnInit, AfterViewInit {
 
   LOADER_IMAGE = ASSETS + "/Loader.svg"
+  REGISTRATION_BG_IMG = ASSETS + "/event-list-bg.svg"
   registerForm: FormGroup
   particpantsForm: FormGroup
   recaptchaForm: FormGroup
