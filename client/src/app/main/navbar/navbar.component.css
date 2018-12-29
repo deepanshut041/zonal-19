@@ -5,11 +5,11 @@
   position: relative;
   padding: 10px 0;
   top: 0px;
-  z-index: 500;
+  z-index: 99;
   width: 100%;
   left: 0;
   right: 0;
-  background: #1b1464;
+  background: #313840;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
