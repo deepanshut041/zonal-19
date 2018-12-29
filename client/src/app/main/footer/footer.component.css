@@ -19,7 +19,24 @@
     display: block;
   }
 }
-
+.logo-si{
+  width: 200px;
+  height: 200px;
+  background-color: #fff;;
+  border-radius: 50%;
+}
+.logo-si:hover{
+  animation: bounce 1s 1;
+  box-shadow: 0px 0px 40px 0px #000;
+  transition: .3s;
+}
+.logo-si img{
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  margin-left: 25px;
+  margin-bottom: 45px;
+}
 .widget {
 }
 
@@ -70,10 +87,13 @@
 }
 
 .widget-item > ul {
+  list-style-type: none;
 }
 
 .widget-item > ul > li {
   list-style-type: none;
+  color: #fff;
+  opacity: .8;
 }
 .widget-item > ul > li > a {
   font-weight: 600;
@@ -88,26 +108,10 @@
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
-  transition: all 0.5s
+  transition: all 0.5s;
+  opacity:1;
 }
 
-.widget-item > ul > li > a:before{
-  content: "\f77a";
-  font-family: "FontAwesome";
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  color: #00e576;
-  font-size: 14px;
-  padding-right: 0.5em;
-  position: absolute;
-  top: -5px;
-  left: 0;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s
-}
 .widget-item > ul > li > a:hover{
   color: #00e576;
 }
@@ -164,6 +168,10 @@
   margin: 0 auto;
   left: 0;
   right: 0;
+}
+.top-button:hover{
+  animation: bounce 1s infinite;
+
 }
 .top-button:before{
   font-style: normal;
