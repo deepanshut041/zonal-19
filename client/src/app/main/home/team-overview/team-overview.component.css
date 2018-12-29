@@ -15,6 +15,9 @@
   margin-top: -5px;
   animation: pulse 2s infinite;
 }
+.main-row{
+  background:rgba(0, 0, 0, 0.05);
+}
 
 .container .row{
   box-shadow: 0px 5px 20px -7px #000;

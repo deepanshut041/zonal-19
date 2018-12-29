@@ -56,7 +56,7 @@
 .year{
   position: absolute;
   font-size:4rem;
-  color: #000;
+  color: #fff;
   z-index: 105;
   cursor: pointer;
 }

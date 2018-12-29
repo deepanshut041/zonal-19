@@ -8,20 +8,27 @@ export class LandingPageService {
     threeActivator(elm) {
         var scene3d = elm
         var scene = new THREE.Scene(); //creating the scene
+        let height = document.body.clientHeight;
+        let width = document.body.clientWidth -10;
         // renderer = new THREE.CanvasRenderer( { alpha: true }); // gradient
-        var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var camera = new THREE.PerspectiveCamera(100, width / height, 0.1, 1000);
         var renderer = new THREE.WebGLRenderer({ alpha: true }); //rendering the scene
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize(width, height);
+        camera.updateProjectionMatrix();
         scene3d.appendChild(renderer.domElement);
+        console.log(width, height);
 
         window.addEventListener('resize', function () //resizing the canvas as per the size of window
         {
-            var width = window.innerWidth;
-            var height = window.innerHeight;
-            renderer.setSize(width, height);
+            let height = document.body.clientHeight;
+            let width = document.body.clientWidth - 10;
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
+            console.log(width, height);
+            renderer.setSize(width, height);
         });
+
 
 
         var geometry = new THREE.BoxGeometry(1, 1, 1);

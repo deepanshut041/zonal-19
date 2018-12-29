@@ -92,15 +92,7 @@
   opacity: 1
 }
 
-.contact-form  input.submit-btn{
-  display: inline-block;
-  background: transparent !important;
-  padding: 15px 60px !important;
-  border: none;
-  font-size: 16px;
-  text-transform: uppercase;
-  outline: none
-}
+
 #message .error_message{
   display: block;
   width: 100%;
@@ -118,25 +110,12 @@
   font-size: 20px;
 }
 
-.contact-form{
-  margin-top: 40px;
-  display: block;
-}
 .contact-form .col-md-6{
   display: block;
 }
 
-.contact-form .input-group{
-  width: 100%;
-  display: block;
-}
-.contact-form  input.form-control, .contact-form textarea.form-control{
-  width: 100%;
-  display: block;
-  background: transparent;
-  border: 1px solid #fff;
-  height: 50px;
-}
+
+
 .contact-form  textarea.form-control{
   height: 120px;
 }
