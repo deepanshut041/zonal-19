@@ -8,7 +8,7 @@
   z-index: 99;
   text-align: center;
   width: 100%;
-  top: 30%;
+  top: 27%;
   color: #000;
   font-size: 4.5rem;
   font-weight: lighter !important;
@@ -64,22 +64,23 @@
   animation: bounce 1s infinite;
 }
 .two{
-  top: 66%;
-  left: 10%;
+  bottom: 1vh;
+  left: 34%;
   transform: rotateZ(-5deg);
 }
 .zero{
-  top: 85%;
-  left: 31.5%;
+  bottom: 6vh;
+  left: 44%;
   transform: rotateZ(5deg);
 }
 .one{
-  top: 74%;
-  left: 62%;
+  bottom: 6vh;
+  left: 56%;
+  transform: rotateZ(-10deg);
 }
 .nine{
-  top: 87%;
-  left: 89%;
+  bottom: 5vh;
+  left: 64%;
   transform: rotateZ(15deg);
 }
 #scene3d {
@@ -101,14 +102,13 @@ canvas {
 }
 
 .mobileImage{
-  display: none;
+  visibility: collapse;
 }
 
 .desktopImage{
   position: absolute;
   left: 0;
   bottom: 0;
-
 }
 @media (max-width:480px){
   .desktopImage{
@@ -116,12 +116,15 @@ canvas {
   }
   .mobileImage{
   visibility: visible;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   }
   .LandingPage{
     margin-top: -300px;
   }
   .LandingPage .MainHeader{
-    top: 35%;
+    top: 30%;
     font-size: 3rem;
     font-weight: lighter !important;
     letter-spacing: 10px;
@@ -133,13 +136,7 @@ canvas {
     font-weight: lighter !important;
     text-shadow: 0px 2px 8px 1px #1b1464;
   }
-  .frontImage{
-    width: 100%;
-    height: 150px;
-    position: absolute;
-    z-index: 100;
-    top: 501px;
-  }
+
   .box1{
     position: absolute;
     width: 60px;
