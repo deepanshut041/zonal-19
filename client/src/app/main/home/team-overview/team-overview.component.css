@@ -5,6 +5,11 @@
   z-index: -1;
   left: 0;
 }
+
+.container-fluid{
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
 .bgSvg img{
   height: 550px;
   margin-top: -5px;

@@ -9,7 +9,7 @@
   text-align: center;
   width: 100%;
   top: 30%;
-  color: #fff;
+  color: #000;
   font-size: 4.5rem;
   font-weight: lighter !important;
   letter-spacing: 40px;
@@ -22,7 +22,7 @@
   text-align: center;
   width: 100%;
   top: 18%;
-  color: #fff;
+  color: #000;
   font-size: 1rem;
   font-weight: lighter !important;
   text-shadow: 0px 2px 8px 1px #1b1464;
@@ -85,7 +85,8 @@
 #scene3d {
 	width: 300px;
 	height: 300px;
-	background: red;
+  background: #fff;
+  opacity: 1;
 }
 
 .fullPage{
