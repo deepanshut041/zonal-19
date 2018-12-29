@@ -9,6 +9,7 @@
 .bgSvg img{
   height: 550px;
   padding-top: 5px;
+  animation: pulse 2s infinite;
 }
 .aboutUsPage .container{
 margin-top: 0px;
