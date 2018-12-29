@@ -1,11 +1,13 @@
-.RegisterPage{
-  min-height: 100vh;
+.main-container{
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 .register-page-row{
   box-shadow: 0px 5px 20px -7px #000;
   border-radius: 10px;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  background: #fff;
 }
 mat-form-field{
   width: 100%;

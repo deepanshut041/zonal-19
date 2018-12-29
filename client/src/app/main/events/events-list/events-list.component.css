@@ -1,13 +1,13 @@
 .fluid-container{
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 20px;
+  padding-top: 50px;
 }
 
 
 .event-card{
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 100px;
   height: 300px;
 }
 
@@ -23,11 +23,9 @@
   height: 250px;
   margin: auto;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid #212121;
   z-index: 1;
   position: absolute;
-  left: 15%;
-  border: 2px solid #212121;
   cursor: pointer;
 }
 
@@ -82,7 +80,7 @@
   display: block;
   padding-top: 50px;
   font-weight: lighter;
-  left: 15%;
+  margin:auto;
 }
 
 .event-card .event:hover{
@@ -94,21 +92,21 @@
   transition: .7s;
   box-shadow: 0px 0px 20px -5px #000;
 }
-/* team */
-@media (max-width:480px)
+
+/* @media (max-width:480px)
 {
-  /* team */
+
   .event-card{
     padding: 20px;
     margin-top: 10px;
   }
   .event-card img{
-    left: 5%;
+    left: 10%;
   }
   .event-card .event{
     left: 5%;
   }
-}
+} */
 
 .more-button {
   background-color: #000;
@@ -119,3 +117,24 @@
   letter-spacing: 1px;
   font-size: 1.2rem !important;
   }
+
+  .back-btn{
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    margin-top: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: #1b1464;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 100;
+  }
+
+.back-btn:hover{
+  background-color: #fff;
+  border: 1px solid #1b1464;
+  color: #000;
+}
