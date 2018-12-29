@@ -9,6 +9,8 @@ import { ASSETS } from 'src/app/shared/assets';
 export class TeamOverviewComponent implements OnInit {
 
   IMG = ASSETS + '/Events.svg';
+  BACKGROUND_IMG = ASSETS + '/teamBg.svg';
+  BACKGROUND_MOBILE_IMG = ASSETS + '/aboutBackgroundMobile.svg';
 
   constructor() { }
 
