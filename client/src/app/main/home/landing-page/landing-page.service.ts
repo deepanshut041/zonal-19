@@ -8,8 +8,8 @@ export class LandingPageService {
     threeActivator(elm) {
         var scene3d = elm
         var scene = new THREE.Scene(); //creating the scene
-        scene.background = new THREE.Color(0xbf360c, 0.0);
-        renderer = new THREE.CanvasRenderer( { alpha: true }); // gradient
+        scene.background = new THREE.Color(0x000000, 0);
+        // renderer = new THREE.CanvasRenderer( { alpha: true }); // gradient
         var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
         var renderer = new THREE.WebGLRenderer({ alpha: true }); //rendering the scene
         renderer.setSize(window.innerWidth, window.innerHeight);

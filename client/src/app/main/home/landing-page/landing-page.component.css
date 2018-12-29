@@ -1,11 +1,7 @@
-.html{
-  background: #11e8bb; /* Old browsers */
-  background: linear-gradient(to bottom,  #11e8bb 0%,#8200c9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
+
 .LandingPage{
   z-index: 0;
   margin-top: -300px;
-  background-color: red;
 }
 .LandingPage .MainHeader{
   position: absolute;
