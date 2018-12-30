@@ -29,10 +29,14 @@
   transition: all 0.5s;
 } */
 .navbar {
-  margin: 0;
   background: #1b1464;
   min-height: initial;
-  box-shadow: none;
+  padding: 10px;
+  box-shadow: 0px 5px 10px -6px #000;
+}
+.puzzle{
+  margin-right: 10px;
+  font-size: 24px;
 }
 .navbar-toggler-icon {
   color: #fff;

@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       'branch': [null, Validators.compose([Validators.required, Validators.maxLength(50), Validators.minLength(3)])],
       'year': [null, Validators.compose([Validators.required])],
       'gender': [null, Validators.compose([Validators.required])],
-      'aadhar_no': [null, Validators.compose([Validators.required, Validators.maxLength(16), Validators.minLength(16), Validators.pattern(numberFormat)])],
+      'aadhar_no': [null, Validators.compose([Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern(numberFormat)])],
       'phn_no': [null, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(numberFormat)])],
       'email': [null, Validators.compose([Validators.required, Validators.pattern(emailFormat)])]
     });
@@ -144,7 +144,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         (success) => {
           this.form_progress = false;
           this.form_success = true;
-          setTimeout(() => {    //<<<---    using ()=> syntax
+          setTimeout(() => {
             this.registerForm.reset();
             this.resetParticipants();
             this.particpantsForm.reset();

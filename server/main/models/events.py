@@ -138,7 +138,7 @@ class EventParticipantModel(models.Model):
     branch = models.CharField(max_length=50, null=False)
     year = models.IntegerField(default=0, null=False, choices=YEAR_CHOICES)
     gender = models.CharField(max_length=10, null=False, choices=GENDER_CHOICES)
-    aadhar_no = models.CharField(null=False, max_length=16, validators=[RegexValidator(regex='^.{16}$', message='Length has to be 16', code='nomatch')])
+    aadhar_no = models.CharField(null=False, max_length=16, validators=[RegexValidator(regex='^.{12}$', message='Length has to be 16', code='nomatch')])
     phn_no = models.CharField(null=False, max_length=10, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
     email = models.EmailField(null=False)
     regs_id = models.CharField(max_length=130, null=True)

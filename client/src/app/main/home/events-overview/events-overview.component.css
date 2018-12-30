@@ -1,5 +1,6 @@
 .bigBlock{
   width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 0;
   margin-top: -130px;
@@ -57,6 +58,7 @@ display: inline-block;
 }
 .EventsDesign img{
 width: 100%;
+min-height: 200px;
 }
 .EventsDesign img:hover{
 animation: tada 1s 1;
@@ -185,8 +187,10 @@ margin-top: 0px;
   background-color: #1b1464;
 }
 .EventsDesign img{
-  position: absolute;
-  left: 35%;
+
+}
+.mobileHeight{
+  
 }
 .EventsDesign .windowScreen-event{
   width: 100px;
