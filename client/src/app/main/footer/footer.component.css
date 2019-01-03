@@ -25,11 +25,11 @@
   background-color: #fff;;
   border-radius: 50%;
 }
-.logo-si:hover{
+/* .logo-si:hover{
   animation: bounce 1s 1;
   box-shadow: 0px 0px 40px 0px #000;
   transition: .3s;
-}
+} */
 .logo-si img{
   width: 150px;
   height: 150px;

@@ -1,12 +1,17 @@
 <div class="fluid-container" [ngStyle]="{'background-image':'url(' + EVENT_BG_IMG + ')'}">
+    <div class="back-btn" routerLink="/events"><i class="fas fa-arrow-left"></i></div>
   <div *ngIf="event" class="container">
+
     <div class="row">
-      <div class="col-12 event-name" [ngStyle]="{'background-color' : ' + event.color +'}">
+      <div class="col-12 event-name" [ngStyle]="{
+        'background-color' :  event.color
+      }">
         <h3>{{event.name}}</h3>
+        <img src={{event.image}}>
       </div>
       <div class="col-12 event-schedule">
         <div class="event-date">
-          <h3><i class="far fa-calendar-alt"></i>{{event.date}}</h3>
+          <h3><i class="far fa-calendar-alt"></i> {{event.date}}</h3>
         </div>
         <div class="event-time">
           <h4><i class="far fa-clock"></i>{{event.time}}</h4>
@@ -16,110 +21,37 @@
         </div>
       </div>
       <div class="col-12 event-detail">
-        <h6 [ngStyle]="{'border-bottom' : '1px solid ' + event.color +' '}">Event Details</h6>
+        <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Event Details</h3>
         <p>{{event.details}}</p>
       </div>
       <div class="col-12 event-rules">
-
+        <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Event Details</h3>
+        <p>{{event.details}}</p>
       </div>
       <div class="col-12 faculty-coordinator">
-
+        <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Faculty Coordinator</h3>
+        <div class="left">
+          <div class="faculty-img">
+            <img src="{{event.faculty_image}}">
+          </div>
+        </div>
+        <div class="right">
+          <h6>{{event.faculty_name}}</h6>
+          <h6>{{event.department}}</h6>
+        </div>
       </div>
-      <div class="col-12 student-cordinator">
-
+      <div class="col-12 student-coordinator">
+        <h6 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Student Coordinators</h6>
+        <div class="row">
+          <div class="col-6" *ngFor="let coordinator of event.coordinators">
+            <div class="student-img">
+              <img src="{{coordinator.name}}">
+            </div>
+            <h6>{{coordinator.name}}</h6>
+            <h6>{{coordinator.phn_no}}</h6>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div *ngIf="event">
-    <div class="container fullPage">
-    <div class="fixedbutton">
-      <div class="btn">
-        <!-- <i class="fas fa-cash-register"></i>-->Register
-      </div>
-    </div>
-    <div class="row topRow">
-      {{event.name}}
-    </div>
-    <div class="row BottomRow">
-      <div class="col-12 bottomColumn">
-        <div class="row "> <!--Event main-details row starts-->
-          <div class="col-12 EventImage text-center " [ngStyle]="{'background-color' : ' + event.color +'}">Event Image
-            <img src="{{event.image}}"/>
-          </div>
-          <div class="col-12 EventDetails">
-            <div class="row">
-              <div class="col-lg-10 col-sm-12 "><!--Event Details-->
-                <h4>Event Details</h4>
-                <p>{{event.details}}</p>
-              </div>
-              <div class="col-lg-2 col-sm-12 align-self-center">
-                <div class="row">
-                  <div class="col-lg-12 col-sm-4 eventDate text-center"><!--Event Date-->
-                    <i class="far fa-calendar-alt"></i>{{event.date}}
-                  </div>
-                  <div class="col-lg-12 col-sm-4 eventTime text-center"><!--Event Time-->
-                    <i class="far fa-clock"></i>{{event.time}}
-                  </div>
-                  <div class="col-lg-12 col-sm-4 EventVenue text-center"><!--Event Venue-->
-                    <i class="far fa-map-marker-alt"></i>{{event.venue}}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="colorSpace text-center">
-            Rules
-          </div>
-          <div class="col-12 RulesList"><!--Event Rules-->
-            <p>
-              {{event.rules}}
-            </p>
-          </div>
-          <div class="colorSpace text-center">
-            Faculty Co-ordinator
-          </div>
-          <div class="col-12">
-            <div class="row"><!--Event Faculty incharge , Department, Participants no.-->
-              <div class="col-lg-4 col-sm-12 EventCard">
-                <img src="{{event.faculty_image}}" alt="event image">
-                <div class="eventDetails row">
-                  <div class="col-lg-6 col-sm-6 facultyName text-center">{{event.faculty_name}}</div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-4 department text-center">
-                {{event.department}}
-              </div>
-            </div>
-          </div>
-          <div class="colorSpace text-center">
-            Student Co-ordinators
-          </div>
-          <div class="col-12"> <!--Event Co-ordinators-->
-            <div class="row">
-              <div class="col-lg-6 col-sm-12" *ngFor="let coordinator of event.coordinators"><!--first mid scetion-->
-                <div class="row">
-                  <div class="col-lg-4 col-sm-4 EventCard">
-                    <img src="{{coordinator.image}}" alt="event image"><!--student image-->
-                  </div>
-                  <div class="col-lg-8 col-sm-8">
-                    <div class="row">
-                      <div class="col-12 text-center"><!--student name-->
-                        {{coordinator.name}}
-                      </div>
-                      <div class="col-12 text-center"><!--student contact details-->
-                        {{coordinator.phn_no}}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!--Event main-details row ends-->
-      </div>
-    </div>
-  </div>
-</div>
-
-
