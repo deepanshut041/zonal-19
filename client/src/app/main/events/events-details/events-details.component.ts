@@ -11,7 +11,7 @@ import { ASSETS } from 'src/app/shared/assets';
 })
 export class EventsDetailsComponent implements OnInit {
   event: any;
-  EVENT_BG_IMG = ASSETS + '/event-list-bg.svg';
+  EVENT_BG_IMG = ASSETS + '/event-list-bg.svg'
   EVENT_PG_IMG = ASSETS + '/Rules.svg'
   constructor(private _mainService: MainService, private activeRoute: ActivatedRoute) {
 

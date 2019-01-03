@@ -9,6 +9,11 @@ overflow-y: scroll;
 font-family: 'GT';
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+
 @font-face {
   font-family: 'GT';
   src: url('/static/ang/assets/font/gthaptikbold.woff2') format('woff2');

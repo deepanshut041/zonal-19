@@ -1,3 +1,15 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<mat-sidenav-container class="fluid-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <app-menu></app-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content" [ngStyle]="{'background-image': 'url('+ BG_IMG +')'}">
+      <button class="button" (click)="sidenav.toggle()">
+        <i *ngIf="!opened" class="fas fa-bars"></i>
+        <i *ngIf="opened" class="fas fa-times"></i>
+      </button>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
