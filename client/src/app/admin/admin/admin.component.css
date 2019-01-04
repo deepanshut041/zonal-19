@@ -4,6 +4,14 @@ width: 100%;
 overflow: hidden;
 }
 
+.container{
+  margin: auto;
+  margin-top: 80px;
+  background-color: rgba(255,255,255,0.9);
+  min-height: 700px;
+  border-radius: 0.125rem;
+}
+
 .content{
   background-size: cover;
   background-repeat: no-repeat;
@@ -42,4 +50,5 @@ overflow: hidden;
   background-color: #1b1464;
   color: #fff;
   outline: none;
+  cursor: pointer;
 }

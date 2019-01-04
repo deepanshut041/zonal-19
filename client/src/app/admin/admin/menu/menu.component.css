@@ -35,6 +35,7 @@ ul{
   padding: 20px;
   cursor: pointer;
   transition: 0.3s;
+  outline: none;
 }
 
 .buttons button:hover{

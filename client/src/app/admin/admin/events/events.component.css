@@ -1,0 +1,32 @@
+.events{
+  padding: 50px;
+}
+
+.heading{
+  text-align: center;
+}
+
+.btn{
+  margin: 10px;
+  outline: none;
+}
+
+.btn-primary{
+  background-color: #1b1464;
+}
+
+.content{
+  margin-top: 80px;
+}
+
+mat-panel-description h6{
+  margin: auto 10px;
+}
+
+mat-form-field textarea{
+  height: 100px;
+}
+
+.event-info img{
+  margin: 10px;
+}

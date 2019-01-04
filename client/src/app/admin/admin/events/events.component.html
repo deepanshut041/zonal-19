@@ -1,1 +1,82 @@
-<router-outlet></router-outlet>
+<div *ngIf="events" class="events">
+  <h1 class="heading">Events</h1>
+  <div class="add-event">
+    <button class="btn btn-primary float-right" (click)="openDialog()">Add event</button>
+  </div>
+  <div class="content">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let event of events">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{event.name}}
+          </mat-panel-title>
+          <mat-panel-description>
+            <h6><i class="far fa-calendar-alt"></i> {{event.date}}</h6>
+            <h6><i class="far fa-clock"></i> {{event.time}}</h6>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <form class="" [formGroup]="updateForm">
+          <div class="event-info row">
+            <div class="col-12">
+              <img src={{event.image}} alt="event image not found">
+            </div>
+
+            <mat-form-field class="col-4">
+              <input matInput placeholder="Event Name" [value]="event.name">
+            </mat-form-field>
+
+            <mat-form-field class="col-4">
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date" [value]="event.date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker touchUi #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="col-4">
+              <input matInput type="time" placeholder="Choose a time" [value]="event.time">
+              <mat-icon matSuffix><i class="far fa-clock"></i></mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="col-4">
+              <input matInput placeholder="Choose a Venue" [value]="event.venue">
+              <mat-icon matSuffix><i class="fas fa-map-marker-alt"></i></mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="col-4">
+              <input matInput placeholder="Department" [value]="event.department">
+            </mat-form-field>
+
+            <mat-form-field class="col-4">
+              <input matInput type="number" placeholder="Maximum Participants" [value]="event.maxp">
+            </mat-form-field>
+
+            <mat-form-field class="col-4">
+              <input matInput placeholder="Event Theme Color" [value]="event.color">
+            </mat-form-field>
+
+            <mat-form-field class="col-12">
+              <textarea matInput type="text" placeholder="Event Details" [value]="event.details"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="col-12">
+              <textarea matInput type="text" placeholder="Event Rules " [value]="event.rules"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="col-4">
+              <input matInput placeholder="Faculty Incharge" [value]="event.faculty_name">
+            </mat-form-field>
+
+            <div class="col-8">
+              <img src={{event.faculty_image}} alt="Faculty image not found">
+              <p>Faculty Image</p>
+            </div>
+
+          </div>
+          <div class="buttons">
+            <button class="btn btn-danger float-right">Delete</button>
+            <button class="btn btn-primary float-right">Update</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

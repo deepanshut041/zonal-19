@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './admin/home/home.component';
 import { EventsComponent } from './admin/events/events.component';
+import { CoordinatorsComponent } from './admin/coordinators/coordinators.component';
 
 
 const routes: Routes = [
   { path: '', component: AdminComponent, children: [
     {path: '', component: HomeComponent},
-    {path: 'events', component: EventsComponent}
+    {path: 'events', component: EventsComponent},
+    {path: 'coordinators', component: CoordinatorsComponent},
   ]}
 ];
 

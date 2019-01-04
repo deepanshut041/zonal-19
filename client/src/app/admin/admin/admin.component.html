@@ -9,7 +9,9 @@
         <i *ngIf="!opened" class="fas fa-bars"></i>
         <i *ngIf="opened" class="fas fa-times"></i>
       </button>
-      <router-outlet></router-outlet>
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

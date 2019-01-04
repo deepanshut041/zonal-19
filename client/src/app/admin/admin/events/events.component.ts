@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../admin.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-events',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  constructor() { }
+  updateForm: FormGroup
+  events:any[]
+
+
+  constructor(private _adminService: AdminService) { }
 
   ngOnInit() {
+    this._adminService.getEvents().subscribe((events)=>{
+      this.events = events["results"]
+      console.log(events)
+    }, (err)=>{
+      console.log(err)
+    })
   }
 
 }
