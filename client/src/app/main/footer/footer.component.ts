@@ -8,7 +8,7 @@ import { ASSETS } from 'src/app/shared/assets';
 })
 export class FooterComponent implements OnInit {
 
-  SI_LOGO = ASSETS + '/akg-logo.png';
+  LOGO = ASSETS + '/akg-logo.png';
 
   constructor() { }
 

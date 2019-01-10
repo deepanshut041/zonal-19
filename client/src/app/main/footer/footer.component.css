@@ -24,6 +24,7 @@
   height: 200px;
   background-color: #fff;;
   border-radius: 50%;
+  margin: auto;
 }
 /* .logo-si:hover{
   animation: bounce 1s 1;
@@ -31,12 +32,11 @@
   transition: .3s;
 } */
 .logo-si img{
-  width: 150px;
-  height: 150px;
-  margin: auto;
-  margin-left: 25px;
-  margin-bottom: 45px;
+  width: 100%;
+  margin: 2px auto;
+  vertical-align: top;
 }
+
 .widget {
 }
 
