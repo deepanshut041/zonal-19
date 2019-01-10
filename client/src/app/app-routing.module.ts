@@ -13,7 +13,6 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 import { RegisterComponent } from './main/register/register.component';
 
 const routes: Routes = [
-    { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
     {
       path: '', component: MainComponent, children: [
         {path: '', component: HomeComponent},
@@ -21,7 +20,6 @@ const routes: Routes = [
           {path: '', component: EventsListComponent},
           {path: ':id', component: EventsDetailsComponent}
         ]},
-        {path: 'register', component: RegisterComponent}
     ]},
     { path: 'auth', component: AuthComponent, children: [
       {path: 'sign-in', component: SignInComponent},

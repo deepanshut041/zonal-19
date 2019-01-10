@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ASSETS } from 'src/app/shared/assets';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  AKG_LOGO = ASSETS + '/akg-logo.png'
 
   constructor() { }
 
