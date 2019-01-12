@@ -8,7 +8,10 @@ import { ASSETS } from 'src/app/shared/assets';
 })
 export class TeamOverviewComponent implements OnInit {
 
-  IMG = ASSETS + '/Events.svg';
+  IMG = ASSETS + '/parashar_sir.jpg';
+  IMG_1 = ASSETS + '/Eeshank Karanwal.jpg';
+  IMG_2 = ASSETS + '/Kunal Rajpoot.jpg';
+  IMG_3 = ASSETS + '/yash_saxena.jpg';
   IMG_4 = ASSETS + '/developer(deepanshu).jpg';
   IMG_5 = ASSETS + '/developer(sarthak).jpg';
   IMG_6 = ASSETS + '/developer(prabhanshu).jpg';
