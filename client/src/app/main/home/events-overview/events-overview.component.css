@@ -181,29 +181,30 @@ visibility: hidden;
 margin-top: 0px;
 }
 .EventsDesign{
-  height: 0px;
+  height: 200px;
   padding: 50px;
   margin-top: 0px;
   background-color: #1b1464;
 }
 .EventsDesign img{
-
+ width: 200px !important;
+ margin:  auto;
 }
 .mobileHeight{
-  
+
 }
 .EventsDesign .windowScreen-event{
   width: 100px;
 }
 .EventsPage .container .row{
-height: 250px;
+height: 350px;
 }
 .EventButton {
 padding: 10px;
 display: inline-block;
 letter-spacing: 1px;
 font-size: 1rem !important;
-margin-top: -100px;
+margin-top: -196px;
 }
 .box1{
   width: 60px;
@@ -222,7 +223,7 @@ margin-top: -100px;
 
 .EventsBox
 {
-  margin-top: 5px
+  margin-top: 5px;
 }
 .card{
   height: 100px;

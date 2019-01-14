@@ -56,12 +56,28 @@
       </div>
       <div class="col-12 student-coordinator" *ngIf="participants">
         <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Event Participants</h3>
-        <ul>
-          <li *ngFor="let participant of participants">
-            {{participant.name}} -- {{participant.college_name}} -- {{participant.university_roll}} -- {{participant.year}}
-            -- {{participant.branch}} -- {{participant.gender}} -- {{participant.phn_no}}
-          </li>
-        </ul>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Participant Name</th>
+                <th scope="col">College</th>
+                <th scope="col">University Roll-No.</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Year</th>
+                <th scope="col">Phone No.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let participant of participants">
+                <td>{{participant.name}}</td>
+                <td>{{participant.college_name}}</td>
+                <td>{{participant.university_roll}}</td>
+                <td>{{participant.branch}}</td>
+                <td>{{participant.year}}</td>
+                <td>{{participant.phn_no}}</td>
+              </tr>
+            </tbody>
+          </table>
       </div>
     </div>
   </div>

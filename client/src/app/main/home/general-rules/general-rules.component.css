@@ -1,0 +1,53 @@
+.fluid-container{
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5%;
+  padding-top: 50px;
+}
+
+.container{
+  margin-top: 100px;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: .15rem;
+}
+
+.heading{
+  border-bottom: 2px solid #1b1464;
+}
+
+ul{
+  list-style-type: none;
+}
+
+li{
+  list-style-type: none;
+  padding: 10px;
+}
+
+li h6{
+  display: inline;
+  margin: 5px;
+}
+
+
+.back-btn{
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  margin-top: 50px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: #1b1464;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.back-btn:hover{
+background-color: #fff;
+border: 1px solid #1b1464;
+color: #000;
+}

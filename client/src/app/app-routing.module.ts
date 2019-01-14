@@ -11,12 +11,14 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { RegisterComponent } from './main/register/register.component';
+import { GeneralRulesComponent } from './main/home/general-rules/general-rules.component';
 
 const routes: Routes = [
     {
       path: '', component: MainComponent, children: [
         {path: '', component: HomeComponent},
         {path:'register', component:RegisterComponent},
+        {path:'rules', component:GeneralRulesComponent},
         {path: 'events', component: EventsComponent, children: [
           {path: '', component: EventsListComponent},
           {path: ':id', component: EventsDetailsComponent}

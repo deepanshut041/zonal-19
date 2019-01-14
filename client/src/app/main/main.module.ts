@@ -38,6 +38,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgwWowModule } from 'ngx-wow';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { ContactUsComponent } from './home/contact-us/contact-us.component';
+import { GeneralRulesComponent } from './home/general-rules/general-rules.component';
 
 
 
@@ -49,7 +50,7 @@ import { ContactUsComponent } from './home/contact-us/contact-us.component';
   ],
   declarations: [
     MainComponent, NavbarComponent, FooterComponent, HomeComponent, LandingPageComponent, EventsOverviewComponent,
-    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent, ScheduleOverviewComponent, AboutUsComponent, ContactUsComponent
+    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent, ScheduleOverviewComponent, AboutUsComponent, ContactUsComponent, GeneralRulesComponent
   ],
   providers:[MainService,LandingPageService]
 })
