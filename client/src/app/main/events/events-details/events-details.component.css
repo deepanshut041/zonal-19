@@ -56,3 +56,8 @@ color: #000;
 .event-schedule, .event-details, .event-rules, .faculty-coordinator, .student-coordinator{
   margin-top: 50px;
 }
+
+.faculty-img, .student-img img{
+  width: 200px;
+  height: 200px;
+}
