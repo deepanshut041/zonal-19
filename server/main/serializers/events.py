@@ -67,6 +67,12 @@ class EventRegistrationSerializer(serializers.ModelSerializer):
         if len(participants) > dict_event['maxp']:
             raise serializers.ValidationError("Paticpants exceeds provided limit")
 
-        EventRegistrationModel.objects.do_registration(registration_data, participants, True)
+        EventRegistrationModel.objects.do_registration(registration_data, participants, False)
         
         return validated_data
+
+class EventParticipantsPartialSerializer(serializers.ModelSerializer):
+    college_name = serializers.CharField(source='registration.college_name', read_only=True) 
+    class Meta:
+        model = EventParticipantModel
+        fields = ("college_name", "name", "university_roll", "year", "branch", "gender", "phn_no")

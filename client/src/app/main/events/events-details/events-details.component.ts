@@ -11,6 +11,7 @@ import { ASSETS } from 'src/app/shared/assets';
 })
 export class EventsDetailsComponent implements OnInit {
   event: any;
+  participants:any[];
   EVENT_BG_IMG = ASSETS + '/event-list-bg.svg'
   EVENT_PG_IMG = ASSETS + '/Rules.svg'
   constructor(private _mainService: MainService, private activeRoute: ActivatedRoute) {
@@ -22,7 +23,12 @@ export class EventsDetailsComponent implements OnInit {
         this._mainService.getEvent(params['id'])
           .subscribe((event) => {
             this.event = event;
-            console.log(event);
+          }, (err) => {
+            console.log(err);
+          });
+        this._mainService.getEventParticipants(params['id'])
+          .subscribe((p) => {
+            this.participants = p["results"];
           }, (err) => {
             console.log(err);
           });

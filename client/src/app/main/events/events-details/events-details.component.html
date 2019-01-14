@@ -54,6 +54,15 @@
           </div>
         </div>
       </div>
+      <div class="col-12 student-coordinator" *ngIf="participants">
+        <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Event Participants</h3>
+        <ul>
+          <li *ngFor="let participant of participants">
+            {{participant.name}} -- {{participant.college_name}} -- {{participant.university_roll}} -- {{participant.year}}
+            -- {{participant.branch}} -- {{participant.gender}} -- {{participant.phn_no}}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

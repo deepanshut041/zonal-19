@@ -16,6 +16,7 @@ const routes: Routes = [
     {
       path: '', component: MainComponent, children: [
         {path: '', component: HomeComponent},
+        {path:'register', component:RegisterComponent},
         {path: 'events', component: EventsComponent, children: [
           {path: '', component: EventsListComponent},
           {path: ':id', component: EventsDetailsComponent}

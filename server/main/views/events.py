@@ -2,7 +2,7 @@ from rest_framework.viewsets import ModelViewSet, ViewSet
 from django.http import Http404
 from rest_framework import viewsets, mixins, serializers
 from ..models.events import EventModel, EventCoordinatorModel, EventParticipantModel, EventRegistrationModel
-from ..serializers.events import EventModelSerializer, EventDetailSerializer, EventShortSerializer, EventCoordinatorSerializer
+from ..serializers.events import EventModelSerializer, EventDetailSerializer, EventShortSerializer, EventCoordinatorSerializer, EventParticipantsPartialSerializer
 from ..serializers.events import EventParticipantsSerializer, EventRegistrationSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -84,6 +84,19 @@ class EventRegistrationView(ModelViewSet):
 class EventParticipantView(ModelViewSet):
     queryset = EventParticipantModel.objects.all()
     serializer_class = EventParticipantsSerializer
-    permission_classes = (IsAdminUser, IsSuperUser, )
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('registration__college_code', 'registration__event')
+
+    def get_permissions(self):
+        # Your logic should be all here
+        if self.action in ('create', 'update', 'partial_update', 'destroy', 'retrieve'):
+            self.permission_classes = [IsSuperUser, IsAdminUser, ]
+        else:
+            self.permission_classes = [AllowAny, ]
+
+        return super(EventParticipantView, self).get_permissions()
+    
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return EventParticipantsPartialSerializer
+        return super(EventParticipantView, self).get_serializer_class()
