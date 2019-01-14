@@ -32,7 +32,7 @@ class EventCoordinatorModel(models.Model):
     event = models.ForeignKey(EventModel, on_delete=models.CASCADE, related_name="coordinators")
 
     def __str__(self):
-        return str(self.name + " - " + self.branch + " - " + self.year)
+        return str(self.name) + " - " + str(self.branch) + " - " + str(self.year)
 
 class EventRegistrationManager(models.Manager):
     @transaction.atomic

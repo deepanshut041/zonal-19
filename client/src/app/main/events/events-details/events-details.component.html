@@ -22,33 +22,35 @@
       </div>
       <div class="col-12 event-detail">
         <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Event Details</h3>
-        <p>{{event.details}}</p>
+        <p innerHtml="{{event.details}}"></p>
       </div>
       <div class="col-12 event-rules">
-        <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Event Details</h3>
-        <p>{{event.details}}</p>
+        <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Event Rules</h3>
+        <p innerHtml="{{event.rules}}"></p>
       </div>
       <div class="col-12 faculty-coordinator">
         <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Faculty Coordinator</h3>
-        <div class="left">
-          <div class="faculty-img">
-            <img src="{{event.faculty_image}}">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 col-12">
+            <div class="faculty-img">
+              <img src="{{event.faculty_image}}" class="img-fluid">
+            </div>
           </div>
-        </div>
-        <div class="right">
-          <h6>{{event.faculty_name}}</h6>
-          <h6>{{event.department}}</h6>
+          <div class="col-md-6 col-lg-8 col-12">
+            <h6>{{event.faculty_name}}</h6>
+            <h6>{{event.department}}</h6>
+          </div>
         </div>
       </div>
       <div class="col-12 student-coordinator">
-        <h6 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Student Coordinators</h6>
+        <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Student Coordinators</h3>
         <div class="row">
-          <div class="col-6" *ngFor="let coordinator of event.coordinators">
+          <div class="col-3" *ngFor="let coordinator of event.coordinators">
             <div class="student-img">
-              <img src="{{coordinator.name}}">
+              <img src="{{coordinator.image}}" class="img-fluid">
             </div>
-            <h6>{{coordinator.name}}</h6>
-            <h6>{{coordinator.phn_no}}</h6>
+            <h6 class="text-center">{{coordinator.name}}</h6>
+            <h6 class="text-center">{{coordinator.phn_no}}</h6>
           </div>
         </div>
       </div>
