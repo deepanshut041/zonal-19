@@ -1,12 +1,12 @@
 <div class="fluid-container" [ngStyle]="{'background-image':'url(' + EVENT_BG_IMG + ')'}">
-    <div class="back-btn" routerLink="/events"><i class="fas fa-arrow-left"></i></div>
+  <div class="back-btn" routerLink="/events"><i class="fas fa-arrow-left"></i></div>
   <div *ngIf="event" class="container">
 
     <div class="row">
       <div class="col-12 event-name" [ngStyle]="{
         'background-color' :  event.color
       }">
-        <h3>{{event.name}}</h3>
+        <h4 class="heading">{{event.name}}</h4>
         <img src={{event.image}}>
       </div>
       <div class="col-12 event-schedule">
@@ -55,15 +55,17 @@
         </div>
       </div>
       <div class="col-12 student-coordinator" *ngIf="participants">
-        <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Event Participants</h3>
-        <table class="table table-striped">
+        <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Participants</h3>
+        <div class="table-responsive">
+          <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Participant Name</th>
+                <th scope="col">Name</th>
                 <th scope="col">College</th>
                 <th scope="col">University Roll-No.</th>
                 <th scope="col">Branch</th>
                 <th scope="col">Year</th>
+                <th scope="col">Gender</th>
                 <th scope="col">Phone No.</th>
               </tr>
             </thead>
@@ -74,10 +76,12 @@
                 <td>{{participant.university_roll}}</td>
                 <td>{{participant.branch}}</td>
                 <td>{{participant.year}}</td>
+                <td>{{participant.gender}}</td>
                 <td>{{participant.phn_no}}</td>
               </tr>
             </tbody>
           </table>
+        </div>
       </div>
     </div>
   </div>

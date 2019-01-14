@@ -49,6 +49,7 @@ color: #000;
 }
 
 .event-schedule{
+  margin-top: 80px !important;
   text-align: center;
   padding: 10px;
 }
@@ -58,6 +59,7 @@ color: #000;
 }
 
 .faculty-img, .student-img img{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
+

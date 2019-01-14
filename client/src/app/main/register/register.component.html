@@ -4,7 +4,7 @@
       <div class="title-section">
         <h3>Regis<span>tr</span>ation</h3>
       </div>
-      <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_show">
+      <!-- <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_show">
         <mat-horizontal-stepper #stepper linear labelPosition="bottom">
           <mat-step [stepControl]="registerForm">
             <ng-template matStepLabel>Fill your information</ng-template>
@@ -203,7 +203,7 @@
             </form>
           </mat-step>
         </mat-horizontal-stepper>
-      </div>
+      </div> -->
       <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_progress">
         <div class="text-center">
           <img src="{{LOADER_IMAGE}}" />
@@ -220,6 +220,9 @@
             <p>{{form_success_message}}</p>
           </div>
         </div>
+      </div>
+      <div class="col-12">
+      <h3 class="text-center">Registration has been closed</h3>
       </div>
     </div>
   </div>
