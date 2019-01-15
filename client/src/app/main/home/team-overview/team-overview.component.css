@@ -156,3 +156,13 @@
       left: 5%;
     }
   }
+
+.prof img{
+  width: 300px;
+  height: 300px;
+}
+
+.prof .TeamMemberDetails{
+  width: 300px;
+  height: 300px;
+}

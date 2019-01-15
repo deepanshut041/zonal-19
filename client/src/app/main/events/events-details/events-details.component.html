@@ -33,10 +33,10 @@
         <div class="row">
           <div class="col-md-6 col-lg-4 col-12">
             <div class="faculty-img">
-              <img src="{{event.faculty_image}}" class="img-fluid">
+              <img [ngStyle]="{'border' : '1px solid ' + event.color +' ','border-radius' : '50%'}" src="{{event.faculty_image}}" class="img-fluid">
             </div>
           </div>
-          <div class="col-md-6 col-lg-8 col-12">
+          <div class="faculty-info col-md-6 col-lg-8 col-12">
             <h6>{{event.faculty_name}}</h6>
             <h6>{{event.department}}</h6>
           </div>
@@ -45,12 +45,12 @@
       <div class="col-12 student-coordinator">
         <h3 [ngStyle]="{'border-bottom' : '2px solid ' + event.color +' '}">Student Coordinators</h3>
         <div class="row">
-          <div class="col-3" *ngFor="let coordinator of event.coordinators">
+          <div class="col-md-6 col-lg-3 col-sm-12" *ngFor="let coordinator of event.coordinators">
             <div class="student-img">
-              <img src="{{coordinator.image}}" class="img-fluid">
+              <img [ngStyle]="{'border' : '1px solid ' + event.color +' '}" src="{{coordinator.image}}" class="img-fluid">
             </div>
-            <h6 class="text-center">{{coordinator.name}}</h6>
-            <h6 class="text-center">{{coordinator.phn_no}}</h6>
+            <h6 class="">{{coordinator.name}}</h6>
+            <h6 class="">{{coordinator.phn_no}}</h6>
           </div>
         </div>
       </div>
