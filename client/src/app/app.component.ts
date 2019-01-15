@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from "@angular/router";
+import { ScrollTopService } from './scroll-top.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +9,9 @@ import { Router, NavigationEnd } from "@angular/router";
 })
 export class AppComponent {
   title = 'client';
-  constructor(private router:Router){
+  constructor(private router: Router, private scrollTopService:ScrollTopService) {
   }
   ngOnInit() {
-}
+    this.scrollTopService.setScrollTop();
+  }
 }
