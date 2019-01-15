@@ -167,7 +167,7 @@ background-color: #212121 !important;
 .CalenderDesign{
 width: 100%;
 }
-@media (max-width:480px)
+@media (max-width:928px)
 {
 .bigBlock{
 margin-top: -10px;

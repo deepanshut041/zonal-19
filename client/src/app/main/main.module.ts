@@ -22,7 +22,6 @@ import { HomeComponent } from './home/home.component';
 import { EventsOverviewComponent } from './home/events-overview/events-overview.component';
 import { TeamOverviewComponent } from './home/team-overview/team-overview.component';
 import { LandingPageComponent } from './home/landing-page/landing-page.component';
-import { ScheduleOverviewComponent } from './home/schedule-overview/schedule-overview.component';
 
 // Events Component
 import { EventsComponent } from './events/events.component';
@@ -50,7 +49,7 @@ import { GeneralRulesComponent } from './home/general-rules/general-rules.compon
   ],
   declarations: [
     MainComponent, NavbarComponent, FooterComponent, HomeComponent, LandingPageComponent, EventsOverviewComponent,
-    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent, ScheduleOverviewComponent, AboutUsComponent, ContactUsComponent, GeneralRulesComponent
+    TeamOverviewComponent, EventsComponent, EventsListComponent, EventsDetailsComponent, RegisterComponent, AboutUsComponent, ContactUsComponent, GeneralRulesComponent
   ],
   providers:[MainService,LandingPageService]
 })

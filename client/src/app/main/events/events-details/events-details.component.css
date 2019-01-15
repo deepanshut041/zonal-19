@@ -66,3 +66,11 @@ color: #000;
 .faculty-info{
   margin: auto;
 }
+
+.table{
+  text-transform: capitalize !important;
+}
+
+.table .uppercase{
+  text-transform: uppercase !important;
+}
