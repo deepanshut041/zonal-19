@@ -11,8 +11,6 @@ class EventModel(models.Model):
     date = models.DateField(null=True)
     time = models.TimeField(null=True)
     venue = models.CharField(max_length=130, null=False)
-    faculty_name = models.CharField(max_length=130, null=False)
-    faculty_image = models.ImageField(blank=False, null=False, upload_to = 'images/events/faculty/')
     department = models.CharField(max_length=130, null=False)
     maxp = models.IntegerField(default=6, null=False)
     image = models.ImageField(blank=False, null=False, upload_to = 'images/events/')
@@ -20,6 +18,16 @@ class EventModel(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+class EventFacultyModel(models.Model):
+    name = models.CharField(max_length=130, null=True, blank=True)
+    image = models.ImageField(blank=True, null=False, upload_to = 'images/events/faculty/')
+    designation = models.CharField(max_length=130, blank=True, null=True)
+    department = models.CharField(max_length=30, blank=True, null=True)
+    event = models.ForeignKey(EventModel, on_delete=models.CASCADE, related_name="faculties")
+    phn_no = models.CharField(null=True, max_length=10, blank=True, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
+    def __str__(self):
+        return str(self.name) + " - " + str(self.department)
 
 
 

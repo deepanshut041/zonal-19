@@ -3,7 +3,7 @@ from rest_framework import routers
 from rest_framework.documentation import include_docs_urls
 from rest_framework import permissions
 
-from .views.events import EventModelView, EventCoordinatorView, EventRegistrationView, EventParticipantView
+from .views.events import EventModelView, EventCoordinatorView, EventRegistrationView, EventParticipantView, EventFacultyView
 
 from .views.accounts import (UserEmailVerificationAPIView, UserProfileAPIView, UserRegistrationAPIView, 
                            UserLoginView, PasswordResetAPIView, PasswordResetConfirmView)
@@ -22,7 +22,8 @@ participants_router.register(r'', EventParticipantView)
 coordinators_router = routers.DefaultRouter()
 coordinators_router.register(r'', EventCoordinatorView)
 
-
+faculty_router = routers.DefaultRouter()
+faculty_router.register(r'', EventFacultyView)
 
 
 urlpatterns = [
@@ -37,4 +38,5 @@ urlpatterns = [
    url(r'^registrations/', include(registrations_router.urls), name='registrations'),
    url(r'^participants/', include(participants_router.urls), name='participants'),
    url(r'^coordinators/', include(coordinators_router.urls), name='coordinators'),
+   url(r'^faculties/', include(faculty_router.urls), name='faculties'),
 ]

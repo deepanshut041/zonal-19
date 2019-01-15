@@ -9,9 +9,10 @@ MySpecialAdmin = lambda model: type('SubClass'+model.__name__, (admin.ModelAdmin
 })
 
 from .models.accounts import UserProfile
-from .models.events import EventModel, EventCoordinatorModel, EventRegistrationModel, EventParticipantModel
+from .models.events import EventModel, EventCoordinatorModel, EventRegistrationModel, EventParticipantModel, EventFacultyModel
 
 admin.site.register(EventModel,  MySpecialAdmin(EventModel))
+admin.site.register(EventFacultyModel, MySpecialAdmin(EventFacultyModel))
 admin.site.register(EventCoordinatorModel, MySpecialAdmin(EventCoordinatorModel))
 admin.site.register(EventRegistrationModel,  MySpecialAdmin(EventRegistrationModel))
 admin.site.register(EventParticipantModel, MySpecialAdmin(EventParticipantModel))

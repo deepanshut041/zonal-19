@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models.events import EventModel, EventCoordinatorModel, EventParticipantModel, EventRegistrationModel
+from ..models.events import EventModel, EventCoordinatorModel, EventParticipantModel, EventRegistrationModel, EventFacultyModel
 from django.forms.models import model_to_dict
 from rest_framework_recaptcha.fields import ReCaptchaField
 
@@ -18,11 +18,17 @@ class EventCoordinatorSerializer(serializers.ModelSerializer):
         model = EventCoordinatorModel
         fields = '__all__'
 
+class EventFacultySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EventFacultyModel
+        fields = '__all__'
+
 class EventDetailSerializer(serializers.ModelSerializer):
     coordinators = EventCoordinatorSerializer(many=True)
+    faculties = EventFacultySerializer(many=True)
     class Meta:
         model = EventModel
-        fields = ("id", "name", "details", "rules", "date", "time", "venue", "faculty_name", "department", "coordinators", "maxp", "faculty_image", "image", "color")
+        fields = ("id", "name", "details", "rules", "date", "time", "venue", "department", "coordinators", "maxp", "image", "color", "faculties")
 
 
 class EventParticipantsSerializer(serializers.ModelSerializer):
