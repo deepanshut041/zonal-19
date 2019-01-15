@@ -186,3 +186,8 @@
 .conv .TeamMemberDetails:hover{
   background-color: #00e576;
 }
+
+
+.mat-divider {
+    border-top-width: 2px !important;
+}

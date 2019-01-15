@@ -7,7 +7,7 @@
 
 .container{
   margin-top: 100px;
-  padding: 50px;
+  padding: 5%;
   background-color: #fff;
   border-radius: .15rem;
 }
@@ -58,10 +58,17 @@ color: #000;
   margin-top: 50px;
 }
 
+.faculty-img, .student-img{
+  text-align: center;
+}
+
 .faculty-img, .student-img img{
   width: 150px;
   height: 150px;
+  margin: auto;
 }
+
+
 
 .faculty-info{
   margin: auto;
@@ -69,8 +76,13 @@ color: #000;
 
 .table{
   text-transform: capitalize !important;
+  cursor: pointer;
 }
 
 .table .uppercase{
   text-transform: uppercase !important;
+}
+
+.table tr:hover{
+  background-color: #F1E3F3;
 }

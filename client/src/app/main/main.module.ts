@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule, MatDividerModule} from '@angular/material';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SharedModule } from "../shared/shared.module";
@@ -45,7 +45,7 @@ import { GeneralRulesComponent } from './home/general-rules/general-rules.compon
   imports: [
     CommonModule, RouterModule, HttpClientModule, FormsModule, ReactiveFormsModule, RecaptchaModule, FontAwesomeModule,
      MatButtonModule, MatCheckboxModule, MatInputModule, BrowserAnimationsModule, MatIconModule, MatStepperModule, MatCardModule,
-     MatSelectModule, MatOptionModule, MatFormFieldModule, SharedModule, NgwWowModule
+     MatSelectModule, MatOptionModule, MatFormFieldModule, SharedModule, NgwWowModule, MatDividerModule
   ],
   declarations: [
     MainComponent, NavbarComponent, FooterComponent, HomeComponent, LandingPageComponent, EventsOverviewComponent,
