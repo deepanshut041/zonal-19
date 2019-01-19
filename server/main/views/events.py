@@ -95,7 +95,7 @@ class EventRegistrationView(ModelViewSet):
         return super(EventRegistrationView, self).get_permissions()
 
 class EventParticipantView(ModelViewSet):
-    queryset = EventParticipantModel.objects.all()
+    queryset = EventParticipantModel.objects.all().order_by('registration__college_code')
     serializer_class = EventParticipantsSerializer
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('registration__college_code', 'registration__event')

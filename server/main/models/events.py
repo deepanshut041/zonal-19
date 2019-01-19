@@ -25,6 +25,7 @@ class EventFacultyModel(models.Model):
     designation = models.CharField(max_length=130, blank=True, null=True)
     department = models.CharField(max_length=30, blank=True, null=True)
     event = models.ForeignKey(EventModel, on_delete=models.CASCADE, related_name="faculties")
+    view_priority = models.IntegerField(null=True, default=0)
     phn_no = models.CharField(null=True, max_length=10, blank=True, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
     def __str__(self):
         return str(self.name) + " - " + str(self.department)

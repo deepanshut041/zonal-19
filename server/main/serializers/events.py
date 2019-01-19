@@ -25,7 +25,12 @@ class EventFacultySerializer(serializers.ModelSerializer):
 
 class EventDetailSerializer(serializers.ModelSerializer):
     coordinators = EventCoordinatorSerializer(many=True)
-    faculties = EventFacultySerializer(many=True)
+    faculties = serializers.SerializerMethodField()
+
+    def get_faculties(self, obj):
+         ordered_queryset = EventFacultyModel.objects.filter(event_id=obj.id).order_by('view_priority')
+         return EventFacultySerializer(ordered_queryset, many=True, context=self.context).data
+
     class Meta:
         model = EventModel
         fields = ("id", "name", "details", "rules", "date", "time", "venue", "department", "coordinators", "maxp", "image", "color", "faculties")
