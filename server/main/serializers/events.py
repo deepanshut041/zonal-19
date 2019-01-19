@@ -24,12 +24,16 @@ class EventFacultySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class EventDetailSerializer(serializers.ModelSerializer):
-    coordinators = EventCoordinatorSerializer(many=True)
+    coordinators = serializers.SerializerMethodField()
     faculties = serializers.SerializerMethodField()
 
     def get_faculties(self, obj):
          ordered_queryset = EventFacultyModel.objects.filter(event_id=obj.id).order_by('view_priority')
          return EventFacultySerializer(ordered_queryset, many=True, context=self.context).data
+
+    def get_coordinators(self, obj):
+         ordered_queryset = EventCoordinatorModel.objects.filter(event_id=obj.id).order_by('-year')
+         return EventCoordinatorSerializer(ordered_queryset, many=True, context=self.context).data
 
     class Meta:
         model = EventModel
