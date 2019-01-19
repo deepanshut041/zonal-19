@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 .fluid-container{
   padding: 5%;
   padding-top: 50px;
@@ -77,6 +79,7 @@ color: #000;
 .table{
   text-transform: capitalize !important;
   cursor: pointer;
+  font-family: 'Lato', sans-serif;
 }
 
 .table .uppercase{
