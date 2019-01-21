@@ -93,7 +93,7 @@ class EventRegistrationModel(models.Model):
 
     objects = EventRegistrationManager()
     def __str__(self):
-        return str(self.college_code + " - " + self.college_name)
+        return str(self.college_code + " - " + self.college_name + " - ") + str(self.event)
     
     class Meta:
         unique_together = ('college_code', 'event')
