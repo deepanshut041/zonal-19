@@ -8,7 +8,7 @@
           <div class="event-info"  routerLink="/events/{{event.id}}">
             <img src="{{event.image}}" alt="event">
             <div class="event text-center media">
-              <h6>{{event.name}}</h6>
+              <h6 innerHtml="{{event.name}}"></h6>
               <h6>{{event.date}}</h6>
               <h6>{{event.time}}</h6>
                 <button class="btn more-button mx-auto align-self-center" type="button" name="button" routerLink="/events/{{event.id}}">

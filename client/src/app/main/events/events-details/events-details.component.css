@@ -64,7 +64,7 @@ color: #000;
   text-align: center;
 }
 
-.faculty-img, .student-img img{
+.faculty-img img, .student-img img{
   width: 150px;
   height: 150px;
   margin: auto;
