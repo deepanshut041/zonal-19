@@ -17,6 +17,7 @@ export class TeamOverviewComponent implements OnInit {
   IMG_6 = ASSETS + '/developer(prabhanshu).jpg';
   IMG_7 = ASSETS + '/Dr. J. G. Yadav.jpg';
   IMG_8 = ASSETS + '/shivan chaudhary.jpg';
+  IMG_9 = ASSETS + '/aman_maam.jpg';
   BACKGROUND_IMG = ASSETS + '/teamBg.svg';
   BACKGROUND_MOBILE_IMG = ASSETS + '/aboutBackgroundMobile.svg';
 

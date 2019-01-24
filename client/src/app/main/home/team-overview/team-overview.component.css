@@ -40,7 +40,7 @@
   .teamCard{
     padding: 20px;
     margin-top: 40px;
-    height: 300px;
+    min-height: 300px;
   }
   .teamCard img{
     width: 250px;
@@ -125,6 +125,7 @@
   /* team */
   @media (max-width:928px)
   {
+
     .imageSection img{
       height: 150px;
     }
@@ -162,8 +163,15 @@
 .prof img{
   width: 300px;
   height: 300px;
+  /* text-align: center; */
 }
-
+.prof-si{
+  width: 250px;
+  height: 250px;
+}
+.prof{
+  width: 100%;
+}
 .prof .TeamMemberDetails{
   width: 300px;
   height: 300px;
