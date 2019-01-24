@@ -6,7 +6,7 @@
       <div class="col-12 event-name" [ngStyle]="{
         'background-color' :  event.color
       }">
-        <h4 class="heading">{{event.name}}</h4>
+        <h4 class="heading" innerHtml="{{event.name}}"></h4>
         <img src={{event.image}}>
       </div>
       <div class="col-12 event-schedule">
