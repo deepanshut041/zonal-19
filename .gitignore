@@ -148,6 +148,6 @@ Thumbs.db
 # database
 db.sqlite3
 
-server/static/ang
+
 server/media
 server/static-root
