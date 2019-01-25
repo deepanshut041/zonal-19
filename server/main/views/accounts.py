@@ -13,6 +13,14 @@ from ..serializers.accounts import (UserRegistrationSerializer, UserLoginSeriali
 
 User = get_user_model()
 
+# Email
+from django.core.mail import EmailMessage
+from django.utils.encoding import force_bytes, force_text
+from django.template.loader import render_to_string
+
+from rest_framework.response import Response
+from rest_framework import status
+
 
 class UserRegistrationAPIView(generics.CreateAPIView):
     """
@@ -113,4 +121,37 @@ class UserProfileAPIView(generics.RetrieveAPIView):
             return self.request.user.userprofile
         except UserProfile.DoesNotExist:
             raise Http404
+
+# Contact Email View 
+class ContactUsAPIView(views.APIView):
+    """
+    docstring here
+        :param APIView: 
+    """
+    permission_classes = (permissions.AllowAny,)
+    def post(self, request):
+        data = request.data
+        first_name = data['first_name']
+        last_name = data['last_name']
+        email_address = data['email']
+        phone_number = data['phone_number']
+        description = data['description']
+        
+        mail_subject = data['subject']
+
+        if first_name and email_address and phone_number and description and mail_subject:
+            mail_message = render_to_string('contact_mail.html', {
+                'first_name': first_name,
+                'last_name': last_name,
+                'email_address': email_address,
+                'phone_number': phone_number,
+                'description':description,
+            })
+            to_email = "prabhanshu.chauhan98@gmail.com"
+            send_mail = EmailMessage(
+                        mail_subject, mail_message, to=[to_email]
+            )
+            send_mail.send()
+            return Response({"status":"Email Sent"}, status=status.HTTP_201_CREATED)
+        return Response({"status":"Email Not Sent"}, status=status.HTTP_400_BAD_REQUEST)
 

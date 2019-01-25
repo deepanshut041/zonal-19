@@ -6,7 +6,7 @@ from rest_framework import permissions
 from .views.events import EventModelView, EventCoordinatorView, EventRegistrationView, EventParticipantView, EventFacultyView
 
 from .views.accounts import (UserEmailVerificationAPIView, UserProfileAPIView, UserRegistrationAPIView, 
-                           UserLoginView, PasswordResetAPIView, PasswordResetConfirmView)
+                           UserLoginView, PasswordResetAPIView, PasswordResetConfirmView, ContactUsAPIView)
 
 
 
@@ -30,6 +30,7 @@ urlpatterns = [
    url(r'^events/', include(events_router.urls), name='events'),
    url(r'^docs/', include_docs_urls(title="api-doc", public=True, permission_classes=[])),
    url(r'^auth/login/', UserLoginView.as_view(), name='login'),
+   url(r'^contact/', ContactUsAPIView.as_view(), name='contact-us'),
    url(r'^auth/register/', UserRegistrationAPIView.as_view(), name='regsiter'),
    url(r'^auth/verify/(?P<verification_key>.+)/$', UserEmailVerificationAPIView.as_view(), name='email_verify'),
    url(r'^auth/password_reset/$', PasswordResetAPIView.as_view(), name='password_change'),

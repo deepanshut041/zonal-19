@@ -13,7 +13,7 @@
             <h1>ENT<span>REVS</span>TOR</h1>
           </div> -->
           <div class="contact-img">
-          <img src={{CONTACT_US}}>
+            <img src={{CONTACT_US}}>
           </div>
           <div class="contact-info">
             <p><b>Phone:</b> +91 92196 12410</p>
@@ -21,49 +21,70 @@
           </div>
         </div>
       </div><!-- END OF / COLUMN -->
-      <div class="col-md-6 wow fadeInRight" data-wow-delay="0.2s">
-        <form id="contact-form" action="inc/contact.php" name="contactform" method="post" class="contact-form">
+      <div class="col-md-6 wow fadeInRight" data-wow-delay="0.2s" *ngIf="form_show">
+        <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" name="name" id="first_name" class="form-control" placeholder="First Name" />
+                <input type="text" name="name" id="first_name" class="form-control" placeholder="First Name"
+                  formControlName="first_name" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" name="name" id="second_name" class="form-control" placeholder="Second Name" />
+                <input type="text" name="name" id="second_name" class="form-control" placeholder="Second Name"
+                  formControlName="last_name" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" name="email" id="email" class="form-control" placeholder="Your Email" />
+                <input type="text" name="email" id="email" class="form-control" placeholder="Your Email"
+                  formControlName="email" />
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" name="phone_no" id="phone_no" class="form-control" placeholder="Phone no." />
+                <input type="text" name="phone_no" id="phone_no" class="form-control" placeholder="Phone no."
+                  formControlName="phone_number" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <textarea name="comments" id="comments" cols="30" rows="10" class="form-control" placeholder="Your Message"></textarea>
+                <textarea name="comments" id="comments" cols="30" rows="10" class="form-control" placeholder="Your Message"
+                  formControlName="description"></textarea>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <span class="pori-btn">
-                <button type="submit" class="btn submit-button" id="submit">Submit</button>
+                <button type="submit" class="btn submit-button" id="submit" type="submit">Submit</button>
               </span>
             </div>
           </div>
         </form><!-- END OF /. FORM -->
-        <div id="message"></div>
       </div><!-- END OF /. COLUMN -->
+      <div class="col-md-6 mx-auto" *ngIf="form_progress">
+        <div class="text-center">
+          <img src="{{LOADER_IMAGE}}" />
+          <h3> Please Wait</h3>
+          <div><br><br></div>
+        </div>
+      </div>
+      <div class="col-md-6 mx-auto" *ngIf="form_success">
+        <div id="verifyEmailAlert">
+          <div class="verify-alert-icon" id="verifyEmailAlertIcon">
+            <i class="fa fa-check fa-2x"></i>
+          </div>
+          <div class="verify-alert-message" id="verifyEmailAlertMsg">
+            <p>{{form_success_message}}</p>
+          </div>
+        </div>
+      </div>
     </div><!-- END OF /. ROW -->
-  </div><!-- END OF /. CONTAINER -->
-</div><!-- END OF /. CONTACT SECTION -->
+  </div>
+</div>

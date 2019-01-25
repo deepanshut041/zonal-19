@@ -188,3 +188,27 @@ span.pori-btn{
   border-left: 1.5px solid #00e576 !important;
   transition: .3s;
   }
+
+  #verifyEmailAlert {
+    background-color: #fff;
+    margin: auto;
+    max-width: 330px;
+  }
+  
+  #verifyEmailAlert .verify-alert-icon {
+    padding: 20px;
+    color: #f0ad4e!important;
+    font-size: 70px;
+    transition: all 1s ease-in;
+    -webkit-text-stroke: 20px #fff;
+  }
+  
+  #verifyEmailAlert .verify-alert-message {
+    color: #4CAF50;
+    font-size: 16px;
+    -webkit-transition: all 1 ease-in 1;
+    -moz-transition: all 1 ease-in 1;
+    transition: all 1 ease-in 1;
+    padding-bottom: 30px;
+  }
+  
