@@ -147,7 +147,7 @@ class ContactUsAPIView(views.APIView):
                 'phone_number': phone_number,
                 'description':description,
             })
-            to_email = "prabhanshu.chauhan98@gmail.com"
+            to_email = "parasharvk@akgec.ac.in"
             send_mail = EmailMessage(
                         mail_subject, mail_message, to=[to_email]
             )
