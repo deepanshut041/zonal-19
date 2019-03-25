@@ -87,7 +87,9 @@ class EventRegistrationSerializer(serializers.ModelSerializer):
         return validated_data
 
 class EventParticipantsPartialSerializer(serializers.ModelSerializer):
-    college_name = serializers.CharField(source='registration.college_name', read_only=True) 
+    college_name = serializers.CharField(source='registration.college_name', read_only=True)
+    event_name = serializers.CharField(source='registration.event.name', read_only=True)
+
     class Meta:
         model = EventParticipantModel
-        fields = ("college_name", "name", "university_roll", "year", "branch", "gender", "phn_no")
+        fields = ("college_name", "name", "university_roll", "year", "branch", "gender", "phn_no", "event_name")
