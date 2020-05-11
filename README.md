@@ -27,10 +27,10 @@ Tested on Ubuntu 16.04 with anaconda python installed.
 
 You need the following to run this app:
 
-* Python 3.6 or higher (Python 2.x is not supported by Django 2.x)
-* [Pipenv](https://pipenv.readthedocs.io/)
-* Node v10.x or higher
-* NPM v6.x or higher
+- Python 3.6 or higher (Python 2.x is not supported by Django 2.x)
+- [Pipenv](https://pipenv.readthedocs.io/)
+- Node v10.x or higher
+- NPM v6.x or higher
 
 ### Setup
 
@@ -53,16 +53,24 @@ You need the following to run this app:
 Backend server starts at http://localhost:8000 and frontend server start at http://localhost:4200
 
 ## API Endpoints
+
 ![API_DOC](./images/apidoc.png)
 
 [View Full Api Doc](./docs/api-doc.html)
 
 ## Screenshots
-![API_DOC](./images/screen1.png)
 
-![API_DOC](./images/screen2.png)
+![Photo 7](./images/screen-7.png)
 
-![API_DOC](./images/screen3.png)
+More Photos
+
+- [Photo 1](./images/screen-1.png)
+- [Photo 2](./images/screen-2.png)
+- [Photo 3](./images/screen-3.png)
+- [Photo 4](./images/screen-4.png)
+- [Photo 5](./images/screen-5.png)
+- [Photo 6](./images/screen-6.png)
+
 
 ## Questions?
 
